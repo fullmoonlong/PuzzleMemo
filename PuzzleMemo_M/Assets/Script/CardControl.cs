@@ -15,7 +15,7 @@ public class CardControl : MonoBehaviour
     public Vector3 cardPos;
     public Vector3 targetPosition;
 
-    public float card_term = 1.2f;
+    private float cardInterval = 1.2f;
 
     Animator anim;
 
@@ -53,6 +53,39 @@ public class CardControl : MonoBehaviour
 
         //카드 움직임
         CardMove();
+
+        //일정시간후 체크
+        IntervalandCheck();
+        
+    }
+
+    void IntervalandCheck()
+    {
+        if (this.isOpen == false)
+        {
+            this.cardInterval = 1.2f;
+            return;
+        }
+        else if (this.isOpen == true)
+        {
+            this.cardInterval -= Time.deltaTime;
+        }
+
+        if (this.cardInterval <= 0f)
+        {
+            if ((imgNum + 6) <= 12 && GameObject.FindWithTag("card" + (imgNum + 6)).transform.GetComponent<CardControl>().ishitted == false)
+            {
+                CloseCard();
+
+                return;
+            }
+            else
+            {
+                this.ishitted = true;
+
+                return;
+            }
+        }
     }
 
     void ClickCheck()
@@ -93,23 +126,18 @@ public class CardControl : MonoBehaviour
 
     void ShowImage()
     {
-        Debug.Log(imgNum);
         //transform.GetComponent<Renderer>().material.mainTexture = Resources.Load("puzzle_" + imgNum.ToString()) as Texture2D;
         transform.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("puzzle_" + imgNum.ToString());
     }
 
     void HideImage()
     {
-        transform.GetComponent<Renderer>().material.mainTexture = Resources.Load("card_back") as Texture2D;
+        //transform.GetComponent<Renderer>().material.mainTexture = Resources.Load("card_back") as Texture2D;
+        transform.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("card_back");
     }
 
     void CardMove()
     {
-        if (this.isOpen == true)//특수카드일 경우에
-        {
-            return;
-        }
-
         if (this.ishitted == true && this.tag.Substring(0, 4) == "card")
         {
             int hittedcardNum = int.Parse(transform.tag.Substring(4));
