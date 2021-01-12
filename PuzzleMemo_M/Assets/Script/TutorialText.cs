@@ -44,7 +44,6 @@ public class TutorialText : MonoBehaviour
         {
             if(ClickCheck == false)
             {
-                Debug.Log(n);
                 ExplainText.text = m_text.Substring(0, n);
                 yield return new WaitForSeconds(0.1f);
             }

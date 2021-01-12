@@ -12,23 +12,24 @@ public class TutorialManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        //0에서 시작
+        popUpIndex = 0;
     }
 
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(popUpIndex);
         //해당 단계의 설명이 나오게하기
         for (int i = 0; i < popUps.Length; i++)
         {
+            
             if (i == popUpIndex)
             {
-                popUps[popUpIndex].SetActive(true);
+                popUps[i].SetActive(true);
             }
             else
             {
-                popUps[popUpIndex].SetActive(false);
+                popUps[i].SetActive(false);
             }
         }
 
@@ -75,5 +76,10 @@ public class TutorialManager : MonoBehaviour
         {
 
         }
+    }
+
+    public int GetPopUpIndex()
+    {
+        return popUpIndex;
     }
 }

@@ -17,13 +17,20 @@ public class CardControl : MonoBehaviour
 
     private float cardInterval = 1.2f;
 
+    //튜토리얼 순서
+    private int tutoIndex;
+
+    //카드 클릭 가능한 상태
+
     Animator anim;
 
     // Start is called before the first frame update
     void Start()
     {
+        //애니메이션
         anim = GetComponent<Animator>();
 
+        //보드 번호 - 태그 활용
         if (tag.Substring(0, 5) == "board")//보드
         {
             //보드 번호 가져오기
@@ -32,7 +39,7 @@ public class CardControl : MonoBehaviour
             //이미지 적용
             transform.GetComponent<Renderer>().material.mainTexture = Resources.Load("puzzle2_" + boardNum.ToString()) as Texture2D;
         }
-
+        //카드 번호 - 태그 활용
         if (tag.Substring(0, 4) == "card")//카드
         {
             //카드 번호 가져오기
@@ -43,6 +50,9 @@ public class CardControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //현재 튜토리얼 순서 갱신
+        tutoIndex = GameObject.Find("TutorialManager").GetComponent<TutorialManager>().GetPopUpIndex();
+
         //윈도우(왼버튼), 모바일(터치)
         if (Input.GetButtonDown("Fire1"))
         {
@@ -55,13 +65,13 @@ public class CardControl : MonoBehaviour
         CardMove();
 
         //일정시간후 체크
-        IntervalandCheck();
+        CardCheck();
         
     }
 
-    void IntervalandCheck()
+    void CardCheck()
     {
-        if (this.isOpen == false)
+        if (this.isOpen == false || this.ishitted == true)
         {
             this.cardInterval = 1.2f;
             return;
@@ -73,17 +83,60 @@ public class CardControl : MonoBehaviour
 
         if (this.cardInterval <= 0f)
         {
-            if ((imgNum + 6) <= 12 && GameObject.FindWithTag("card" + (imgNum + 6)).transform.GetComponent<CardControl>().ishitted == false)
+            if (tutoIndex == 0)
             {
-                CloseCard();
-
-                return;
+                
             }
-            else
+            else if (tutoIndex == 1)
             {
-                this.ishitted = true;
+                //해당 단계에 뒤집을 카드 설정
+                if (imgNum == 11 || imgNum == 12)
+                {
+                    this.ishitted = true;
 
-                return;
+                    return;
+                }
+                else//정해진 카드가 아니라면 뒤집기
+                {
+                    CloseCard();
+
+                    return;
+                }
+            }
+            else if (tutoIndex == 2)
+            {
+                //해당 단계에 뒤집을 카드 설정
+                if (imgNum == 5 || imgNum == 6)
+                {
+                    this.ishitted = true;
+
+                    return;
+                }
+                else//정해진 카드가 아니라면 뒤집기
+                {
+                    CloseCard();
+
+                    return;
+                }
+            }
+            else if (tutoIndex == 3)
+            {
+
+            }
+            else//마지막, 이전에 쓰던 기본규칙
+            {
+                if ((imgNum + 6) <= 12 && GameObject.FindWithTag("card" + (imgNum + 6)).transform.GetComponent<CardControl>().ishitted == false)
+                {
+                    CloseCard();
+
+                    return;
+                }
+                else
+                {
+                    this.ishitted = true;
+
+                    return;
+                }
             }
         }
     }
@@ -120,6 +173,7 @@ public class CardControl : MonoBehaviour
         if (!isOpen) return;
 
         isOpen = false;
+        ishitted = false;
         transform.position = new Vector3(transform.position.x, transform.position.y, -1f);
         anim.Play("aniClose");
     }
