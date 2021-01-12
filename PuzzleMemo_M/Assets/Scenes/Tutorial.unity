@@ -121,6 +121,50 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &94222739
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 94222741}
+  - component: {fileID: 94222740}
+  m_Layer: 0
+  m_Name: SoundManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &94222740
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 94222739}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cc45e0ed13d8d3409593ac3f5877012, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Menusound: {fileID: 8300000, guid: c11e1fc67a36db24faa6538e738e49b3, type: 3}
+--- !u!4 &94222741
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 94222739}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -1.655629, z: 90}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &303911186
 GameObject:
   m_ObjectHideFlags: 0
@@ -766,6 +810,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MenuSet: {fileID: 2124587920}
+  audioSource: {fileID: 0}
+  musictext: {fileID: 0}
 --- !u!1 &543479624
 GameObject:
   m_ObjectHideFlags: 0
@@ -1341,6 +1387,7 @@ MonoBehaviour:
   ExplainText: {fileID: 866822626}
   m_text: "\uC548\uB155 \uB9CC\uB098\uC11C \uBC18\uAC00\uC6CC! \uBA3C\uC800 \uAC8C\uC784
     \uB8F0\uC744 \uC124\uBA85\uD574 \uC904\uAC8C"
+  n: 0
 --- !u!114 &866822626
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1594,6 +1641,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MenuSet: {fileID: 2124587920}
+  audioSource: {fileID: 0}
+  musictext: {fileID: 0}
 --- !u!114 &1056456812
 MonoBehaviour:
   m_ObjectHideFlags: 0
