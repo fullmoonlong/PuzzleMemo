@@ -23,11 +23,10 @@ public class TutorialText : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //카드 넘어가면서 클릭하면 설명 바로 다나와서 임시로없앰 ㅠㅠ
-        /*if(Input.GetMouseButtonDown(0))
+        if(Input.GetMouseButtonDown(0))
         {
             ClickCheck = true;
-        }*/
+        }
     }
 
     //설명 넘어가면서 새로 불러오려고 추가 - 규식
