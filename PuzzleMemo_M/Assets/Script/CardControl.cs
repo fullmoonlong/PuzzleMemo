@@ -83,61 +83,67 @@ public class CardControl : MonoBehaviour
 
         if (this.cardInterval <= 0f)
         {
-            if (tutoIndex == 0)
-            {
-                
-            }
-            else if (tutoIndex == 1)
-            {
-                //해당 단계에 뒤집을 카드 설정
-                if (imgNum == 11 || imgNum == 12)
-                {
-                    this.ishitted = true;
+            //if (tutoIndex == 0)
+            //{
 
-                    return;
-                }
-                else//정해진 카드가 아니라면 뒤집기
-                {
-                    CloseCard();
+            //}
 
-                    return;
-                }
-            }
-            else if (tutoIndex == 2)
-            {
-                //해당 단계에 뒤집을 카드 설정
-                if (imgNum == 5 || imgNum == 6)
-                {
-                    this.ishitted = true;
+            //if (tutoIndex == 1)
+            //{
 
-                    return;
-                }
-                else//정해진 카드가 아니라면 뒤집기
-                {
-                    CloseCard();
+            //}
 
-                    return;
-                }
-            }
-            else if (tutoIndex == 3)
-            {
+            //else if (tutoIndex == 2)
+            //{
+            //    //해당 단계에 뒤집을 카드 설정
+            //    if (imgNum == 11 || imgNum == 12)
+            //    {
+            //        this.ishitted = true;
 
-            }
-            else//마지막, 이전에 쓰던 기본규칙
-            {
-                if ((imgNum + 6) <= 12 && GameObject.FindWithTag("card" + (imgNum + 6)).transform.GetComponent<CardControl>().ishitted == false)
-                {
-                    CloseCard();
+            //        return;
+            //    }
+            //    else//정해진 카드가 아니라면 뒤집기
+            //    {
+            //        CloseCard();
 
-                    return;
-                }
-                else
-                {
-                    this.ishitted = true;
+            //        return;
+            //    }
+            //}
+            //else if (tutoIndex == 3)
+            //{
+            //    //해당 단계에 뒤집을 카드 설정
+            //    if (imgNum == 5 || imgNum == 6)
+            //    {
+            //        this.ishitted = true;
 
-                    return;
-                }
-            }
+            //        return;
+            //    }
+            //    else//정해진 카드가 아니라면 뒤집기
+            //    {
+            //        CloseCard();
+
+            //        return;
+            //    }
+            //}
+            //else if (tutoIndex == 4)
+            //{
+
+            //}
+            //else//마지막, 이전에 쓰던 기본규칙
+            //{
+            //    if ((imgNum + 6) <= 12 && GameObject.FindWithTag("card" + (imgNum + 6)).transform.GetComponent<CardControl>().ishitted == false)
+            //    {
+            //        CloseCard();
+
+            //        return;
+            //    }
+            //    else
+            //    {
+            //        this.ishitted = true;
+
+            //        return;
+            //    }
+            //}
         }
     }
 
