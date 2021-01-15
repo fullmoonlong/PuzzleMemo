@@ -83,16 +83,99 @@ public class CardControl : MonoBehaviour
 
         if (this.cardInterval <= 0f)
         {
-            //if (tutoIndex == 0)
-            //{
+            if (tutoIndex == 0)
+            {
 
-            //}
+            }
 
-            //if (tutoIndex == 1)
-            //{
+            else if (tutoIndex == 1)
+            {
 
-            //}
+            }
 
+            else if (tutoIndex == 2)
+            {
+
+            }
+
+            else if (tutoIndex == 3)
+            {
+
+            }
+
+            else if (tutoIndex == 4)
+            {
+
+            }
+
+            else if (tutoIndex == 5)
+            {
+
+            }
+
+            else if (tutoIndex == 6)
+            {
+
+            }
+
+            else if (tutoIndex == 7)
+            {
+
+            }
+
+            else if (tutoIndex == 8)
+            {
+
+            }
+
+            else if (tutoIndex == 9)
+            {
+                if (imgNum == 6)
+                {
+                    this.ishitted = true;
+
+                    return;
+                }
+                else//정해진 카드가 아니라면 뒤집기
+                {
+                    CloseCard();
+
+                    return;
+                }
+            }
+
+            else if (tutoIndex == 10)
+            {
+
+            }
+
+            else if (tutoIndex == 11)
+            {
+
+            }
+
+            else if (tutoIndex == 12)
+            {
+
+            }
+
+            else if (tutoIndex == 13)
+            {
+                print("13");
+                if (imgNum == 18)
+                {
+                    print("18");
+                    this.ishitted = true;
+
+                    return;
+                }
+                else//정해진 카드가 아니라면 뒤집기
+                {
+                    CloseCard();
+
+                    return;
+                }
+            }
             //else if (tutoIndex == 2)
             //{
             //    //해당 단계에 뒤집을 카드 설정

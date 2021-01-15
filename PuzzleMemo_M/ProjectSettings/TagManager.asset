@@ -20,6 +20,9 @@ TagManager:
   - card6
   - card11
   - card12
+  - board18
+  - board24
+  - card18
   layers:
   - Default
   - TransparentFX

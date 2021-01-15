@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class TutorialManager : MonoBehaviour
 {
@@ -14,14 +15,23 @@ public class TutorialManager : MonoBehaviour
 
     //카메라 정보
     private Camera cam;
+    public GameObject Player1;
+    public GameObject Player2;
     Vector3 originCamPos;//초기 위치
     float originCamSize;//초기 사이즈
 
+    public Text Playertext;
+
     [Space]
     [Space]
+    public GameObject cardsoloPos;
+    public GameObject boardsoloPos;
+    public GameObject speicalPos;
     public GameObject cardPos;
     public GameObject boardPos;
-    public GameObject speicalPos;
+    public GameObject centerPos;
+    public GameObject NextPos;
+    public GameObject OutPos;
     private float cameraSpeed = 5f;
 
     public float ZoomSpeed = 3f;
@@ -123,13 +133,12 @@ public class TutorialManager : MonoBehaviour
         {
             //3초 뒤?
             popUps[0].SetActive(true);
-            cam.transform.position = Vector3.Lerp(cam.transform.position, boardPos.transform.position, cameraSpeed * Time.deltaTime);
-            cam.orthographicSize = Mathf.Lerp(cam.orthographicSize, 3, ZoomSpeed);
+            cam.transform.position = Vector3.Lerp(cam.transform.position, boardsoloPos.transform.position, cameraSpeed * Time.deltaTime);
+            //cam.orthographicSize = Mathf.Lerp(cam.orthographicSize, 3, ZoomSpeed);
             if (Input.GetButtonDown("Fire1"))
             {
                 tutoText.m_text = "점수를 따라 이동할 수 있는 4종류의 말";
                 tutoText.TextStart();
-
                 popUpIndex++;
             }
         }
@@ -151,13 +160,12 @@ public class TutorialManager : MonoBehaviour
         {
             popUps[0].SetActive(false);
             popUps[1].SetActive(true);
-            cam.transform.position = Vector3.Lerp(cam.transform.position, cardPos.transform.position, cameraSpeed * Time.deltaTime);
+            cam.transform.position = Vector3.Lerp(cam.transform.position, cardsoloPos.transform.position, cameraSpeed * Time.deltaTime);
 
             if (Input.GetButtonDown("Fire1"))
             {
                 tutoText.m_text = "5장의 특수카드로 이루어져 있습니다.";
                 tutoText.TextStart();
-                CameraReset();
                 popUpIndex++;
             }
         }
@@ -167,6 +175,156 @@ public class TutorialManager : MonoBehaviour
             popUps[1].SetActive(false);
             popUps[2].SetActive(true);
             cam.transform.position = Vector3.Lerp(cam.transform.position, speicalPos.transform.position, cameraSpeed * Time.deltaTime);
+
+            if (Input.GetButtonDown("Fire1"))
+            {
+                tutoText.m_text = "말판의 이동에 관한 설명을 시작합시다.";
+                tutoText.TextStart();
+                popUpIndex++;
+            }
+        }
+
+        else if (popUpIndex == 7)//scene1-2.1
+        {
+            popUps[2].SetActive(false);
+            cam.transform.position = Vector3.Lerp(cam.transform.position, centerPos.transform.position, cameraSpeed * Time.deltaTime);
+
+            if (Input.GetButtonDown("Fire1"))
+            {
+                tutoText.m_text = "동물을 완성한 후, 맞춰진 동물이 가진 카드의 수만큼 나뭇잎을 따라 말을 이동하게 됩니다.";
+                tutoText.TextStart();
+                popUpIndex++;
+            }
+        }
+
+        else if (popUpIndex == 8)//scene1-2.2
+        {
+            if (Input.GetButtonDown("Fire1"))
+            {
+                tutoText.m_text = "왼쪽  카드를 클릭하여 보세요";
+                tutoText.TextStart();
+                popUpIndex++;
+            }
+        }
+
+        else if (popUpIndex == 9)//scene1-2.3 (카드 클릭, 플레이어 움직이기)
+        {
+            popUps[3].SetActive(true);
+            if (GameObject.FindWithTag("card6").GetComponent<CardControl>().ishitted == true && complete[6] == false)
+            {
+                //카메라를 보드판 위치로 이동
+                cam.transform.position = Vector3.Lerp(cam.transform.position, boardPos.transform.position, cameraSpeed * Time.deltaTime);
+                //위치이동이 완료되었으면 체크
+                if (cam.transform.position.y >= boardPos.transform.position.y - 0.001)
+                {
+                    check[6] = true;
+                }
+
+                //체크됐을 때 플레이어1이 플레이어2로 갔을 때 complete 체크
+                if (check[6])
+                {
+                    Player1.transform.position = Vector3.Lerp(Player1.transform.position, Player2.transform.position, cameraSpeed * Time.deltaTime);
+                    if (Player1.transform.position.x >= Player2.transform.position.x - 0.001)
+                    {
+                        complete[6] = true;
+                    }
+                }
+            }
+
+            if (complete[6]) // 말위로 올라타기 기능 설명
+            {
+                Debug.Log("complete");
+                tutoText.m_text = "뒷사람이 앞사람을 따라 잡았을 경우, 말 위로 올라타는 것이 가능합니다.";
+                tutoText.TextStart();
+                popUpIndex++;
+            }
+        }
+
+        else if (popUpIndex == 10)//scene1-2.4
+        {
+            if (Input.GetButtonDown("Fire1"))
+            {
+                tutoText.m_text = "아랫사람이 이동을 하면 올라탄 사람은 같이 이동을 하게 됩니다.";
+                tutoText.TextStart();
+                popUpIndex++;
+            }
+        }
+
+        else if (popUpIndex == 11)//scene1-2.5
+        {
+            cam.transform.position = Vector3.Lerp(cam.transform.position, centerPos.transform.position, cameraSpeed * Time.deltaTime);
+            if (Input.GetButtonDown("Fire1"))
+            {
+                tutoText.m_text = "하지만 업혀있는 사람이 이동하게 되면 아랫사람은 같이 이동하지 않습니다.";
+                tutoText.TextStart();
+                popUpIndex++;
+            }
+
+        }
+
+        else if (popUpIndex == 12)//scene1-2.6
+        {
+            
+            
+            if (Input.GetButtonDown("Fire1"))
+            {
+                tutoText.m_text = "오른쪽 카드를 클릭해보세요";
+                tutoText.TextStart();
+                popUpIndex++;
+            }
+        }
+
+        else if (popUpIndex == 13)//scene1-2.7 (카드 클릭, 플레이어 같이 이동)
+        {
+            Playertext.text = "Player2";
+            if (GameObject.FindWithTag("card18").GetComponent<CardControl>().ishitted == true && complete[18] == false)
+            {
+                print("들어옴");
+                //카메라를 보드판 위치로 이동
+                cam.transform.position = Vector3.Lerp(cam.transform.position, boardPos.transform.position, cameraSpeed * Time.deltaTime);
+                //위치이동이 완료되었으면 체크
+                if (cam.transform.position.y >= boardPos.transform.position.y - 0.001)
+                {
+                    check[18] = true;
+                }
+
+                //체크됐을 때 플레이어1이 플레이어2로 갔을 때 complete 체크
+                if (check[18])
+                {
+                    Player2.transform.position = Vector3.Lerp(Player2.transform.position, NextPos.transform.position, cameraSpeed * Time.deltaTime);
+                    Player1.transform.position = Vector3.Lerp(Player1.transform.position, NextPos.transform.position, cameraSpeed * Time.deltaTime);
+                
+                    if (Player2.transform.position.x >= NextPos.transform.position.x - 0.001)
+                    {
+                        complete[18] = true;
+                    }
+                }
+            }
+
+            if (complete[18]) // 말위로 올라타기 기능 설명
+            {
+                popUps[3].SetActive(false);
+                tutoText.m_text = "또한, 업혀있는 사람은 덩굴이 내려운 장소에서 무조건 내리게 됩니다.";
+                tutoText.TextStart();
+                popUpIndex++;
+            }
+        }
+
+        else if (popUpIndex == 14)//scene1-2.8 (내리는 모션 )
+        {
+
+            Player1.transform.position = Vector3.Lerp(Player1.transform.position, OutPos.transform.position, cameraSpeed * Time.deltaTime);
+            if (Input.GetButtonDown("Fire1"))
+            {
+                tutoText.m_text = "말판의 이동은 이러한 방법으로 진행되며, 모든 퍼즐이 맞춰 졌을 떄 가장 멀리 이동한 사람이 승리합니다.";
+                tutoText.TextStart();
+                popUpIndex++;
+            }
+        }
+
+        else if (popUpIndex == 15)//scene1-2.9
+        {
+            tutoText.m_text = "말판의 이동은 이러한 방법으로 진행되며, 모든 퍼즐이 맞춰 졌을 떄 가장 멀리 이동한 사람이 승리합니다.";
         }
         //if (popUpIndex == 0)//첫번째 설명 (사족)
         //{
