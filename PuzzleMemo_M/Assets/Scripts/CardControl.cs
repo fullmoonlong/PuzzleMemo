@@ -15,7 +15,8 @@ public class CardControl : MonoBehaviour
     public Vector3 cardPos;
     public Vector3 targetPosition;
 
-    public float card_term = 1.2f;
+    int cardCnt = 24;
+    public float cardInterval = 1.2f;
 
     Animator anim;
 
@@ -55,6 +56,8 @@ public class CardControl : MonoBehaviour
             ClickCheck();
         }
         CardMove();
+
+        CardBoardMatch();
     }
 
     void ClickCheck()
@@ -120,5 +123,36 @@ public class CardControl : MonoBehaviour
     void BoardMatch(int _hittedCardNum)
     {
         GameObject.FindWithTag("card" + _hittedCardNum).transform.position = GameObject.FindWithTag("board" + _hittedCardNum).transform.position;
+    }
+
+    void CardBoardMatch()
+    {
+        if (this.isOpen == false || this.ishitted == true)
+        {
+            this.cardInterval = 1.2f;
+            return;
+        }
+        else if (this.isOpen == true)
+        {
+            this.cardInterval -= Time.deltaTime;
+        }
+
+        if (this.cardInterval <= 0f)
+        {
+            {
+                if ((imgNum + 6) <= 24 && GameObject.FindWithTag("card" + (imgNum + 6)).transform.GetComponent<CardControl>().ishitted == false)
+                {
+                    CloseCard();
+
+                    return;
+                }
+                else
+                {
+                    this.ishitted = true;
+
+                    return;
+                }
+            }
+        }
     }
 }

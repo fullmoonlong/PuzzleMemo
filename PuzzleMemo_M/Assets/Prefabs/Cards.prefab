@@ -72,7 +72,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 71a42ce859276e141b401e1139e1425d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -99,6 +99,7 @@ MonoBehaviour:
   ishitted: 0
   cardPos: {x: 0, y: 0, z: 0}
   targetPosition: {x: 0, y: 0, z: 0}
+  cardInterval: 1.2
 --- !u!65 &5866687518436995095
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -122,7 +123,7 @@ Animator:
   m_GameObject: {fileID: 2519819370177094018}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 411d473475c8abe409935b41d9464be6, type: 2}
+  m_Controller: {fileID: 9100000, guid: 8c01f7b2704024c4b884514185adb8b2, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
