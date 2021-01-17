@@ -133,8 +133,8 @@ GameObject:
   - component: {fileID: 3650392}
   - component: {fileID: 3650391}
   m_Layer: 5
-  m_Name: Image (2)
-  m_TagString: Untagged
+  m_Name: Board14
+  m_TagString: board14
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -207,8 +207,8 @@ GameObject:
   - component: {fileID: 24106626}
   - component: {fileID: 24106625}
   m_Layer: 5
-  m_Name: Image (1)
-  m_TagString: Untagged
+  m_Name: Board10
+  m_TagString: board10
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -757,8 +757,8 @@ GameObject:
   - component: {fileID: 341387550}
   - component: {fileID: 341387549}
   m_Layer: 5
-  m_Name: Image (2)
-  m_TagString: Untagged
+  m_Name: Board17
+  m_TagString: board17
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -831,8 +831,8 @@ GameObject:
   - component: {fileID: 410618214}
   - component: {fileID: 410618213}
   m_Layer: 5
-  m_Name: Image
-  m_TagString: Untagged
+  m_Name: Board2
+  m_TagString: board2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -976,8 +976,8 @@ GameObject:
   - component: {fileID: 530987747}
   - component: {fileID: 530987746}
   m_Layer: 5
-  m_Name: Image (3)
-  m_TagString: Untagged
+  m_Name: Board21
+  m_TagString: board21
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1305,8 +1305,8 @@ GameObject:
   - component: {fileID: 589511378}
   - component: {fileID: 589511377}
   m_Layer: 5
-  m_Name: Image (1)
-  m_TagString: Untagged
+  m_Name: Board12
+  m_TagString: board12
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1379,8 +1379,8 @@ GameObject:
   - component: {fileID: 590067237}
   - component: {fileID: 590067236}
   m_Layer: 5
-  m_Name: Image (1)
-  m_TagString: Untagged
+  m_Name: Board9
+  m_TagString: board9
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1453,8 +1453,8 @@ GameObject:
   - component: {fileID: 793983819}
   - component: {fileID: 793983818}
   m_Layer: 5
-  m_Name: Image (1)
-  m_TagString: Untagged
+  m_Name: Board11
+  m_TagString: board11
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1527,8 +1527,8 @@ GameObject:
   - component: {fileID: 844840441}
   - component: {fileID: 844840440}
   m_Layer: 5
-  m_Name: Image (3)
-  m_TagString: Untagged
+  m_Name: Board19
+  m_TagString: board19
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1771,8 +1771,8 @@ GameObject:
   - component: {fileID: 971194262}
   - component: {fileID: 971194261}
   m_Layer: 5
-  m_Name: Image
-  m_TagString: Untagged
+  m_Name: Board3
+  m_TagString: board3
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1845,8 +1845,8 @@ GameObject:
   - component: {fileID: 1033792668}
   - component: {fileID: 1033792667}
   m_Layer: 5
-  m_Name: Image (3)
-  m_TagString: Untagged
+  m_Name: Board22
+  m_TagString: board22
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1992,6 +1992,52 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1106074388}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1172427664
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1172427665}
+  - component: {fileID: 1172427666}
+  m_Layer: 0
+  m_Name: Enemy
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1172427665
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1172427664}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1172427666
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1172427664}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 754404abb9162864bb13dc1752e037ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ishitted: 0
+  cardPos: {x: 0, y: 0, z: 0}
+  targetPosition: {x: 0, y: 0, z: 0}
 --- !u!1 &1229250886
 GameObject:
   m_ObjectHideFlags: 0
@@ -2087,8 +2133,8 @@ GameObject:
   - component: {fileID: 1231379589}
   - component: {fileID: 1231379588}
   m_Layer: 5
-  m_Name: Image
-  m_TagString: Untagged
+  m_Name: Board5
+  m_TagString: board5
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2594,8 +2640,8 @@ GameObject:
   - component: {fileID: 1395147865}
   - component: {fileID: 1395147864}
   m_Layer: 5
-  m_Name: Image (3)
-  m_TagString: Untagged
+  m_Name: Board23
+  m_TagString: board23
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2668,7 +2714,7 @@ GameObject:
   - component: {fileID: 1397150978}
   - component: {fileID: 1397150977}
   m_Layer: 5
-  m_Name: Image
+  m_Name: Board1
   m_TagString: board1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2742,8 +2788,8 @@ GameObject:
   - component: {fileID: 1436376153}
   - component: {fileID: 1436376152}
   m_Layer: 5
-  m_Name: Image
-  m_TagString: Untagged
+  m_Name: Board6
+  m_TagString: board6
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2881,8 +2927,8 @@ GameObject:
   - component: {fileID: 1468548676}
   - component: {fileID: 1468548675}
   m_Layer: 5
-  m_Name: Image (1)
-  m_TagString: Untagged
+  m_Name: Board7
+  m_TagString: board7
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2955,8 +3001,8 @@ GameObject:
   - component: {fileID: 1485066387}
   - component: {fileID: 1485066386}
   m_Layer: 5
-  m_Name: Image (2)
-  m_TagString: Untagged
+  m_Name: Board18
+  m_TagString: board18
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3114,8 +3160,8 @@ GameObject:
   - component: {fileID: 1567354612}
   - component: {fileID: 1567354611}
   m_Layer: 5
-  m_Name: Image (1)
-  m_TagString: Untagged
+  m_Name: Board8
+  m_TagString: board8
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3188,8 +3234,8 @@ GameObject:
   - component: {fileID: 1591160725}
   - component: {fileID: 1591160724}
   m_Layer: 5
-  m_Name: Image (2)
-  m_TagString: Untagged
+  m_Name: Board13
+  m_TagString: board13
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3262,8 +3308,8 @@ GameObject:
   - component: {fileID: 1610349419}
   - component: {fileID: 1610349418}
   m_Layer: 5
-  m_Name: Image (3)
-  m_TagString: Untagged
+  m_Name: Board20
+  m_TagString: board20
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3644,7 +3690,7 @@ GameObject:
   - component: {fileID: 1708257115}
   - component: {fileID: 1708257116}
   m_Layer: 5
-  m_Name: Horizontal Layout
+  m_Name: BoardLayout
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3712,8 +3758,8 @@ GameObject:
   - component: {fileID: 1718455217}
   - component: {fileID: 1718455216}
   m_Layer: 5
-  m_Name: Image
-  m_TagString: Untagged
+  m_Name: Board4
+  m_TagString: board4
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3786,7 +3832,7 @@ GameObject:
   - component: {fileID: 1823462750}
   - component: {fileID: 1823462749}
   m_Layer: 5
-  m_Name: Image (3)
+  m_Name: Board24
   m_TagString: board24
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4265,8 +4311,8 @@ GameObject:
   - component: {fileID: 1950899541}
   - component: {fileID: 1950899540}
   m_Layer: 5
-  m_Name: Image (2)
-  m_TagString: Untagged
+  m_Name: Board16
+  m_TagString: board16
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4339,8 +4385,8 @@ GameObject:
   - component: {fileID: 2130879606}
   - component: {fileID: 2130879605}
   m_Layer: 5
-  m_Name: Image (2)
-  m_TagString: Untagged
+  m_Name: Board15
+  m_TagString: board15
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
