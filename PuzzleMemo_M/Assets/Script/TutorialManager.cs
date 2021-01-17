@@ -24,20 +24,22 @@ public class TutorialManager : MonoBehaviour
 
     [Space]
     [Space]
+    //카메라 이동용
     public GameObject cardsoloPos;
     public GameObject boardsoloPos;
     public GameObject speicalPos;
+    public GameObject cardrulePos;
     public GameObject cardPos;
     public GameObject boardPos;
     public GameObject centerPos;
     public GameObject NextPos;
     public GameObject OutPos;
-    private float cameraSpeed = 5f;
 
+    private float cameraSpeed = 5f;
     public float ZoomSpeed = 3f;
 
     //카메라이동용 함수
-    static private int cardCnt = 50;
+    static private int cardCnt = 100;
 
     bool[] check = new bool[cardCnt];
     bool[] complete = new bool[cardCnt];
@@ -45,8 +47,8 @@ public class TutorialManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //0에서 시작
-        popUpIndex = 0;
+        //0에서 시작, 16에 scene 2
+        popUpIndex = 15;
 
         //튜토리얼 텍스트 스크립트 연결
         tutoText = GameObject.Find("Panel_Explanation").transform.Find("Text").GetComponent<TutorialText>();
@@ -133,8 +135,9 @@ public class TutorialManager : MonoBehaviour
         {
             //3초 뒤?
             popUps[0].SetActive(true);
-            cam.transform.position = Vector3.Lerp(cam.transform.position, boardsoloPos.transform.position, cameraSpeed * Time.deltaTime);
+            cam.transform.position = boardsoloPos.transform.position;
             //cam.orthographicSize = Mathf.Lerp(cam.orthographicSize, 3, ZoomSpeed);
+
             if (Input.GetButtonDown("Fire1"))
             {
                 tutoText.m_text = "점수를 따라 이동할 수 있는 4종류의 말";
@@ -147,7 +150,7 @@ public class TutorialManager : MonoBehaviour
         {
             //나중에 말판 위치 추가시 넣을거
             //cam.transform.position = Vector3.Lerp(cam.transform.position, boardPos.transform.position, cameraSpeed * Time.deltaTime);
-            
+
             if (Input.GetButtonDown("Fire1"))
             {
                 tutoText.m_text = "그리고 40장의 일반카드와";
@@ -160,7 +163,7 @@ public class TutorialManager : MonoBehaviour
         {
             popUps[0].SetActive(false);
             popUps[1].SetActive(true);
-            cam.transform.position = Vector3.Lerp(cam.transform.position, cardsoloPos.transform.position, cameraSpeed * Time.deltaTime);
+            cam.transform.position = cardsoloPos.transform.position;
 
             if (Input.GetButtonDown("Fire1"))
             {
@@ -174,7 +177,7 @@ public class TutorialManager : MonoBehaviour
         {
             popUps[1].SetActive(false);
             popUps[2].SetActive(true);
-            cam.transform.position = Vector3.Lerp(cam.transform.position, speicalPos.transform.position, cameraSpeed * Time.deltaTime);
+            cam.transform.position = speicalPos.transform.position;
 
             if (Input.GetButtonDown("Fire1"))
             {
@@ -187,7 +190,7 @@ public class TutorialManager : MonoBehaviour
         else if (popUpIndex == 7)//scene1-2.1
         {
             popUps[2].SetActive(false);
-            cam.transform.position = Vector3.Lerp(cam.transform.position, centerPos.transform.position, cameraSpeed * Time.deltaTime);
+            cam.transform.position = centerPos.transform.position;
 
             if (Input.GetButtonDown("Fire1"))
             {
@@ -210,6 +213,7 @@ public class TutorialManager : MonoBehaviour
         else if (popUpIndex == 9)//scene1-2.3 (카드 클릭, 플레이어 움직이기)
         {
             popUps[3].SetActive(true);
+
             if (GameObject.FindWithTag("card6").GetComponent<CardControl>().ishitted == true && complete[6] == false)
             {
                 //카메라를 보드판 위치로 이동
@@ -253,6 +257,7 @@ public class TutorialManager : MonoBehaviour
         else if (popUpIndex == 11)//scene1-2.5
         {
             cam.transform.position = Vector3.Lerp(cam.transform.position, centerPos.transform.position, cameraSpeed * Time.deltaTime);
+
             if (Input.GetButtonDown("Fire1"))
             {
                 tutoText.m_text = "하지만 업혀있는 사람이 이동하게 되면 아랫사람은 같이 이동하지 않습니다.";
@@ -264,8 +269,6 @@ public class TutorialManager : MonoBehaviour
 
         else if (popUpIndex == 12)//scene1-2.6
         {
-            
-            
             if (Input.GetButtonDown("Fire1"))
             {
                 tutoText.m_text = "오른쪽 카드를 클릭해보세요";
@@ -293,7 +296,7 @@ public class TutorialManager : MonoBehaviour
                 {
                     Player2.transform.position = Vector3.Lerp(Player2.transform.position, NextPos.transform.position, cameraSpeed * Time.deltaTime);
                     Player1.transform.position = Vector3.Lerp(Player1.transform.position, NextPos.transform.position, cameraSpeed * Time.deltaTime);
-                
+
                     if (Player2.transform.position.x >= NextPos.transform.position.x - 0.001)
                     {
                         complete[18] = true;
@@ -312,8 +315,8 @@ public class TutorialManager : MonoBehaviour
 
         else if (popUpIndex == 14)//scene1-2.8 (내리는 모션 )
         {
-
             Player1.transform.position = Vector3.Lerp(Player1.transform.position, OutPos.transform.position, cameraSpeed * Time.deltaTime);
+
             if (Input.GetButtonDown("Fire1"))
             {
                 tutoText.m_text = "말판의 이동은 이러한 방법으로 진행되며, 모든 퍼즐이 맞춰 졌을 떄 가장 멀리 이동한 사람이 승리합니다.";
@@ -324,7 +327,195 @@ public class TutorialManager : MonoBehaviour
 
         else if (popUpIndex == 15)//scene1-2.9
         {
-            tutoText.m_text = "말판의 이동은 이러한 방법으로 진행되며, 모든 퍼즐이 맞춰 졌을 떄 가장 멀리 이동한 사람이 승리합니다.";
+            //아래 코드 안써도 말 나와서 제외
+            //tutoText.m_text = "말판의 이동은 이러한 방법으로 진행되며, 모든 퍼즐이 맞춰 졌을 떄 가장 멀리 이동한 사람이 승리합니다.";
+
+            if (Input.GetButtonDown("Fire1"))
+            {
+                tutoText.m_text = "말판에 대한 설명이 끝났으니 다음은 카드로 넘어가도록 하겠습니다.";
+                tutoText.TextStart();
+                popUpIndex++;
+            }
+        }
+
+        //Scene2 시작
+        else if (popUpIndex == 16)//scene2-1
+        {
+            //룰 설명 위해 화면 이동
+            cam.transform.position = cardrulePos.transform.position;
+
+            if (Input.GetButtonDown("Fire1"))
+            {
+                tutoText.m_text = " 일반 카드의 설명을 먼저 진행하며, 기본 플레이 룰에 대해 말씀드리겠습니다.";
+                tutoText.TextStart();
+                popUpIndex++;
+            }
+        }
+
+        else if (popUpIndex == 17)
+        {
+            if (Input.GetButtonDown("Fire1"))
+            {
+                tutoText.m_text = "Puzzle Memo는 40장의 일반 카드를 가지고 있습니다.";
+                tutoText.TextStart();
+                popUpIndex++;
+            }
+        }
+
+        else if (popUpIndex == 18)
+        {
+            if (Input.GetButtonDown("Fire1"))
+            {
+                GameObject.FindWithTag("card22").GetComponent<CardControl>().OpenCard();//22번 카드 뒤집기
+
+                tutoText.m_text = "카드는 골고루 섞어 뒷면이 보이도록 뒤집은 후, 보드 판을 기준으로 아래에서부터 맞춰지게 됩니다.";
+                tutoText.TextStart();
+                popUpIndex++;
+            }
+        }
+
+        else if (popUpIndex == 19)
+        {
+            if (GameObject.FindWithTag("card22").GetComponent<CardControl>().ishitted == true)
+            {
+                popUpIndex++;
+            }
+        }
+
+        else if (popUpIndex == 20)
+        {
+            if (Input.GetButtonDown("Fire1"))
+            {
+                tutoText.m_text = "아래 칸이 맞춰지지 않은 상태에서는 위쪽 칸을 맞출 수 없습니다.";
+                tutoText.TextStart();
+                popUpIndex++;
+            }
+        }
+
+        else if (popUpIndex == 21)
+        {
+            popUps[4].SetActive(true);
+
+            if (Input.GetButtonDown("Fire1"))
+            {
+                GameObject.FindWithTag("card15").GetComponent<CardControl>().OpenCard();//15번 카드 뒤집기
+                GameObject.FindWithTag("card16").GetComponent<CardControl>().OpenCard();//16번 카드 뒤집기
+                GameObject.FindWithTag("card21").GetComponent<CardControl>().OpenCard();//21번 카드 뒤집기
+
+                tutoText.m_text = "모든 칸을 맞추게 되면 완성된 동물이 가진 카드의 수만큼 점수를 획득합니다.";
+                tutoText.TextStart();
+                popUpIndex++;
+            }
+        }
+
+        else if (popUpIndex == 22)
+        {
+            if (GameObject.FindWithTag("card15").GetComponent<CardControl>().ishitted == true ||
+                GameObject.FindWithTag("card16").GetComponent<CardControl>().ishitted == true ||
+                GameObject.FindWithTag("card21").GetComponent<CardControl>().ishitted == true)
+            {
+                popUpIndex++;
+            }
+        }
+
+        else if (popUpIndex == 23)//scene2-2
+        {
+            popUps[4].SetActive(false);
+            popUps[5].SetActive(true);
+
+            if (Input.GetButtonDown("Fire1"))
+            {
+                tutoText.m_text = "이번에는 특수 카드에 대한 설명을 시작하겠습니다.";
+                tutoText.TextStart();
+                popUpIndex++;
+            }
+        }
+
+        else if (popUpIndex == 24)
+        {
+            cam.transform.position = speicalPos.transform.position;
+
+            popUps[5].SetActive(false);
+
+            if (Input.GetButtonDown("Fire1"))
+            {
+                tutoText.m_text = "Puzzle Memo는 5장의 특수 카드를 보유하고 있습니다.";
+                tutoText.TextStart();
+                popUpIndex++;
+            }
+        }
+
+        else if (popUpIndex == 25)
+        {
+
+
+            if (Input.GetButtonDown("Fire1"))
+            {
+                tutoText.m_text = "연꽃카드를 뒤집었을 땐, 다른 카드를 뒤집을 수 있습니다";
+                tutoText.TextStart();
+                popUpIndex++;
+            }
+        }
+
+        else if (popUpIndex == 26)
+        {
+
+
+            if (Input.GetButtonDown("Fire1"))
+            {
+                tutoText.m_text = "거미줄 카드는 꽝 카드입니다. 차례를 넘깁니다.";
+                tutoText.TextStart();
+                popUpIndex++;
+            }
+        }
+
+        else if (popUpIndex == 27)
+        {
+
+
+            if (Input.GetButtonDown("Fire1"))
+            {
+                tutoText.m_text = "원숭이가 묘기를 부리는 이 카드는 앞사람의 머리 위로 올라탑니다.";
+                tutoText.TextStart();
+                popUpIndex++;
+            }
+        }
+
+        else if (popUpIndex == 28)
+        {
+
+
+            if (Input.GetButtonDown("Fire1"))
+            {
+                tutoText.m_text = "원숭이가 미끄러지는 카드는 말판을 뒤로 한칸 이동시킵니다.";
+                tutoText.TextStart();
+                popUpIndex++;
+            }
+        }
+
+        else if (popUpIndex == 29)
+        {
+
+
+            if (Input.GetButtonDown("Fire1"))
+            {
+                tutoText.m_text = "불리한 상황에도 포기하지 않는다면 역전할 수 있습니다. ";
+                tutoText.TextStart();
+                popUpIndex++;
+            }
+        }
+
+        //Scene 3
+        else if (popUpIndex == 30)//설명 종료
+        {
+
+
+            if (Input.GetButtonDown("Fire1"))
+            {
+                tutoText.m_text = "이로써 Puzzle Memo의 모든 설명을 종료합니다.";
+                tutoText.TextStart();
+                popUpIndex++;
+            }
         }
         //if (popUpIndex == 0)//첫번째 설명 (사족)
         //{

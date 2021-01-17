@@ -176,57 +176,54 @@ public class CardControl : MonoBehaviour
                     return;
                 }
             }
-            //else if (tutoIndex == 2)
-            //{
-            //    //해당 단계에 뒤집을 카드 설정
-            //    if (imgNum == 11 || imgNum == 12)
-            //    {
-            //        this.ishitted = true;
 
-            //        return;
-            //    }
-            //    else//정해진 카드가 아니라면 뒤집기
-            //    {
-            //        CloseCard();
+            else if (tutoIndex == 19)
+            {
+                if (imgNum == 22)
+                {
+                    this.ishitted = true;
 
-            //        return;
-            //    }
-            //}
-            //else if (tutoIndex == 3)
-            //{
-            //    //해당 단계에 뒤집을 카드 설정
-            //    if (imgNum == 5 || imgNum == 6)
-            //    {
-            //        this.ishitted = true;
+                    return;
+                }
+                else//정해진 카드가 아니라면 뒤집기
+                {
+                    CloseCard();
 
-            //        return;
-            //    }
-            //    else//정해진 카드가 아니라면 뒤집기
-            //    {
-            //        CloseCard();
+                    return;
+                }
+            }
 
-            //        return;
-            //    }
-            //}
-            //else if (tutoIndex == 4)
-            //{
+            else if (tutoIndex == 22)
+            {
+                if (imgNum == 15 || imgNum == 16 || imgNum == 21)
+                {
+                    this.ishitted = true;
 
-            //}
-            //else//마지막, 이전에 쓰던 기본규칙
-            //{
-            //    if ((imgNum + 6) <= 12 && GameObject.FindWithTag("card" + (imgNum + 6)).transform.GetComponent<CardControl>().ishitted == false)
-            //    {
-            //        CloseCard();
+                    return;
+                }
+                else//정해진 카드가 아니라면 뒤집기
+                {
+                    CloseCard();
 
-            //        return;
-            //    }
-            //    else
-            //    {
-            //        this.ishitted = true;
+                    return;
+                }
+            }
 
-            //        return;
-            //    }
-            //}
+
+            /*else//마지막, 이전에 쓰던 기본규칙
+            {
+                if ((imgNum + 6) <= 12 && GameObject.FindWithTag("card" + (imgNum + 6)).transform.GetComponent<CardControl>().ishitted == false)
+                    CloseCard();
+            
+                    return;
+                }
+                else
+                {
+                    this.ishitted = true;
+            
+                    return;
+                }
+            }*/
         }
     }
 
@@ -247,7 +244,7 @@ public class CardControl : MonoBehaviour
         }
     }
 
-    void OpenCard()
+    public void OpenCard()
     {
         //이미 열려있으면 무시
         if (isOpen) return;
