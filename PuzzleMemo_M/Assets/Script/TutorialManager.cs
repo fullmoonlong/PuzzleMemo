@@ -17,6 +17,9 @@ public class TutorialManager : MonoBehaviour
     private Camera cam;
     public GameObject Player1;
     public GameObject Player2;
+    public Sprite AddPlayer;
+    public Sprite CurrentPlayer;
+
     Vector3 originCamPos;//초기 위치
     float originCamSize;//초기 사이즈
 
@@ -216,12 +219,11 @@ public class TutorialManager : MonoBehaviour
 
         else if (popUpIndex == 9)//scene1-2.3 (카드 클릭, 플레이어 움직이기)
         {
-            popUps[3].SetActive(true);
-
             if (GameObject.FindWithTag("card6").GetComponent<CardControl>().ishitted == true && complete[6] == false)
             {
                 //카메라를 보드판 위치로 이동
                 cam.transform.position = Vector3.Lerp(cam.transform.position, boardPos.transform.position, cameraSpeed * Time.deltaTime);
+                
                 //위치이동이 완료되었으면 체크
                 if (cam.transform.position.y >= boardPos.transform.position.y - 0.001)
                 {
@@ -234,6 +236,8 @@ public class TutorialManager : MonoBehaviour
                     Player1.transform.position = Vector3.Lerp(Player1.transform.position, Player2.transform.position, cameraSpeed * Time.deltaTime);
                     if (Player1.transform.position.x >= Player2.transform.position.x - 0.001)
                     {
+                        Player2.GetComponent<SpriteRenderer>().sprite = AddPlayer;
+                        Player1.SetActive(false);
                         complete[6] = true;
                     }
                 }
@@ -286,7 +290,6 @@ public class TutorialManager : MonoBehaviour
             Playertext.text = "Player2";
             if (GameObject.FindWithTag("card18").GetComponent<CardControl>().ishitted == true && complete[18] == false)
             {
-                print("들어옴");
                 //카메라를 보드판 위치로 이동
                 cam.transform.position = Vector3.Lerp(cam.transform.position, boardPos.transform.position, cameraSpeed * Time.deltaTime);
                 //위치이동이 완료되었으면 체크
@@ -298,9 +301,12 @@ public class TutorialManager : MonoBehaviour
                 //체크됐을 때 플레이어1이 플레이어2로 갔을 때 complete 체크
                 if (check[18])
                 {
+                    Player1.SetActive(true);
                     Player2.transform.position = Vector3.Lerp(Player2.transform.position, NextPos.transform.position, cameraSpeed * Time.deltaTime);
-                    Player1.transform.position = Vector3.Lerp(Player1.transform.position, NextPos.transform.position, cameraSpeed * Time.deltaTime);
+                    Player1.transform.position = Vector3.Lerp(Player1.transform.position, OutPos.transform.position, cameraSpeed * Time.deltaTime);
 
+                    Player2.transform.GetComponent<SpriteRenderer>().sprite = CurrentPlayer;
+                 
                     if (Player2.transform.position.x >= NextPos.transform.position.x - 0.001)
                     {
                         complete[18] = true;
@@ -310,7 +316,6 @@ public class TutorialManager : MonoBehaviour
 
             if (complete[18]) // 말위로 올라타기 기능 설명
             {
-                popUps[3].SetActive(false);
                 ExplainText.text = "또한, 업혀있는 사람은 덩굴이 내려운 장소에서 무조건 내리게 됩니다.";
                 
                 popUpIndex++;
@@ -331,11 +336,10 @@ public class TutorialManager : MonoBehaviour
 
         else if (popUpIndex == 15)//scene1-2.9
         {
-            //아래 코드 안써도 말 나와서 제외
-            //ExplainText.text = "말판의 이동은 이러한 방법으로 진행되며, 모든 퍼즐이 맞춰 졌을 떄 가장 멀리 이동한 사람이 승리합니다.";
-
+            popUps[3].SetActive(true);
             if (Input.GetButtonDown("Fire1"))
             {
+                popUps[3].SetActive(false);
                 ExplainText.text = "말판에 대한 설명이 끝났으니 다음은 카드로 넘어가도록 하겠습니다.";
                 
                 popUpIndex++;
@@ -345,6 +349,7 @@ public class TutorialManager : MonoBehaviour
         //Scene2 시작
         else if (popUpIndex == 16)//scene2-1
         {
+
             //룰 설명 위해 화면 이동
             cam.transform.position = cardrulePos.transform.position;
 
