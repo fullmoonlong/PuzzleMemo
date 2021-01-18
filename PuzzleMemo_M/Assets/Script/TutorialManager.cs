@@ -11,7 +11,7 @@ public class TutorialManager : MonoBehaviour
     private int popUpIndex;
 
     //튜토리얼텍스트 연결용
-    TutorialText tutoText;
+    //TutorialText tutoText;
 
     //카메라 정보
     private Camera cam;
@@ -21,6 +21,10 @@ public class TutorialManager : MonoBehaviour
     float originCamSize;//초기 사이즈
 
     public Text Playertext;
+
+    [Space]
+    [Space]
+    public Text ExplainText;
 
     [Space]
     [Space]
@@ -48,10 +52,10 @@ public class TutorialManager : MonoBehaviour
     void Start()
     {
         //0에서 시작, 16에 scene 2
-        popUpIndex = 15;
+        popUpIndex = 0;
 
         //튜토리얼 텍스트 스크립트 연결
-        tutoText = GameObject.Find("Panel_Explanation").transform.Find("Text").GetComponent<TutorialText>();
+        //tutoText = GameObject.Find("Panel_Explanation").transform.Find("Text").GetComponent<TutorialText>();
 
         //카메라 정보 세팅
         cam = Camera.main;
@@ -87,12 +91,12 @@ public class TutorialManager : MonoBehaviour
 
         if (popUpIndex == 0)//scene1.1
         {
-            tutoText.m_text = "Puzzle Memo의 세계에 오신 것을 환영합니다.";
+            ExplainText.text = "Puzzle Memo의 세계에 오신 것을 환영합니다.";
             //특정 트리거로 다음 설명으로
             if (Input.GetButtonDown("Fire1"))
             {
-                tutoText.m_text = "게임 방법에 대해 궁금하신가요? 설명에 따라 천천히 룰을 익혀보도록 합니다.";
-                tutoText.TextStart();
+                ExplainText.text = "게임 방법에 대해 궁금하신가요? 설명에 따라 천천히 룰을 익혀보도록 합니다.";
+                
 
                 //카메라 정보 초기화
                 CameraReset();
@@ -106,8 +110,8 @@ public class TutorialManager : MonoBehaviour
             //특정 트리거로 다음 설명으로
             if (Input.GetButtonDown("Fire1"))
             {
-                tutoText.m_text = "게임의 구성품에 대해 알아볼까요?";
-                tutoText.TextStart();
+                ExplainText.text = "게임의 구성품에 대해 알아볼까요?";
+                
 
                 //카메라 정보 초기화
                 CameraReset();
@@ -121,8 +125,8 @@ public class TutorialManager : MonoBehaviour
             //특정 트리거로 다음 설명으로
             if (Input.GetButtonDown("Fire1"))
             {
-                tutoText.m_text = "Puzzle Memo의 구성품은 게임이 진행될 보드판과";
-                tutoText.TextStart();
+                ExplainText.text = "Puzzle Memo의 구성품은 게임이 진행될 보드판과";
+                
 
                 //카메라 정보 초기화
                 CameraReset();
@@ -140,8 +144,8 @@ public class TutorialManager : MonoBehaviour
 
             if (Input.GetButtonDown("Fire1"))
             {
-                tutoText.m_text = "점수를 따라 이동할 수 있는 4종류의 말";
-                tutoText.TextStart();
+                ExplainText.text = "점수를 따라 이동할 수 있는 4종류의 말";
+                
                 popUpIndex++;
             }
         }
@@ -153,8 +157,8 @@ public class TutorialManager : MonoBehaviour
 
             if (Input.GetButtonDown("Fire1"))
             {
-                tutoText.m_text = "그리고 40장의 일반카드와";
-                tutoText.TextStart();
+                ExplainText.text = "그리고 40장의 일반카드와";
+                
                 popUpIndex++;
             }
         }
@@ -167,8 +171,8 @@ public class TutorialManager : MonoBehaviour
 
             if (Input.GetButtonDown("Fire1"))
             {
-                tutoText.m_text = "5장의 특수카드로 이루어져 있습니다.";
-                tutoText.TextStart();
+                ExplainText.text = "5장의 특수카드로 이루어져 있습니다.";
+                
                 popUpIndex++;
             }
         }
@@ -181,8 +185,8 @@ public class TutorialManager : MonoBehaviour
 
             if (Input.GetButtonDown("Fire1"))
             {
-                tutoText.m_text = "말판의 이동에 관한 설명을 시작합시다.";
-                tutoText.TextStart();
+                ExplainText.text = "말판의 이동에 관한 설명을 시작합시다.";
+                
                 popUpIndex++;
             }
         }
@@ -194,8 +198,8 @@ public class TutorialManager : MonoBehaviour
 
             if (Input.GetButtonDown("Fire1"))
             {
-                tutoText.m_text = "동물을 완성한 후, 맞춰진 동물이 가진 카드의 수만큼 나뭇잎을 따라 말을 이동하게 됩니다.";
-                tutoText.TextStart();
+                ExplainText.text = "동물을 완성한 후, 맞춰진 동물이 가진 카드의 수만큼 나뭇잎을 따라 말을 이동하게 됩니다.";
+                
                 popUpIndex++;
             }
         }
@@ -204,8 +208,8 @@ public class TutorialManager : MonoBehaviour
         {
             if (Input.GetButtonDown("Fire1"))
             {
-                tutoText.m_text = "왼쪽  카드를 클릭하여 보세요";
-                tutoText.TextStart();
+                ExplainText.text = "왼쪽  카드를 클릭하여 보세요";
+                
                 popUpIndex++;
             }
         }
@@ -238,8 +242,8 @@ public class TutorialManager : MonoBehaviour
             if (complete[6]) // 말위로 올라타기 기능 설명
             {
                 Debug.Log("complete");
-                tutoText.m_text = "뒷사람이 앞사람을 따라 잡았을 경우, 말 위로 올라타는 것이 가능합니다.";
-                tutoText.TextStart();
+                ExplainText.text = "뒷사람이 앞사람을 따라 잡았을 경우, 말 위로 올라타는 것이 가능합니다.";
+                
                 popUpIndex++;
             }
         }
@@ -248,8 +252,8 @@ public class TutorialManager : MonoBehaviour
         {
             if (Input.GetButtonDown("Fire1"))
             {
-                tutoText.m_text = "아랫사람이 이동을 하면 올라탄 사람은 같이 이동을 하게 됩니다.";
-                tutoText.TextStart();
+                ExplainText.text = "아랫사람이 이동을 하면 올라탄 사람은 같이 이동을 하게 됩니다.";
+                
                 popUpIndex++;
             }
         }
@@ -260,8 +264,8 @@ public class TutorialManager : MonoBehaviour
 
             if (Input.GetButtonDown("Fire1"))
             {
-                tutoText.m_text = "하지만 업혀있는 사람이 이동하게 되면 아랫사람은 같이 이동하지 않습니다.";
-                tutoText.TextStart();
+                ExplainText.text = "하지만 업혀있는 사람이 이동하게 되면 아랫사람은 같이 이동하지 않습니다.";
+                
                 popUpIndex++;
             }
 
@@ -271,8 +275,8 @@ public class TutorialManager : MonoBehaviour
         {
             if (Input.GetButtonDown("Fire1"))
             {
-                tutoText.m_text = "오른쪽 카드를 클릭해보세요";
-                tutoText.TextStart();
+                ExplainText.text = "오른쪽 카드를 클릭해보세요";
+                
                 popUpIndex++;
             }
         }
@@ -307,8 +311,8 @@ public class TutorialManager : MonoBehaviour
             if (complete[18]) // 말위로 올라타기 기능 설명
             {
                 popUps[3].SetActive(false);
-                tutoText.m_text = "또한, 업혀있는 사람은 덩굴이 내려운 장소에서 무조건 내리게 됩니다.";
-                tutoText.TextStart();
+                ExplainText.text = "또한, 업혀있는 사람은 덩굴이 내려운 장소에서 무조건 내리게 됩니다.";
+                
                 popUpIndex++;
             }
         }
@@ -319,8 +323,8 @@ public class TutorialManager : MonoBehaviour
 
             if (Input.GetButtonDown("Fire1"))
             {
-                tutoText.m_text = "말판의 이동은 이러한 방법으로 진행되며, 모든 퍼즐이 맞춰 졌을 떄 가장 멀리 이동한 사람이 승리합니다.";
-                tutoText.TextStart();
+                ExplainText.text = "말판의 이동은 이러한 방법으로 진행되며, 모든 퍼즐이 맞춰 졌을 떄 가장 멀리 이동한 사람이 승리합니다.";
+                
                 popUpIndex++;
             }
         }
@@ -328,12 +332,12 @@ public class TutorialManager : MonoBehaviour
         else if (popUpIndex == 15)//scene1-2.9
         {
             //아래 코드 안써도 말 나와서 제외
-            //tutoText.m_text = "말판의 이동은 이러한 방법으로 진행되며, 모든 퍼즐이 맞춰 졌을 떄 가장 멀리 이동한 사람이 승리합니다.";
+            //ExplainText.text = "말판의 이동은 이러한 방법으로 진행되며, 모든 퍼즐이 맞춰 졌을 떄 가장 멀리 이동한 사람이 승리합니다.";
 
             if (Input.GetButtonDown("Fire1"))
             {
-                tutoText.m_text = "말판에 대한 설명이 끝났으니 다음은 카드로 넘어가도록 하겠습니다.";
-                tutoText.TextStart();
+                ExplainText.text = "말판에 대한 설명이 끝났으니 다음은 카드로 넘어가도록 하겠습니다.";
+                
                 popUpIndex++;
             }
         }
@@ -346,8 +350,8 @@ public class TutorialManager : MonoBehaviour
 
             if (Input.GetButtonDown("Fire1"))
             {
-                tutoText.m_text = " 일반 카드의 설명을 먼저 진행하며, 기본 플레이 룰에 대해 말씀드리겠습니다.";
-                tutoText.TextStart();
+                ExplainText.text = " 일반 카드의 설명을 먼저 진행하며, 기본 플레이 룰에 대해 말씀드리겠습니다.";
+                
                 popUpIndex++;
             }
         }
@@ -356,8 +360,8 @@ public class TutorialManager : MonoBehaviour
         {
             if (Input.GetButtonDown("Fire1"))
             {
-                tutoText.m_text = "Puzzle Memo는 40장의 일반 카드를 가지고 있습니다.";
-                tutoText.TextStart();
+                ExplainText.text = "Puzzle Memo는 40장의 일반 카드를 가지고 있습니다.";
+                
                 popUpIndex++;
             }
         }
@@ -368,8 +372,8 @@ public class TutorialManager : MonoBehaviour
             {
                 GameObject.FindWithTag("card22").GetComponent<CardControl>().OpenCard();//22번 카드 뒤집기
 
-                tutoText.m_text = "카드는 골고루 섞어 뒷면이 보이도록 뒤집은 후, 보드 판을 기준으로 아래에서부터 맞춰지게 됩니다.";
-                tutoText.TextStart();
+                ExplainText.text = "카드는 골고루 섞어 뒷면이 보이도록 뒤집은 후, 보드 판을 기준으로 아래에서부터 맞춰지게 됩니다.";
+                
                 popUpIndex++;
             }
         }
@@ -386,8 +390,8 @@ public class TutorialManager : MonoBehaviour
         {
             if (Input.GetButtonDown("Fire1"))
             {
-                tutoText.m_text = "아래 칸이 맞춰지지 않은 상태에서는 위쪽 칸을 맞출 수 없습니다.";
-                tutoText.TextStart();
+                ExplainText.text = "아래 칸이 맞춰지지 않은 상태에서는 위쪽 칸을 맞출 수 없습니다.";
+                
                 popUpIndex++;
             }
         }
@@ -402,8 +406,8 @@ public class TutorialManager : MonoBehaviour
                 GameObject.FindWithTag("card16").GetComponent<CardControl>().OpenCard();//16번 카드 뒤집기
                 GameObject.FindWithTag("card21").GetComponent<CardControl>().OpenCard();//21번 카드 뒤집기
 
-                tutoText.m_text = "모든 칸을 맞추게 되면 완성된 동물이 가진 카드의 수만큼 점수를 획득합니다.";
-                tutoText.TextStart();
+                ExplainText.text = "모든 칸을 맞추게 되면 완성된 동물이 가진 카드의 수만큼 점수를 획득합니다.";
+                
                 popUpIndex++;
             }
         }
@@ -425,8 +429,8 @@ public class TutorialManager : MonoBehaviour
 
             if (Input.GetButtonDown("Fire1"))
             {
-                tutoText.m_text = "이번에는 특수 카드에 대한 설명을 시작하겠습니다.";
-                tutoText.TextStart();
+                ExplainText.text = "이번에는 특수 카드에 대한 설명을 시작하겠습니다.";
+                
                 popUpIndex++;
             }
         }
@@ -439,8 +443,8 @@ public class TutorialManager : MonoBehaviour
 
             if (Input.GetButtonDown("Fire1"))
             {
-                tutoText.m_text = "Puzzle Memo는 5장의 특수 카드를 보유하고 있습니다.";
-                tutoText.TextStart();
+                ExplainText.text = "Puzzle Memo는 5장의 특수 카드를 보유하고 있습니다.";
+                
                 popUpIndex++;
             }
         }
@@ -451,8 +455,8 @@ public class TutorialManager : MonoBehaviour
 
             if (Input.GetButtonDown("Fire1"))
             {
-                tutoText.m_text = "연꽃카드를 뒤집었을 땐, 다른 카드를 뒤집을 수 있습니다";
-                tutoText.TextStart();
+                ExplainText.text = "연꽃카드를 뒤집었을 땐, 다른 카드를 뒤집을 수 있습니다";
+                
                 popUpIndex++;
             }
         }
@@ -463,8 +467,8 @@ public class TutorialManager : MonoBehaviour
 
             if (Input.GetButtonDown("Fire1"))
             {
-                tutoText.m_text = "거미줄 카드는 꽝 카드입니다. 차례를 넘깁니다.";
-                tutoText.TextStart();
+                ExplainText.text = "거미줄 카드는 꽝 카드입니다. 차례를 넘깁니다.";
+                
                 popUpIndex++;
             }
         }
@@ -475,8 +479,8 @@ public class TutorialManager : MonoBehaviour
 
             if (Input.GetButtonDown("Fire1"))
             {
-                tutoText.m_text = "원숭이가 묘기를 부리는 이 카드는 앞사람의 머리 위로 올라탑니다.";
-                tutoText.TextStart();
+                ExplainText.text = "원숭이가 묘기를 부리는 이 카드는 앞사람의 머리 위로 올라탑니다.";
+                
                 popUpIndex++;
             }
         }
@@ -487,8 +491,8 @@ public class TutorialManager : MonoBehaviour
 
             if (Input.GetButtonDown("Fire1"))
             {
-                tutoText.m_text = "원숭이가 미끄러지는 카드는 말판을 뒤로 한칸 이동시킵니다.";
-                tutoText.TextStart();
+                ExplainText.text = "원숭이가 미끄러지는 카드는 말판을 뒤로 한칸 이동시킵니다.";
+                
                 popUpIndex++;
             }
         }
@@ -499,8 +503,8 @@ public class TutorialManager : MonoBehaviour
 
             if (Input.GetButtonDown("Fire1"))
             {
-                tutoText.m_text = "불리한 상황에도 포기하지 않는다면 역전할 수 있습니다. ";
-                tutoText.TextStart();
+                ExplainText.text = "불리한 상황에도 포기하지 않는다면 역전할 수 있습니다. ";
+                
                 popUpIndex++;
             }
         }
@@ -512,23 +516,23 @@ public class TutorialManager : MonoBehaviour
 
             if (Input.GetButtonDown("Fire1"))
             {
-                tutoText.m_text = "이로써 Puzzle Memo의 모든 설명을 종료합니다.";
-                tutoText.TextStart();
+                ExplainText.text = "이로써 Puzzle Memo의 모든 설명을 종료합니다.";
+                
                 popUpIndex++;
             }
         }
         //if (popUpIndex == 0)//첫번째 설명 (사족)
         //{
         //    //설명 텍스트
-        //    tutoText.m_text = "Puzzle Memo는 40장의 일반 카드를 가지고 있습니다. 하지만 설명을 위해서 일단 4장의 카드만 보여드리도록 하겠습니다.";
+        //    ExplainText.text = "Puzzle Memo는 40장의 일반 카드를 가지고 있습니다. 하지만 설명을 위해서 일단 4장의 카드만 보여드리도록 하겠습니다.";
 
         //    //특정 트리거로 다음 설명으로
         //    if (Input.GetButtonDown("Fire1"))
         //    {
         //        //설명변경 후 다음 설명으로
-        //        //tutoText.m_text = "두번째 설명/ 아래쪽 두개 맞추면 넘어감";
-        //        tutoText.m_text = "카드는 골고루 섞어 뒷면이 보이도록 뒤집은 후, 보드 판을 기준으로 아래에서부터 맞춰지게 됩니다.";
-        //        tutoText.TextStart();
+        //        //ExplainText.text = "두번째 설명/ 아래쪽 두개 맞추면 넘어감";
+        //        ExplainText.text = "카드는 골고루 섞어 뒷면이 보이도록 뒤집은 후, 보드 판을 기준으로 아래에서부터 맞춰지게 됩니다.";
+        //        
 
         //        //카메라 정보 초기화
         //        CameraReset();
@@ -541,8 +545,8 @@ public class TutorialManager : MonoBehaviour
         //{
         //    if (Input.GetButtonDown("Fire1"))
         //    {
-        //        tutoText.m_text = "오른쪽 아래의 카드를 클릭 해 보세요";
-        //        tutoText.TextStart();
+        //        ExplainText.text = "오른쪽 아래의 카드를 클릭 해 보세요";
+        //        
 
         //        //카메라 정보 초기화
         //        CameraReset();
@@ -584,8 +588,8 @@ public class TutorialManager : MonoBehaviour
         //    //if (complete[11] || complete[12])
         //    //{
         //    //    //설명 텍스트
-        //    //    tutoText.m_text = "세번째 설명/ 위쪽 두개 맞추면 넘어감";
-        //    //    tutoText.TextStart();
+        //    //    ExplainText.text = "세번째 설명/ 위쪽 두개 맞추면 넘어감";
+        //    //    
 
         //    //    //카메라 정보 초기화
         //    //    CameraReset();
@@ -648,8 +652,8 @@ public class TutorialManager : MonoBehaviour
         //    if (complete[5] && complete[6])
         //    {
         //        //설명 텍스트
-        //        tutoText.m_text = "네번째 설명/ 현재 끝. 우측 위 버튼을 통해 나가기";
-        //        tutoText.TextStart();
+        //        ExplainText.text = "네번째 설명/ 현재 끝. 우측 위 버튼을 통해 나가기";
+        //        
 
         //        //카메라 정보 초기화
         //        CameraReset();

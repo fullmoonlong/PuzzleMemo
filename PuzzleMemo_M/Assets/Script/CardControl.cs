@@ -20,8 +20,6 @@ public class CardControl : MonoBehaviour
     //튜토리얼 순서
     private int tutoIndex;
 
-    //카드 클릭 가능한 상태
-
     Animator anim;
 
     // Start is called before the first frame update
