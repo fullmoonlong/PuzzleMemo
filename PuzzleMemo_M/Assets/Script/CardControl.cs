@@ -8,7 +8,7 @@ public class CardControl : MonoBehaviour
     int imgNum = 1;
 
     //오픈된 카드 판별 여부
-    bool isOpen = false;
+    public bool isOpen = false;
     public bool ishitted = false;
 
     //물체 이동을 위해서
@@ -175,7 +175,89 @@ public class CardControl : MonoBehaviour
                 }
             }
 
+            else if (tutoIndex == 14)
+            {
+
+            }
+
+            else if (tutoIndex == 15)
+            {
+
+            }
+
+            else if (tutoIndex == 16)
+            {
+                // 아무카드도 안뒤집히게 하기
+
+                if (imgNum == 0)//실패용 없는카드
+                {
+                    this.ishitted = true;
+
+                    return;
+                }
+                else//정해진 카드가 아니라면 뒤집기
+                {
+                    CloseCard();
+
+                    return;
+                }
+            }
+
+            else if (tutoIndex == 17)
+            {
+                // 아무카드도 안뒤집히게 하기
+
+                if (imgNum == 0)//실패용 없는카드
+                {
+                    this.ishitted = true;
+
+                    return;
+                }
+                else//정해진 카드가 아니라면 뒤집기
+                {
+                    CloseCard();
+
+                    return;
+                }
+            }
+
+            else if (tutoIndex == 18)
+            {
+                // 아무카드도 안뒤집히게 하기
+
+                if (imgNum == 0)//실패용 없는카드
+                {
+                    this.ishitted = true;
+
+                    return;
+                }
+                else//정해진 카드가 아니라면 뒤집기
+                {
+                    CloseCard();
+
+                    return;
+                }
+            }
+
             else if (tutoIndex == 19)
+            {
+                // 아무카드도 안뒤집히게 하기
+
+                if (imgNum == 0)//실패용 없는카드
+                {
+                    this.ishitted = true;
+
+                    return;
+                }
+                else//정해진 카드가 아니라면 뒤집기
+                {
+                    CloseCard();
+
+                    return;
+                }
+            }
+
+            else if (tutoIndex == 20)
             {
                 if (imgNum == 22)
                 {
@@ -191,9 +273,75 @@ public class CardControl : MonoBehaviour
                 }
             }
 
+            else if (tutoIndex == 21)
+            {
+                // 아무카드도 안뒤집히게 하기
+
+                if (imgNum == 0)//실패용 없는카드
+                {
+                    this.ishitted = true;
+
+                    return;
+                }
+                else//정해진 카드가 아니라면 뒤집기
+                {
+                    CloseCard();
+
+                    return;
+                }
+            }
+
             else if (tutoIndex == 22)
             {
-                if (imgNum == 15 || imgNum == 16 || imgNum == 21)
+                // 아무카드도 안뒤집히게 하기
+
+                if (imgNum == 0)//실패용 없는카드
+                {
+                    this.ishitted = true;
+
+                    return;
+                }
+                else//정해진 카드가 아니라면 뒤집기
+                {
+                    CloseCard();
+
+                    return;
+                }
+            }
+
+            else if (tutoIndex == 23)
+            {
+                // 아무카드도 안뒤집히게 하기
+
+                if (imgNum == 0)//실패용 없는카드
+                {
+                    this.ishitted = true;
+
+                    return;
+                }
+                else//정해진 카드가 아니라면 뒤집기
+                {
+                    CloseCard();
+
+                    return;
+                }
+            }
+
+            else if (tutoIndex == 25)
+            {
+                if (imgNum == 21 || imgNum == 22)
+                {
+                    this.ishitted = true;
+
+                    return;
+                }
+                else if (GameObject.FindWithTag("card21").GetComponent<CardControl>().ishitted == true && this.tag == "card15")
+                {
+                    this.ishitted = true;
+
+                    return;
+                }
+                else if (GameObject.FindWithTag("card22").GetComponent<CardControl>().ishitted == true && this.tag == "card16")
                 {
                     this.ishitted = true;
 

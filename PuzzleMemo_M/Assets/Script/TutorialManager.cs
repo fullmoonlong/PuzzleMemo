@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class TutorialManager : MonoBehaviour
 {
@@ -36,6 +37,7 @@ public class TutorialManager : MonoBehaviour
     public GameObject boardsoloPos;
     public GameObject speicalPos;
     public GameObject cardrulePos;
+    public GameObject mainmenuPos;
     public GameObject cardPos;
     public GameObject boardPos;
     public GameObject centerPos;
@@ -375,7 +377,6 @@ public class TutorialManager : MonoBehaviour
         {
             if (Input.GetButtonDown("Fire1"))
             {
-                GameObject.FindWithTag("card22").GetComponent<CardControl>().OpenCard();//22번 카드 뒤집기
 
                 ExplainText.text = "카드는 골고루 섞어 뒷면이 보이도록 뒤집은 후, 보드 판을 기준으로 아래에서부터 맞춰지게 됩니다.";
                 
@@ -385,62 +386,92 @@ public class TutorialManager : MonoBehaviour
 
         else if (popUpIndex == 19)
         {
-            if (GameObject.FindWithTag("card22").GetComponent<CardControl>().ishitted == true)
+            if (Input.GetButtonDown("Fire1"))
             {
+                ExplainText.text = "우측 아래 카드를 클릭해 보세요";
+
                 popUpIndex++;
             }
         }
 
         else if (popUpIndex == 20)
         {
-            if (Input.GetButtonDown("Fire1"))
+            if (GameObject.FindWithTag("card22").GetComponent<CardControl>().ishitted == true)
             {
-                ExplainText.text = "아래 칸이 맞춰지지 않은 상태에서는 위쪽 칸을 맞출 수 없습니다.";
-                
+                ExplainText.text = "잘하셨습니다!";
+
                 popUpIndex++;
             }
         }
 
         else if (popUpIndex == 21)
         {
-            popUps[4].SetActive(true);
-
             if (Input.GetButtonDown("Fire1"))
             {
-                GameObject.FindWithTag("card15").GetComponent<CardControl>().OpenCard();//15번 카드 뒤집기
-                GameObject.FindWithTag("card16").GetComponent<CardControl>().OpenCard();//16번 카드 뒤집기
-                GameObject.FindWithTag("card21").GetComponent<CardControl>().OpenCard();//21번 카드 뒤집기
+                ExplainText.text = "왼쪽 위 카드를 선택해 보세요";
 
-                ExplainText.text = "모든 칸을 맞추게 되면 완성된 동물이 가진 카드의 수만큼 점수를 획득합니다.";
-                
                 popUpIndex++;
             }
         }
 
         else if (popUpIndex == 22)
         {
-            if (GameObject.FindWithTag("card15").GetComponent<CardControl>().ishitted == true ||
-                GameObject.FindWithTag("card16").GetComponent<CardControl>().ishitted == true ||
-                GameObject.FindWithTag("card21").GetComponent<CardControl>().ishitted == true)
+            if (GameObject.FindWithTag("card15").GetComponent<CardControl>().isOpen == true)
             {
+                ExplainText.text = "아래 칸이 맞춰지지 않은 상태에서는 위쪽 칸을 맞출 수 없습니다.";
+
                 popUpIndex++;
             }
         }
 
-        else if (popUpIndex == 23)//scene2-2
+        else if (popUpIndex == 23)
         {
-            popUps[4].SetActive(false);
-            popUps[5].SetActive(true);
-
-            if (Input.GetButtonDown("Fire1"))
+            if (GameObject.FindWithTag("card15").GetComponent<CardControl>().isOpen == false)
             {
-                ExplainText.text = "이번에는 특수 카드에 대한 설명을 시작하겠습니다.";
-                
                 popUpIndex++;
             }
         }
 
         else if (popUpIndex == 24)
+        {
+            popUps[4].SetActive(true);
+
+            if (Input.GetButtonDown("Fire1"))
+            {
+                ExplainText.text = "뒤집힌 카드를 클릭해서 남은 카드들을 모두 맞춰봅시다.";
+                
+                popUpIndex++;
+            }
+        }
+
+        else if (popUpIndex == 25)
+        {
+            popUps[4].SetActive(false);
+
+            if (GameObject.FindWithTag("card15").GetComponent<CardControl>().ishitted == true &&
+                GameObject.FindWithTag("card16").GetComponent<CardControl>().ishitted == true &&
+                GameObject.FindWithTag("card21").GetComponent<CardControl>().ishitted == true &&
+                GameObject.FindWithTag("card22").GetComponent<CardControl>().ishitted == true)
+            {
+                ExplainText.text = "모든 칸을 맞추게 되면 완성된 동물이 가진 카드의 수만큼 점수를 획득합니다.";
+
+                popUpIndex++;
+            }
+        }
+
+        else if (popUpIndex == 26)//scene2-2
+        {
+            popUps[5].SetActive(true);
+
+            if (Input.GetButtonDown("Fire1"))
+            {
+                ExplainText.text = "이번에는 특수 카드에 대한 설명을 시작하겠습니다.";
+
+                popUpIndex++;
+            }
+        }
+
+        else if (popUpIndex == 27)
         {
             cam.transform.position = speicalPos.transform.position;
 
@@ -454,70 +485,95 @@ public class TutorialManager : MonoBehaviour
             }
         }
 
-        else if (popUpIndex == 25)
-        {
-
-
-            if (Input.GetButtonDown("Fire1"))
-            {
-                ExplainText.text = "연꽃카드를 뒤집었을 땐, 다른 카드를 뒤집을 수 있습니다";
-                
-                popUpIndex++;
-            }
-        }
-
-        else if (popUpIndex == 26)
-        {
-
-
-            if (Input.GetButtonDown("Fire1"))
-            {
-                ExplainText.text = "거미줄 카드는 꽝 카드입니다. 차례를 넘깁니다.";
-                
-                popUpIndex++;
-            }
-        }
-
-        else if (popUpIndex == 27)
-        {
-
-
-            if (Input.GetButtonDown("Fire1"))
-            {
-                ExplainText.text = "원숭이가 묘기를 부리는 이 카드는 앞사람의 머리 위로 올라탑니다.";
-                
-                popUpIndex++;
-            }
-        }
-
         else if (popUpIndex == 28)
         {
-
+            popUps[6].SetActive(true);
 
             if (Input.GetButtonDown("Fire1"))
             {
-                ExplainText.text = "원숭이가 미끄러지는 카드는 말판을 뒤로 한칸 이동시킵니다.";
-                
+                ExplainText.text = "거미줄 카드만 2장, 나머지 카드 1장씩으로 총 5장이 존재합니다.";
+
                 popUpIndex++;
             }
         }
 
         else if (popUpIndex == 29)
         {
-
-
             if (Input.GetButtonDown("Fire1"))
             {
-                ExplainText.text = "불리한 상황에도 포기하지 않는다면 역전할 수 있습니다. ";
+                ExplainText.text = "먼저 소개시켜드릴 카드는 원숭이 그림이 그려진 카드입니다.";
                 
                 popUpIndex++;
             }
         }
 
-        //Scene 3
-        else if (popUpIndex == 30)//설명 종료
+        else if (popUpIndex == 30)
         {
+            popUps[6].SetActive(false);
 
+            if (Input.GetButtonDown("Fire1"))
+            {
+                ExplainText.text = "앞으로 튀어 오르는 원숭이가 그려진 카드는 자기 바로 앞사람의 머리 위로 올라타게 합니다";
+                
+                popUpIndex++;
+            }
+        }
+
+        else if (popUpIndex == 31)
+        {
+            popUps[7].SetActive(true);
+
+            if (Input.GetButtonDown("Fire1"))
+            {
+                ExplainText.text = "뒤로 튕겨나간 원숭이가 그려진 카드는 뒤로 1칸 말을 이동하게 합니다";
+                
+                popUpIndex++;
+            }
+        }
+
+        else if (popUpIndex == 32)
+        {
+            popUps[7].SetActive(false);
+            popUps[8].SetActive(true);
+
+            if (Input.GetButtonDown("Fire1"))
+            {
+                ExplainText.text = "다음으로 보실 카드는 거미줄 카드입니다. 거미줄 카드는 자신의 차례를 강제로 한번 쉬게 하는 함정카드입니다.";
+                
+                popUpIndex++;
+            }
+        }
+
+        else if (popUpIndex == 33)
+        {
+            popUps[8].SetActive(false);
+            popUps[9].SetActive(true);
+
+            if (Input.GetButtonDown("Fire1"))
+            {
+                ExplainText.text = "마지막 카드는 연꽃이 그려진 카드입니다. 이 카드는 뽑은 것으로 다음 차례로 넘어가는 카드입니다.";
+                
+                popUpIndex++;
+            }
+        }
+
+        else if (popUpIndex == 34)
+        {
+            popUps[9].SetActive(false);
+            popUps[10].SetActive(true);
+
+            if (Input.GetButtonDown("Fire1"))
+            {
+                ExplainText.text = "특수 카드이지만 무난하게 차례를 넘긴다는 느낌이 강한 카드입니다.";
+
+                popUpIndex++;
+            }
+        }
+
+        //Scene 3
+        else if (popUpIndex == 35)//설명 종료
+        {
+            popUps[10].SetActive(false);
 
             if (Input.GetButtonDown("Fire1"))
             {
@@ -526,152 +582,53 @@ public class TutorialManager : MonoBehaviour
                 popUpIndex++;
             }
         }
-        //if (popUpIndex == 0)//첫번째 설명 (사족)
-        //{
-        //    //설명 텍스트
-        //    ExplainText.text = "Puzzle Memo는 40장의 일반 카드를 가지고 있습니다. 하지만 설명을 위해서 일단 4장의 카드만 보여드리도록 하겠습니다.";
 
-        //    //특정 트리거로 다음 설명으로
-        //    if (Input.GetButtonDown("Fire1"))
-        //    {
-        //        //설명변경 후 다음 설명으로
-        //        //ExplainText.text = "두번째 설명/ 아래쪽 두개 맞추면 넘어감";
-        //        ExplainText.text = "카드는 골고루 섞어 뒷면이 보이도록 뒤집은 후, 보드 판을 기준으로 아래에서부터 맞춰지게 됩니다.";
-        //        
+        else if (popUpIndex == 36)
+        {
+            cam.transform.position = mainmenuPos.transform.position;
 
-        //        //카메라 정보 초기화
-        //        CameraReset();
+            if (Input.GetButtonDown("Fire1"))
+            {
+                ExplainText.text = "메인 화면의 튜토리얼 버튼을 누른 후 원하시는 목차의 설명을 다시 보실 수 있으며,";
 
-        //        popUpIndex++;
-        //    }
-        //}
+                popUpIndex++;
+            }
+        }
 
-        //else if (popUpIndex == 1)//두번째 설명
-        //{
-        //    if (Input.GetButtonDown("Fire1"))
-        //    {
-        //        ExplainText.text = "오른쪽 아래의 카드를 클릭 해 보세요";
-        //        
+        else if (popUpIndex == 37)
+        {
+            popUps[11].SetActive(true);
 
-        //        //카메라 정보 초기화
-        //        CameraReset();
+            if (Input.GetButtonDown("Fire1"))
+            {
+                ExplainText.text = "마찬가지로 메인 화면의 플레이 버튼을 통하여 혼자서도 룰을 연습하실 수 있습니다.";
 
-        //        popUpIndex++;
-        //    }
-        //}
+                popUpIndex++;
+            }
+        }
 
-        //else if (popUpIndex == 2)//두번째 설명
-        //{
-        //    //카메라 확대
-        //    cam.orthographicSize = Mathf.Lerp(cam.orthographicSize, 3, ZoomSpeed);
-        //    //만약 카드12를 맞췄으면
-        //    //3초뒤에
+        else if (popUpIndex == 38)
+        {
+            popUps[11].SetActive(false);
+            popUps[12].SetActive(true);
 
-        //    if (GameObject.FindWithTag("card12").GetComponent<CardControl>().ishitted == true && complete[12] == false)
-        //    {
-        //        //카메라를 보드판 위치로 이동
-        //        cam.transform.position = Vector3.Lerp(cam.transform.position, boardPos.transform.position, cameraSpeed * Time.deltaTime);
+            if (Input.GetButtonDown("Fire1"))
+            {
+                ExplainText.text = "다음 클릭시 메인화면으로 이동됩니다.";
 
-        //        //위치이동이 완료되었으면 체크
-        //        if (cam.transform.position.y >= boardPos.transform.position.y - 0.001)
-        //        {
-        //            check[12] = true;
-        //        }
+                popUpIndex++;
+            }
+        }
 
-        //        //체크됐을 때 다시 카드판 위치로 이동
-        //        if (check[12])
-        //        {
-        //            cam.transform.position = Vector3.Lerp(cam.transform.position, cardPos.transform.position, cameraSpeed * Time.deltaTime);
+        else if (popUpIndex == 39)
+        {
+            popUps[12].SetActive(false);
 
-        //            if (cam.transform.position.y <= -0.63)
-        //            {
-        //                complete[12] = true;
-        //            }
-        //        }
-        //    }
-
-        //    //if (complete[11] || complete[12])
-        //    //{
-        //    //    //설명 텍스트
-        //    //    ExplainText.text = "세번째 설명/ 위쪽 두개 맞추면 넘어감";
-        //    //    
-
-        //    //    //카메라 정보 초기화
-        //    //    CameraReset();
-
-        //    //    popUpIndex++;
-        //    //}
-        //}
-
-        //else if (popUpIndex == 3)//세번째 설명
-        //{
-        //    //카메라 확대
-        //    cam.orthographicSize = Mathf.Lerp(cam.orthographicSize, 3, ZoomSpeed);
-
-        //    if (GameObject.FindWithTag("card5").GetComponent<CardControl>().ishitted == true && complete[5] == false)
-        //    {
-        //        //카메라를 보드판 위치로 이동
-        //        cam.transform.position = Vector3.Lerp(cam.transform.position, boardPos.transform.position, cameraSpeed * Time.deltaTime);
-
-        //        //위치이동이 완료되었으면 체크
-        //        if (cam.transform.position.y >= boardPos.transform.position.y - 0.001)
-        //        {
-        //            check[5] = true;
-        //        }
-
-        //        //체크됐을 때 다시 카드판 위치로 이동
-        //        if (check[5])
-        //        {
-        //            cam.transform.position = Vector3.Lerp(cam.transform.position, cardPos.transform.position, cameraSpeed * Time.deltaTime);
-
-        //            if (cam.transform.position.y <= -0.63)
-        //            {
-        //                complete[5] = true;
-        //            }
-        //        }
-        //    }
-
-        //    //만약 카드12를 맞췄으면
-        //    if (GameObject.FindWithTag("card6").GetComponent<CardControl>().ishitted == true && complete[6] == false)
-        //    {
-        //        //카메라를 보드판 위치로 이동
-        //        cam.transform.position = Vector3.Lerp(cam.transform.position, boardPos.transform.position, cameraSpeed * Time.deltaTime);
-
-        //        //위치이동이 완료되었으면 체크
-        //        if (cam.transform.position.y >= boardPos.transform.position.y - 0.001)
-        //        {
-        //            check[6] = true;
-        //        }
-
-        //        //체크됐을 때 다시 카드판 위치로 이동
-        //        if (check[6])
-        //        {
-        //            cam.transform.position = Vector3.Lerp(cam.transform.position, cardPos.transform.position, cameraSpeed * Time.deltaTime);
-
-        //            if (cam.transform.position.y <= -0.63)
-        //            {
-        //                complete[6] = true;
-        //            }
-        //        }
-        //    }
-        //    if (complete[5] && complete[6])
-        //    {
-        //        //설명 텍스트
-        //        ExplainText.text = "네번째 설명/ 현재 끝. 우측 위 버튼을 통해 나가기";
-        //        
-
-        //        //카메라 정보 초기화
-        //        CameraReset();
-
-        //        popUpIndex++;
-        //    }
-        //}
-        //else if (popUpIndex == 4)//네번째 설명
-        //{
-        //    //쓸모없는 오브젝트 제외
-        //    if (GameObject.Find("Cards")) GameObject.Find("Cards").SetActive(false);
-        //    if (GameObject.Find("Boards")) GameObject.Find("Boards").SetActive(false);
-        //}
+            if (Input.GetButtonDown("Fire1"))
+            {
+                SceneManager.LoadScene("MainMenu");
+            }
+        }
     }
 
     //카메라 정보 초기화
