@@ -12,7 +12,20 @@ public class SceneLoad : MonoBehaviour
 
     public void Tutorial()
     {
+        PlayerPrefs.SetInt("PopIndex", 0);
         SceneManager.LoadScene("Tutorial");
+    }
+
+    public void SpeicalCard()
+    {
+        SceneManager.LoadScene("Tutorial");
+        PlayerPrefs.SetInt("PopIndex", 27);
+    }
+
+    public void GameRule()
+    {
+        SceneManager.LoadScene("Tutorial");
+        PlayerPrefs.SetInt("PopIndex", 16);
     }
 
     //주경이가 정한 씬네임 따라적기
