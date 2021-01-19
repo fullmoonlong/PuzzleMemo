@@ -71,19 +71,15 @@ public class SoloModeCardControl: MonoBehaviour
                 CardFlip();
             }
         }
+
         //클릭 후 카드 움직임
-        
+        CardMove();
+        CardBoardMatch();
     }
 
     void CardFlip()
     {
         ClickCheck();
-        CardMove();
-        CardBoardMatch();
-        
-        //AI의 턴으로 변경
-        SetIsMyTurn(false);
-        //SoloModeManager.instance.turnCount++;
     }
 
     void ClickCheck()
@@ -97,9 +93,12 @@ public class SoloModeCardControl: MonoBehaviour
 
             if (tag.Substring(0, 4) == "card")
             {
-                Debug.Log("card");
                 //카드에 있는 OpenCard()함수 실행하기
                 hit.transform.GetComponent<SoloModeCardControl>().OpenCard();
+
+                //AI의 턴으로 변경
+                SetIsMyTurn(false);
+                //SoloModeManager.instance.turnCount++;
             }
         }
     }

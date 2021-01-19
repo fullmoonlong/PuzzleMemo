@@ -9,28 +9,28 @@ public class EnemyAI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Debug.Log(SoloModeCardControl.instance.GetIsMyTurn());
+
         if (SoloModeCardControl.instance.GetIsMyTurn() == false)
         {
-            Debug.Log(passedTime);
             passedTime += Time.deltaTime;
-            aiTurnTimer = Random.Range(2f, 5f);
+            aiTurnTimer = Random.Range(4f, 7f);
 
             if (passedTime >= aiTurnTimer)
             {
                 AICardFlip();
+                passedTime = 0f;
             }
+
+            //카드 움직임
+            SoloModeCardControl.instance.CardMove();
+            SoloModeCardControl.instance.CardBoardMatch();
         }
     }
 
     public void AICardFlip()
     {
         AIClickCheck();
-        SoloModeCardControl.instance.CardMove();
-        SoloModeCardControl.instance.CardBoardMatch();
-
-        //플레이어의 턴으로 변경
-        SoloModeCardControl.instance.SetIsMyTurn(true);
-        //SoloModeManager.instance.turnCount++;
     }
 
     void AIClickCheck()
@@ -69,7 +69,26 @@ public class EnemyAI : MonoBehaviour
         */
 
         int randomCard = Random.Range(1, 24);
+        if (GameObject.FindWithTag("card" + randomCard).GetComponent<SoloModeCardControl>().ishitted == true)
+        {
+            do
+            {
+                Debug.Log("Card" + randomCard);
+                randomCard = Random.Range(1, 24);
+            }
+            while (GameObject.FindWithTag("card" + randomCard).GetComponent<SoloModeCardControl>().ishitted == false);
+            {
+                Debug.Log("Card" + randomCard);
+                randomCard = Random.Range(1, 24);
+            }
+        }
+        else
+        {
+            GameObject.FindWithTag("card" + randomCard).GetComponent<SoloModeCardControl>().OpenCard();
 
-        GameObject.FindWithTag("card" + randomCard).GetComponent<SoloModeCardControl>().OpenCard();
+            //플레이어의 턴으로 변경
+            SoloModeCardControl.instance.SetIsMyTurn(true);
+            //SoloModeManager.instance.turnCount++;
+        }
     }
 }
