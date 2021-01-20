@@ -5,7 +5,10 @@ using UnityEngine.UI;
 
 public class OnOff : MonoBehaviour
 {
+    //추가창 넣을 것들
     public GameObject MenuSet;
+    public GameObject MenuTuto;
+    public GameObject MenuGame;
 
     public AudioSource audioSource;
 
@@ -59,5 +62,33 @@ public class OnOff : MonoBehaviour
     {
         SoundScript.Inst.ClickMenu();
         Application.Quit();
+    }
+
+    //튜토 온오프
+    public void OnClickTuto()
+    {
+        SoundScript.Inst.ClickMenu();
+        if (MenuTuto.activeSelf)
+        {
+            MenuTuto.SetActive(false);
+        }
+        else
+        {
+            MenuTuto.SetActive(true);
+        }
+    }
+
+    //게임 온오프
+    public void OnClickGame()
+    {
+        SoundScript.Inst.ClickMenu();
+        if (MenuGame.activeSelf)
+        {
+            MenuGame.SetActive(false);
+        }
+        else
+        {
+            MenuGame.SetActive(true);
+        }
     }
 }

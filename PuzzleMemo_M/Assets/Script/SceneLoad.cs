@@ -10,7 +10,7 @@ public class SceneLoad : MonoBehaviour
         SceneManager.LoadScene("MainMenu");
     }
 
-    public void Tutorial()
+    public void Beginning()
     {
         PlayerPrefs.SetInt("PopIndex", 0);
         SceneManager.LoadScene("Tutorial");
