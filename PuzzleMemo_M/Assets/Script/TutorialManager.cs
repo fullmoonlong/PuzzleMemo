@@ -8,6 +8,7 @@ public class TutorialManager : MonoBehaviour
 {
     //여러개의 팝업을 집어넣을수 있게만듬
     public GameObject[] popUps;
+    public GameObject[] Clicks;
     //현재 팝업 번호
     private int popUpIndex;
 
@@ -26,7 +27,7 @@ public class TutorialManager : MonoBehaviour
 
     public Text Playertext;
 
-    public GameObject Click;
+    public GameObject ClickText;
     [Space]
     [Space]
     public Text ExplainText;
@@ -115,8 +116,8 @@ public class TutorialManager : MonoBehaviour
             ExplainText.text = "Puzzle Memo의 세계에 오신 것을 환영합니다.";
 
             //트리거 전에 간격 주기
-            if (popUpInterval >= 0){ Click.SetActive(false); return;}
-            if (popUpInterval < 0){ Click.SetActive(true);}
+            if (popUpInterval >= 0){ ClickText.SetActive(false); return;}
+            if (popUpInterval < 0){ ClickText.SetActive(true);}
             //if (popUpInterval < 0) { Click.SetActive(true); }
             //특정 트리거로 다음 설명으로
             if (Input.GetButtonDown("Fire1"))
@@ -133,8 +134,8 @@ public class TutorialManager : MonoBehaviour
         {
             ExplainText.text = "게임 방법에 대해 궁금하신가요?\n설명에 따라 천천히 룰을 익혀보도록 합니다.";
             //트리거 전에 간격 주기
-            if (popUpInterval >= 0){ Click.SetActive(false); return;}
-            if (popUpInterval < 0){ Click.SetActive(true);}
+            if (popUpInterval >= 0){ ClickText.SetActive(false); return;}
+            if (popUpInterval < 0){ ClickText.SetActive(true);}
             //특정 트리거로 다음 설명으로
             if (Input.GetButtonDown("Fire1"))
             {
@@ -152,8 +153,8 @@ public class TutorialManager : MonoBehaviour
         {
             ExplainText.text = "게임의 구성품에 대해 알아볼까요?";
             //트리거 전에 간격 주기
-            if (popUpInterval >= 0){ Click.SetActive(false); return;}
-            if (popUpInterval < 0) { Click.SetActive(true); }
+            if (popUpInterval >= 0){ ClickText.SetActive(false); return;}
+            if (popUpInterval < 0) { ClickText.SetActive(true); }
 
             //특정 트리거로 다음 설명으로
             if (Input.GetButtonDown("Fire1"))
@@ -177,8 +178,8 @@ public class TutorialManager : MonoBehaviour
             //cam.orthographicSize = Mathf.Lerp(cam.orthographicSize, 3, ZoomSpeed);
 
             //트리거 전에 간격 주기
-            if (popUpInterval >= 0){ Click.SetActive(false); return;}
-            if (popUpInterval < 0){ Click.SetActive(true);}
+            if (popUpInterval >= 0){ ClickText.SetActive(false); return;}
+            if (popUpInterval < 0){ ClickText.SetActive(true);}
             if (Input.GetButtonDown("Fire1"))
             {
                 
@@ -194,8 +195,8 @@ public class TutorialManager : MonoBehaviour
 
             ExplainText.text = "점수를 따라 이동할 수 있는 4종류의 말";
             //트리거 전에 간격 주기
-            if (popUpInterval >= 0){ Click.SetActive(false); return;}
-            if (popUpInterval < 0){ Click.SetActive(true);}
+            if (popUpInterval >= 0){ ClickText.SetActive(false); return;}
+            if (popUpInterval < 0){ ClickText.SetActive(true);}
             if (Input.GetButtonDown("Fire1"))
             {
                 
@@ -212,8 +213,8 @@ public class TutorialManager : MonoBehaviour
             cam.transform.position = cardsoloPos.transform.position;
 
             //트리거 전에 간격 주기
-            if (popUpInterval >= 0){ Click.SetActive(false); return;}
-            if (popUpInterval < 0){ Click.SetActive(true);}
+            if (popUpInterval >= 0){ ClickText.SetActive(false); return;}
+            if (popUpInterval < 0){ ClickText.SetActive(true);}
             if (Input.GetButtonDown("Fire1"))
             {
                 
@@ -230,8 +231,8 @@ public class TutorialManager : MonoBehaviour
             cam.transform.position = speicalPos.transform.position;
 
             //트리거 전에 간격 주기
-            if (popUpInterval >= 0){ Click.SetActive(false); return;}
-            if (popUpInterval < 0){ Click.SetActive(true);}
+            if (popUpInterval >= 0){ ClickText.SetActive(false); return;}
+            if (popUpInterval < 0){ ClickText.SetActive(true);}
             if (Input.GetButtonDown("Fire1"))
             {
                 
@@ -247,8 +248,8 @@ public class TutorialManager : MonoBehaviour
             cam.transform.position = centerPos.transform.position;
 
             //트리거 전에 간격 주기
-            if (popUpInterval >= 0){ Click.SetActive(false); return;}
-            if (popUpInterval < 0){ Click.SetActive(true);}
+            if (popUpInterval >= 0){ ClickText.SetActive(false); return;}
+            if (popUpInterval < 0){ ClickText.SetActive(true);}
             if (Input.GetButtonDown("Fire1"))
             {
                 
@@ -261,8 +262,8 @@ public class TutorialManager : MonoBehaviour
         {
             ExplainText.text = "동물을 완성한 후, 맞춰진 동물이 가진 카드의 수만큼 나뭇잎을 따라 말을 이동하게 됩니다.";
             //트리거 전에 간격 주기
-            if (popUpInterval >= 0){ Click.SetActive(false); return;}
-            if (popUpInterval < 0){ Click.SetActive(true);}
+            if (popUpInterval >= 0){ ClickText.SetActive(false); return;}
+            if (popUpInterval < 0){ ClickText.SetActive(true);}
             if (Input.GetButtonDown("Fire1"))
             {
                 
@@ -273,9 +274,11 @@ public class TutorialManager : MonoBehaviour
 
         else if (popUpIndex == 9)//scene1-2.3 (카드 클릭, 플레이어 움직이기)
         {
+            Clicks[0].SetActive(true);
             ExplainText.text = "왼쪽  카드를 클릭하여 보세요";
             if (GameObject.FindWithTag("card6").GetComponent<CardControl>().ishitted == true && complete[6] == false)
             {
+                Clicks[0].SetActive(false);
                 //카메라를 보드판 위치로 이동
                 cam.transform.position = Vector3.Lerp(cam.transform.position, boardPos.transform.position, cameraSpeed * Time.deltaTime);
                 
@@ -299,8 +302,7 @@ public class TutorialManager : MonoBehaviour
             }
 
             //트리거 전에 간격 주기
-            if (popUpInterval >= 0){ Click.SetActive(false); return;}
-            if (popUpInterval < 0){ Click.SetActive(true);}
+            if (popUpInterval >= 0) { ClickText.SetActive(false); return;}
             if (complete[6]) // 말위로 올라타기 기능 설명
             {
                 Debug.Log("complete");
@@ -314,8 +316,8 @@ public class TutorialManager : MonoBehaviour
         {
             ExplainText.text = "뒷사람이 앞사람을 따라 잡았을 경우, 말 위로 올라타는 것이 가능합니다.";
             //트리거 전에 간격 주기
-            if (popUpInterval >= 0){ Click.SetActive(false); return;}
-            if (popUpInterval < 0) { Click.SetActive(true); }
+            if (popUpInterval >= 0){ ClickText.SetActive(false); return;}
+            if (popUpInterval < 0) { ClickText.SetActive(true); }
             if (Input.GetButtonDown("Fire1"))
             {
                 
@@ -330,8 +332,8 @@ public class TutorialManager : MonoBehaviour
             cam.transform.position = Vector3.Lerp(cam.transform.position, centerPos.transform.position, cameraSpeed * Time.deltaTime);
 
             //트리거 전에 간격 주기
-            if (popUpInterval >= 0){ Click.SetActive(false); return;}
-            if (popUpInterval < 0) { Click.SetActive(true); }
+            if (popUpInterval >= 0){ ClickText.SetActive(false); return;}
+            if (popUpInterval < 0) { ClickText.SetActive(true); }
             if (Input.GetButtonDown("Fire1"))
             {
                 
@@ -345,8 +347,8 @@ public class TutorialManager : MonoBehaviour
         {
             ExplainText.text = "하지만 업혀있는 사람이 이동하게 되면 아랫사람은 같이 이동하지 않습니다.";
             //트리거 전에 간격 주기
-            if (popUpInterval >= 0){ Click.SetActive(false); return;}
-            if (popUpInterval < 0){ Click.SetActive(true);}
+            if (popUpInterval >= 0){ ClickText.SetActive(false); return;}
+            if (popUpInterval < 0){ ClickText.SetActive(true);}
             if (Input.GetButtonDown("Fire1"))
             {
                 
@@ -357,10 +359,12 @@ public class TutorialManager : MonoBehaviour
 
         else if (popUpIndex == 13)//scene1-2.7 (카드 클릭, 플레이어 같이 이동)
         {
+            Clicks[1].SetActive(true);
             ExplainText.text = "오른쪽 카드를 클릭해보세요";
             Playertext.text = "Player2";
             if (GameObject.FindWithTag("card18").GetComponent<CardControl>().ishitted == true && complete[18] == false)
             {
+                Clicks[1].SetActive(false);
                 //카메라를 보드판 위치로 이동
                 cam.transform.position = Vector3.Lerp(cam.transform.position, boardPos.transform.position, cameraSpeed * Time.deltaTime);
                 //위치이동이 완료되었으면 체크
@@ -386,11 +390,9 @@ public class TutorialManager : MonoBehaviour
             }
 
             //트리거 전에 간격 주기
-            if (popUpInterval >= 0){ Click.SetActive(false); return;}
-            if (popUpInterval < 0){ Click.SetActive(true);}
+            if (popUpInterval >= 0) { ClickText.SetActive(false); return;}
             if (complete[18]) // 말위로 올라타기 기능 설명
             {
-                
                 popUpInterval = IntervalTime;
                 popUpIndex++;
             }
@@ -402,8 +404,8 @@ public class TutorialManager : MonoBehaviour
             Player1.transform.position = Vector3.Lerp(Player1.transform.position, OutPos.transform.position, cameraSpeed * Time.deltaTime);
 
             //트리거 전에 간격 주기
-            if (popUpInterval >= 0){ Click.SetActive(false); return;}
-            if (popUpInterval < 0){ Click.SetActive(true);}
+            if (popUpInterval >= 0){ ClickText.SetActive(false); return;}
+            if (popUpInterval < 0){ ClickText.SetActive(true);}
             if (Input.GetButtonDown("Fire1"))
             {
                 
@@ -414,12 +416,12 @@ public class TutorialManager : MonoBehaviour
 
         else if (popUpIndex == 15)//scene1-2.9
         {
-            ExplainText.text = "말판의 이동은 이러한 방법으로 진행되며, 모든 퍼즐이 맞춰 졌을 떄 가장 멀리 이동한 사람이 승리합니다.";
+            ExplainText.text = "말판의 이동은 이러한 방법으로 진행되며, 모든 퍼즐이 맞춰 졌을 때 가장 멀리 이동한 사람이 승리합니다.";
             popUps[3].SetActive(true);
 
             //트리거 전에 간격 주기
-            if (popUpInterval >= 0){ Click.SetActive(false); return;}
-            if (popUpInterval < 0){ Click.SetActive(true);}
+            if (popUpInterval >= 0){ ClickText.SetActive(false); return;}
+            if (popUpInterval < 0){ ClickText.SetActive(true);}
             if (Input.GetButtonDown("Fire1"))
             {
                 popUps[3].SetActive(false);
@@ -437,8 +439,8 @@ public class TutorialManager : MonoBehaviour
             cam.transform.position = cardrulePos.transform.position;
 
             //트리거 전에 간격 주기
-            if (popUpInterval >= 0){ Click.SetActive(false); return;}
-            if (popUpInterval < 0){ Click.SetActive(true);}
+            if (popUpInterval >= 0){ ClickText.SetActive(false); return;}
+            if (popUpInterval < 0){ ClickText.SetActive(true);}
             if (Input.GetButtonDown("Fire1"))
             {
                 
@@ -451,8 +453,8 @@ public class TutorialManager : MonoBehaviour
         {
             ExplainText.text = " 일반 카드의 설명을 먼저 진행하며, 기본 플레이 룰에 대해 말씀드리겠습니다.";
             //트리거 전에 간격 주기
-            if (popUpInterval >= 0){ Click.SetActive(false); return;}
-            if (popUpInterval < 0){ Click.SetActive(true);}
+            if (popUpInterval >= 0){ ClickText.SetActive(false); return;}
+            if (popUpInterval < 0){ ClickText.SetActive(true);}
             if (Input.GetButtonDown("Fire1"))
             {
                 
@@ -465,8 +467,8 @@ public class TutorialManager : MonoBehaviour
         {
             ExplainText.text = "Puzzle Memo는 40장의 일반 카드를 가지고 있습니다.";
             //트리거 전에 간격 주기
-            if (popUpInterval >= 0){ Click.SetActive(false); return;}
-            if (popUpInterval < 0){ Click.SetActive(true);}
+            if (popUpInterval >= 0){ ClickText.SetActive(false); return;}
+            if (popUpInterval < 0){ ClickText.SetActive(true);}
             if (Input.GetButtonDown("Fire1"))
             {
 
@@ -480,8 +482,8 @@ public class TutorialManager : MonoBehaviour
         {
             ExplainText.text = "카드는 골고루 섞어 뒷면이 보이도록 뒤집은 후, 보드 판을 기준으로 아래에서부터 맞춰지게 됩니다.";
             //트리거 전에 간격 주기
-            if (popUpInterval >= 0){ Click.SetActive(false); return;}
-            if (popUpInterval < 0){ Click.SetActive(true);}
+            if (popUpInterval >= 0){ ClickText.SetActive(false); return;}
+            if (popUpInterval < 0){ ClickText.SetActive(true);}
             if (Input.GetButtonDown("Fire1"))
             {
 
@@ -492,13 +494,13 @@ public class TutorialManager : MonoBehaviour
 
         else if (popUpIndex == 20)
         {
+            Clicks[2].SetActive(true);
             ExplainText.text = "우측 아래 카드를 클릭해 보세요";
             //트리거 전에 간격 주기
-            if (popUpInterval >= 0){ Click.SetActive(false); return;}
-            if (popUpInterval < 0){ Click.SetActive(true);}
+            if (popUpInterval >= 0){ ClickText.SetActive(false); return;}
             if (GameObject.FindWithTag("card22").GetComponent<CardControl>().ishitted == true)
             {
-
+                Clicks[2].SetActive(false);
                 ExplainText.text = "잘하셨습니다!";
                 popUpInterval = IntervalTime;
                 popUpIndex++;
@@ -508,11 +510,10 @@ public class TutorialManager : MonoBehaviour
         else if (popUpIndex == 21)
         {
             //트리거 전에 간격 주기
-            if (popUpInterval >= 0){ Click.SetActive(false); return;}
-            if (popUpInterval < 0){ Click.SetActive(true);}
+            if (popUpInterval >= 0){ ClickText.SetActive(false); return;}
+            if (popUpInterval < 0){ ClickText.SetActive(true);}
             if (Input.GetButtonDown("Fire1"))
             {
-
                 popUpInterval = IntervalTime;
                 popUpIndex++;
             }
@@ -520,12 +521,14 @@ public class TutorialManager : MonoBehaviour
 
         else if (popUpIndex == 22)
         {
+            Clicks[3].SetActive(true);
             ExplainText.text = "왼쪽 위 카드를 선택해 보세요";
             //트리거 전에 간격 주기
-            if (popUpInterval >= 0){ Click.SetActive(false); return;}
-            if (popUpInterval < 0) { Click.SetActive(true); }
+            if (popUpInterval >= 0){ ClickText.SetActive(false); return;}
+      
             if (GameObject.FindWithTag("card15").GetComponent<CardControl>().isOpen == true)
             {
+                Clicks[3].SetActive(false);
                 ExplainText.text = "아래 칸이 맞춰지지 않은 상태에서는 위쪽 칸을 맞출 수 없습니다.";
 
                 popUpInterval = IntervalTime;
@@ -536,8 +539,8 @@ public class TutorialManager : MonoBehaviour
         else if (popUpIndex == 23)
         {
             //트리거 전에 간격 주기
-            if (popUpInterval >= 0){ Click.SetActive(false); return;}
-            if (popUpInterval < 0){ Click.SetActive(true);}
+            if (popUpInterval >= 0){ ClickText.SetActive(false); return;}
+            if (popUpInterval < 0){ ClickText.SetActive(true);}
             if (GameObject.FindWithTag("card15").GetComponent<CardControl>().isOpen == false)
             {
                 popUpInterval = IntervalTime;
@@ -550,8 +553,8 @@ public class TutorialManager : MonoBehaviour
             popUps[4].SetActive(true);
 
             //트리거 전에 간격 주기
-            if (popUpInterval >= 0){ Click.SetActive(false); return;}
-            if (popUpInterval < 0){ Click.SetActive(true);}
+            if (popUpInterval >= 0){ ClickText.SetActive(false); return;}
+            if (popUpInterval < 0){ ClickText.SetActive(true);}
             if (Input.GetButtonDown("Fire1"))
             {
                 
@@ -566,8 +569,7 @@ public class TutorialManager : MonoBehaviour
             popUps[4].SetActive(false);
 
             //트리거 전에 간격 주기
-            if (popUpInterval >= 0){ Click.SetActive(false); return;}
-            if (popUpInterval < 0) { Click.SetActive(true); }
+            if (popUpInterval >= 0){ ClickText.SetActive(false); return;}
             if (GameObject.FindWithTag("card15").GetComponent<CardControl>().ishitted == true &&
                 GameObject.FindWithTag("card16").GetComponent<CardControl>().ishitted == true &&
                 GameObject.FindWithTag("card21").GetComponent<CardControl>().ishitted == true &&
@@ -585,8 +587,8 @@ public class TutorialManager : MonoBehaviour
             popUps[5].SetActive(true);
 
             //트리거 전에 간격 주기
-            if (popUpInterval >= 0){ Click.SetActive(false); return;}
-            if (popUpInterval < 0){ Click.SetActive(true);}
+            if (popUpInterval >= 0){ ClickText.SetActive(false); return;}
+            if (popUpInterval < 0){ ClickText.SetActive(true);}
             if (Input.GetButtonDown("Fire1"))
             {
 
@@ -603,8 +605,8 @@ public class TutorialManager : MonoBehaviour
             popUps[5].SetActive(false);
 
             //트리거 전에 간격 주기
-            if (popUpInterval >= 0){ Click.SetActive(false); return;}
-            if (popUpInterval < 0){ Click.SetActive(true);}
+            if (popUpInterval >= 0){ ClickText.SetActive(false); return;}
+            if (popUpInterval < 0){ ClickText.SetActive(true);}
             if (Input.GetButtonDown("Fire1"))
             {
                 
@@ -619,8 +621,8 @@ public class TutorialManager : MonoBehaviour
             popUps[6].SetActive(true);
 
             //트리거 전에 간격 주기
-            if (popUpInterval >= 0) { Click.SetActive(false); return; }
-            if (popUpInterval < 0) { Click.SetActive(true); }
+            if (popUpInterval >= 0) { ClickText.SetActive(false); return; }
+            if (popUpInterval < 0) { ClickText.SetActive(true); }
             if (Input.GetButtonDown("Fire1"))
             {
 
@@ -633,8 +635,8 @@ public class TutorialManager : MonoBehaviour
         {
             ExplainText.text = "거미줄 카드만 2장, 나머지 카드 1장씩으로 총 5장이 존재합니다.";
             //트리거 전에 간격 주기
-            if (popUpInterval >= 0) { Click.SetActive(false); return; }
-            if (popUpInterval < 0) { Click.SetActive(true); }
+            if (popUpInterval >= 0) { ClickText.SetActive(false); return; }
+            if (popUpInterval < 0) { ClickText.SetActive(true); }
             if (Input.GetButtonDown("Fire1"))
             {
                 
@@ -662,8 +664,8 @@ public class TutorialManager : MonoBehaviour
             popUps[7].SetActive(true);
 
             //트리거 전에 간격 주기
-            if (popUpInterval >= 0) { Click.SetActive(false); return; }
-            if (popUpInterval < 0) { Click.SetActive(true); }
+            if (popUpInterval >= 0) { ClickText.SetActive(false); return; }
+            if (popUpInterval < 0) { ClickText.SetActive(true); }
             if (Input.GetButtonDown("Fire1"))
             {
                 
@@ -679,8 +681,8 @@ public class TutorialManager : MonoBehaviour
             popUps[8].SetActive(true);
 
             //트리거 전에 간격 주기
-            if (popUpInterval >= 0) { Click.SetActive(false); return; }
-            if (popUpInterval < 0) { Click.SetActive(true); }
+            if (popUpInterval >= 0) { ClickText.SetActive(false); return; }
+            if (popUpInterval < 0) { ClickText.SetActive(true); }
             if (Input.GetButtonDown("Fire1"))
             {
                 
@@ -696,8 +698,8 @@ public class TutorialManager : MonoBehaviour
             popUps[9].SetActive(true);
 
             //트리거 전에 간격 주기
-            if (popUpInterval >= 0) { Click.SetActive(false); return; }
-            if (popUpInterval < 0) { Click.SetActive(true); }
+            if (popUpInterval >= 0) { ClickText.SetActive(false); return; }
+            if (popUpInterval < 0) { ClickText.SetActive(true); }
             if (Input.GetButtonDown("Fire1"))
             {
                 
@@ -713,8 +715,8 @@ public class TutorialManager : MonoBehaviour
             popUps[10].SetActive(true);
 
             //트리거 전에 간격 주기
-            if (popUpInterval >= 0) { Click.SetActive(false); return; }
-            if (popUpInterval < 0) { Click.SetActive(true); }
+            if (popUpInterval >= 0) { ClickText.SetActive(false); return; }
+            if (popUpInterval < 0) { ClickText.SetActive(true); }
             if (Input.GetButtonDown("Fire1"))
             {
 
@@ -730,8 +732,8 @@ public class TutorialManager : MonoBehaviour
             popUps[10].SetActive(false);
 
             //트리거 전에 간격 주기
-            if (popUpInterval >= 0) { Click.SetActive(false); return; }
-            if (popUpInterval < 0) { Click.SetActive(true); }
+            if (popUpInterval >= 0) { ClickText.SetActive(false); return; }
+            if (popUpInterval < 0) { ClickText.SetActive(true); }
             if (Input.GetButtonDown("Fire1"))
             {
                 
@@ -746,8 +748,8 @@ public class TutorialManager : MonoBehaviour
             cam.transform.position = mainmenuPos.transform.position;
 
             //트리거 전에 간격 주기
-            if (popUpInterval >= 0) { Click.SetActive(false); return; }
-            if (popUpInterval < 0) { Click.SetActive(true); }
+            if (popUpInterval >= 0) { ClickText.SetActive(false); return; }
+            if (popUpInterval < 0) { ClickText.SetActive(true); }
             if (Input.GetButtonDown("Fire1"))
             {
 
@@ -762,8 +764,8 @@ public class TutorialManager : MonoBehaviour
             popUps[11].SetActive(true);
 
             //트리거 전에 간격 주기
-            if (popUpInterval >= 0) { Click.SetActive(false); return; }
-            if (popUpInterval < 0) { Click.SetActive(true); }
+            if (popUpInterval >= 0) { ClickText.SetActive(false); return; }
+            if (popUpInterval < 0) { ClickText.SetActive(true); }
             if (Input.GetButtonDown("Fire1"))
             {
 
@@ -779,8 +781,8 @@ public class TutorialManager : MonoBehaviour
             popUps[12].SetActive(true);
 
             //트리거 전에 간격 주기
-            if (popUpInterval >= 0) { Click.SetActive(false); return; }
-            if (popUpInterval < 0) { Click.SetActive(true); }
+            if (popUpInterval >= 0) { ClickText.SetActive(false); return; }
+            if (popUpInterval < 0) { ClickText.SetActive(true); }
             if (Input.GetButtonDown("Fire1"))
             {
 
@@ -795,8 +797,8 @@ public class TutorialManager : MonoBehaviour
             popUps[12].SetActive(false);
 
             //트리거 전에 간격 주기
-            if (popUpInterval >= 0) { Click.SetActive(false); return; }
-            if (popUpInterval < 0) { Click.SetActive(true); }
+            if (popUpInterval >= 0) { ClickText.SetActive(false); return; }
+            if (popUpInterval < 0) { ClickText.SetActive(true); }
             if (Input.GetButtonDown("Fire1"))
             {
                 //메인메뉴로
