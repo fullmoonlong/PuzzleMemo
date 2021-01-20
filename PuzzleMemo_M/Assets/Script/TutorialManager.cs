@@ -19,6 +19,10 @@ public class TutorialManager : MonoBehaviour
     private Camera cam;
     public GameObject Player1;
     public GameObject Player2;
+    public GameObject PlayerA_1;//Index 31
+    public GameObject PlayerB_1;//Index 31
+    public GameObject PlayerA_2;//Index 32
+
     public Sprite AddPlayer;
     public Sprite CurrentPlayer;
 
@@ -45,6 +49,7 @@ public class TutorialManager : MonoBehaviour
     public GameObject centerPos;
     public GameObject NextPos;
     public GameObject OutPos;
+    public GameObject PlayerA_2_Backpos;//A_2뒤로 갈 위치
 
     private float cameraSpeed = 5f;
     public float ZoomSpeed = 3f;
@@ -557,7 +562,6 @@ public class TutorialManager : MonoBehaviour
             if (popUpInterval < 0){ ClickText.SetActive(true);}
             if (Input.GetButtonDown("Fire1"))
             {
-                
                 popUpInterval = IntervalTime;
                 popUpIndex++;
             }
@@ -575,8 +579,6 @@ public class TutorialManager : MonoBehaviour
                 GameObject.FindWithTag("card21").GetComponent<CardControl>().ishitted == true &&
                 GameObject.FindWithTag("card22").GetComponent<CardControl>().ishitted == true)
             {
-                ExplainText.text = "모든 칸을 맞추게 되면 완성된 동물이 가진 카드의 수만큼 점수를 획득합니다.";
-
                 popUpInterval = IntervalTime;
                 popUpIndex++;
             }
@@ -584,6 +586,7 @@ public class TutorialManager : MonoBehaviour
 
         else if (popUpIndex == 26)//scene2-2
         {
+            ExplainText.text = "모든 칸을 맞추게 되면 완성된 동물이 가진 카드의 수만큼 점수를 획득합니다.";
             popUps[5].SetActive(true);
 
             //트리거 전에 간격 주기
@@ -591,7 +594,6 @@ public class TutorialManager : MonoBehaviour
             if (popUpInterval < 0){ ClickText.SetActive(true);}
             if (Input.GetButtonDown("Fire1"))
             {
-
                 popUpInterval = IntervalTime;
                 popUpIndex++;
             }
@@ -609,7 +611,6 @@ public class TutorialManager : MonoBehaviour
             if (popUpInterval < 0){ ClickText.SetActive(true);}
             if (Input.GetButtonDown("Fire1"))
             {
-                
                 popUpInterval = IntervalTime;
                 popUpIndex++;
             }
@@ -625,7 +626,6 @@ public class TutorialManager : MonoBehaviour
             if (popUpInterval < 0) { ClickText.SetActive(true); }
             if (Input.GetButtonDown("Fire1"))
             {
-
                 popUpInterval = IntervalTime;
                 popUpIndex++;
             }
@@ -634,12 +634,12 @@ public class TutorialManager : MonoBehaviour
         else if (popUpIndex == 29)
         {
             ExplainText.text = "거미줄 카드만 2장, 나머지 카드 1장씩으로 총 5장이 존재합니다.";
+
             //트리거 전에 간격 주기
             if (popUpInterval >= 0) { ClickText.SetActive(false); return; }
             if (popUpInterval < 0) { ClickText.SetActive(true); }
             if (Input.GetButtonDown("Fire1"))
             {
-                
                 popUpInterval = IntervalTime;
                 popUpIndex++;
             }
@@ -650,9 +650,11 @@ public class TutorialManager : MonoBehaviour
             ExplainText.text = "먼저 소개시켜드릴 카드는 원숭이 그림이 그려진 카드입니다.";
             popUps[6].SetActive(false);
 
+            //트리거 전에 간격 주기
+            if (popUpInterval >= 0) { ClickText.SetActive(false); return; }
+            if (popUpInterval < 0) { ClickText.SetActive(true); }
             if (Input.GetButtonDown("Fire1"))
             {
-                
                 popUpInterval = IntervalTime;
                 popUpIndex++;
             }
@@ -660,7 +662,7 @@ public class TutorialManager : MonoBehaviour
 
         else if (popUpIndex == 31)
         {
-            ExplainText.text = "앞으로 튀어 오르는 원숭이가 그려진 카드는 자기 바로 앞사람의 머리 위로 올라타게 합니다";
+            ExplainText.text = "앞으로 튀어 오르는 원숭이가 그려진 카드는 앞사람의 머리 위로 올라타게 합니다";
             popUps[7].SetActive(true);
 
             //트리거 전에 간격 주기
@@ -668,13 +670,39 @@ public class TutorialManager : MonoBehaviour
             if (popUpInterval < 0) { ClickText.SetActive(true); }
             if (Input.GetButtonDown("Fire1"))
             {
-                
                 popUpInterval = IntervalTime;
                 popUpIndex++;
             }
         }
 
         else if (popUpIndex == 32)
+        {
+            ExplainText.text = "앞으로 튀어 오르는 원숭이가 그려진 카드는 앞사람의 머리 위로 올라타게 합니다";
+
+            if (complete[32] == false)
+            {
+                //플레이어 A_1을 플레이어B_1 위로 올리고 합쳐짐
+                PlayerA_1.transform.position = Vector3.Lerp(PlayerA_1.transform.position, PlayerB_1.transform.position, cameraSpeed * Time.deltaTime);
+
+                if (PlayerA_1.transform.position.x >= PlayerB_1.transform.position.x - 0.001)
+                {
+                    PlayerB_1.GetComponent<SpriteRenderer>().sprite = AddPlayer;
+                    PlayerA_1.SetActive(false);
+                    complete[32] = true;
+                }
+            }
+
+            //트리거 전에 간격 주기
+            if (popUpInterval >= 0) { ClickText.SetActive(false); return; }
+            if (popUpInterval < 0) { ClickText.SetActive(true); }
+            if (Input.GetButtonDown("Fire1"))
+            {
+                popUpInterval = IntervalTime;
+                popUpIndex++;
+            }
+        }
+
+        else if (popUpIndex == 33)
         {
             ExplainText.text = "뒤로 튕겨나간 원숭이가 그려진 카드는 뒤로 1칸 말을 이동하게 합니다";
             popUps[7].SetActive(false);
@@ -685,13 +713,38 @@ public class TutorialManager : MonoBehaviour
             if (popUpInterval < 0) { ClickText.SetActive(true); }
             if (Input.GetButtonDown("Fire1"))
             {
+                popUpInterval = IntervalTime;
+                popUpIndex++;
+            }
+        }
+
+        else if (popUpIndex == 34)
+        {
+            ExplainText.text = "뒤로 튕겨나간 원숭이가 그려진 카드는 뒤로 1칸 말을 이동하게 합니다"; 
+
+            if (complete[34] == false)
+            {
+                //플레이어 A_2를 뒤로 한칸 이동시킴
+                PlayerA_2.transform.position = Vector3.Lerp(PlayerA_2.transform.position, PlayerA_2_Backpos.transform.position, cameraSpeed * Time.deltaTime);
+
+                if (PlayerA_2.transform.position.x <= PlayerA_2_Backpos.transform.position.x - 0.001)
+                {
+                    complete[34] = true;
+                }
+            }
+
+            //트리거 전에 간격 주기
+            if (popUpInterval >= 0) { ClickText.SetActive(false); return; }
+            if (popUpInterval < 0) { ClickText.SetActive(true); }
+            if (Input.GetButtonDown("Fire1"))
+            {
                 
                 popUpInterval = IntervalTime;
                 popUpIndex++;
             }
         }
 
-        else if (popUpIndex == 33)
+        else if (popUpIndex == 35)
         {
             ExplainText.text = "다음으로 보실 카드는 거미줄 카드입니다. 거미줄 카드는 자신의 차례를 강제로 한번 쉬게 하는 함정카드입니다.";
             popUps[8].SetActive(false);
@@ -708,7 +761,7 @@ public class TutorialManager : MonoBehaviour
             }
         }
 
-        else if (popUpIndex == 34)
+        else if (popUpIndex == 36)
         {
             ExplainText.text = "마지막 카드는 연꽃이 그려진 카드입니다. 이 카드는 뽑은 것으로 다음 차례로 넘어가는 카드입니다.";
             popUps[9].SetActive(false);
@@ -726,7 +779,7 @@ public class TutorialManager : MonoBehaviour
         }
 
         //Scene 3
-        else if (popUpIndex == 35)//설명 종료
+        else if (popUpIndex == 37)//설명 종료
         {
             ExplainText.text = "특수 카드이지만 무난하게 차례를 넘긴다는 느낌이 강한 카드입니다.";
             popUps[10].SetActive(false);
@@ -742,7 +795,7 @@ public class TutorialManager : MonoBehaviour
             }
         }
 
-        else if (popUpIndex == 36)
+        else if (popUpIndex == 38)
         {
             ExplainText.text = "이로써 Puzzle Memo의 모든 설명을 종료합니다.";
             cam.transform.position = mainmenuPos.transform.position;
@@ -758,7 +811,7 @@ public class TutorialManager : MonoBehaviour
             }
         }
 
-        else if (popUpIndex == 37)
+        else if (popUpIndex == 39)
         {
             ExplainText.text = "메인 화면의 튜토리얼 버튼을 누른 후 원하시는 목차의 설명을 다시 보실 수 있으며,";
             popUps[11].SetActive(true);
@@ -774,7 +827,7 @@ public class TutorialManager : MonoBehaviour
             }
         }
 
-        else if (popUpIndex == 38)
+        else if (popUpIndex == 40)
         {
             ExplainText.text = "마찬가지로 메인 화면의 플레이 버튼을 통하여 혼자서도 룰을 연습하실 수 있습니다.";
             popUps[11].SetActive(false);
@@ -791,7 +844,7 @@ public class TutorialManager : MonoBehaviour
             }
         }
 
-        else if (popUpIndex == 39)
+        else if (popUpIndex == 41)
         {
             ExplainText.text = "다음 클릭시 메인화면으로 이동됩니다.";
             popUps[12].SetActive(false);
