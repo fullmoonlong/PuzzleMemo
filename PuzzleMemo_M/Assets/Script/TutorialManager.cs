@@ -199,6 +199,9 @@ public class TutorialManager : MonoBehaviour
             //cam.transform.position = Vector3.Lerp(cam.transform.position, boardPos.transform.position, cameraSpeed * Time.deltaTime);
 
             ExplainText.text = "점수를 따라 이동할 수 있는 4종류의 말";
+
+            popUps[0].SetActive(false);
+
             //트리거 전에 간격 주기
             if (popUpInterval >= 0){ ClickText.SetActive(false); return;}
             if (popUpInterval < 0){ ClickText.SetActive(true);}
@@ -213,7 +216,7 @@ public class TutorialManager : MonoBehaviour
         else if (popUpIndex == 5)//scene1-1.5 (일반카드 설명)
         {
             ExplainText.text = "그리고 40장의 일반카드와";
-            popUps[0].SetActive(false);
+            
             popUps[1].SetActive(true);
             cam.transform.position = cardsoloPos.transform.position;
 
