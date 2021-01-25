@@ -105,7 +105,7 @@ public class SoloModeCardControl: MonoBehaviour
 
         isOpen = true;
         transform.position = new Vector3(transform.position.x, transform.position.y, -1.1f);
-        anim.Play("aniOpen");
+        anim.Play("SingleAniOpen");
     }
 
     public void CloseCard()
@@ -118,7 +118,7 @@ public class SoloModeCardControl: MonoBehaviour
         isOpen = false;
         ishitted = false;
         transform.position = new Vector3(transform.position.x, transform.position.y, -1f);
-        anim.Play("aniClose");
+        anim.Play("SingleAniClose");
     }
 
     public void ShowImage()
