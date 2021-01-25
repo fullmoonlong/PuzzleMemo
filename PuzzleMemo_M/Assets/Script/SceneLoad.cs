@@ -31,6 +31,6 @@ public class SceneLoad : MonoBehaviour
     //주경이가 정한 씬네임 따라적기
     public void Solo()
     {
-        SceneManager.LoadScene("Solo");
+        SceneManager.LoadScene("SoloPlayScene");
     }
 }
