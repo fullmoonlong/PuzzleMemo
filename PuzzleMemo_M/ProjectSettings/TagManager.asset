@@ -8,29 +8,50 @@ TagManager:
   - card2
   - card3
   - card4
+  - card5
+  - card6
+  - card7
+  - card8
+  - card9
+  - card10
+  - card11
+  - card12
+  - card13
+  - card14
+  - card15
+  - card16
+  - card17
+  - card18
+  - card19
+  - card20
+  - card21
+  - card22
+  - card23
+  - card24
   - board1
   - board2
   - board3
   - board4
   - board5
   - board6
+  - board7
+  - board8
+  - board9
+  - board10
   - board11
   - board12
-  - card5
-  - card6
-  - card11
-  - card12
-  - board18
-  - board24
-  - card18
-  - card15
-  - card16
-  - card21
-  - card22
+  - board13
+  - board14
   - board15
   - board16
+  - board17
+  - board18
+  - board19
+  - board20
   - board21
   - board22
+  - board23
+  - board24
   layers:
   - Default
   - TransparentFX
@@ -40,7 +61,7 @@ TagManager:
   - UI
   - 
   - 
-  - post processing
+  - 
   - 
   - 
   - 
