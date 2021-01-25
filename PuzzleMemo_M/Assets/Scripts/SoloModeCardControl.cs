@@ -68,18 +68,13 @@ public class SoloModeCardControl: MonoBehaviour
             //윈도우(왼버튼), 모바일(터치)
             if (Input.GetButtonDown("Fire1"))
             {
-                CardFlip();
+                ClickCheck();
             }
         }
 
         //클릭 후 카드 움직임
         CardMove();
         CardBoardMatch();
-    }
-
-    void CardFlip()
-    {
-        ClickCheck();
     }
 
     void ClickCheck()

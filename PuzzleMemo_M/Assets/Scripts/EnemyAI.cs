@@ -14,11 +14,11 @@ public class EnemyAI : MonoBehaviour
         if (SoloModeCardControl.instance.GetIsMyTurn() == false)
         {
             passedTime += Time.deltaTime;
-            aiTurnTimer = Random.Range(4f, 7f);
+            aiTurnTimer = Random.Range(4, 7);
 
             if (passedTime >= aiTurnTimer)
             {
-                AICardFlip();
+                AIClickCheck();
                 passedTime = 0f;
             }
 
@@ -26,11 +26,6 @@ public class EnemyAI : MonoBehaviour
             SoloModeCardControl.instance.CardMove();
             SoloModeCardControl.instance.CardBoardMatch();
         }
-    }
-
-    public void AICardFlip()
-    {
-        AIClickCheck();
     }
 
     void AIClickCheck()
@@ -71,16 +66,15 @@ public class EnemyAI : MonoBehaviour
         int randomCard = Random.Range(1, 24);
         if (GameObject.FindWithTag("card" + randomCard).GetComponent<SoloModeCardControl>().ishitted == true)
         {
-            do
+            //do
+            //{
+            //    randomCard = Random.Range(1, 24);
+            //}
+            while (GameObject.FindWithTag("card" + randomCard).GetComponent<SoloModeCardControl>().ishitted == false)//;
             {
-                Debug.Log("Card" + randomCard);
                 randomCard = Random.Range(1, 24);
             }
-            while (GameObject.FindWithTag("card" + randomCard).GetComponent<SoloModeCardControl>().ishitted == false);
-            {
-                Debug.Log("Card" + randomCard);
-                randomCard = Random.Range(1, 24);
-            }
+            Debug.Log("Card " + randomCard);
         }
         else
         {
