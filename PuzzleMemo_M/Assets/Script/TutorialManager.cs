@@ -201,6 +201,7 @@ public class TutorialManager : MonoBehaviour
             ExplainText.text = "점수를 따라 이동할 수 있는 4종류의 말";
 
             popUps[0].SetActive(false);
+            popUps[1].SetActive(true);
 
             //트리거 전에 간격 주기
             if (popUpInterval >= 0){ ClickText.SetActive(false); return;}
@@ -217,7 +218,8 @@ public class TutorialManager : MonoBehaviour
         {
             ExplainText.text = "그리고 40장의 일반카드와";
             
-            popUps[1].SetActive(true);
+            popUps[1].SetActive(false);
+            popUps[2].SetActive(true);
             cam.transform.position = cardsoloPos.transform.position;
 
             //트리거 전에 간격 주기
@@ -234,8 +236,8 @@ public class TutorialManager : MonoBehaviour
         else if (popUpIndex == 6)//scene1-1.6 (특수 카드 설명)
         {
             ExplainText.text = "5장의 특수카드로 이루어져 있습니다.";
-            popUps[1].SetActive(false);
-            popUps[2].SetActive(true);
+            popUps[2].SetActive(false);
+            popUps[3].SetActive(true);
             cam.transform.position = speicalPos.transform.position;
 
             //트리거 전에 간격 주기
@@ -252,7 +254,7 @@ public class TutorialManager : MonoBehaviour
         else if (popUpIndex == 7)//scene1-2.1
         {
             ExplainText.text = "말판의 이동에 관한 설명을 시작합시다.";
-            popUps[2].SetActive(false);
+            popUps[3].SetActive(false);
             cam.transform.position = centerPos.transform.position;
 
             //트리거 전에 간격 주기
@@ -425,14 +427,14 @@ public class TutorialManager : MonoBehaviour
         else if (popUpIndex == 15)//scene1-2.9
         {
             ExplainText.text = "말판의 이동은 이러한 방법으로 진행되며, 모든 퍼즐이 맞춰 졌을 때 가장 멀리 이동한 사람이 승리합니다.";
-            popUps[3].SetActive(true);
+            popUps[4].SetActive(true);
 
             //트리거 전에 간격 주기
             if (popUpInterval >= 0){ ClickText.SetActive(false); return;}
             if (popUpInterval < 0){ ClickText.SetActive(true);}
             if (Input.GetButtonDown("Fire1"))
             {
-                popUps[3].SetActive(false);
+                popUps[4].SetActive(false);
 
                 popUpInterval = IntervalTime;
                 popUpIndex++;
@@ -558,7 +560,7 @@ public class TutorialManager : MonoBehaviour
 
         else if (popUpIndex == 24)
         {
-            popUps[4].SetActive(true);
+            popUps[5].SetActive(true);
 
             //트리거 전에 간격 주기
             if (popUpInterval >= 0){ ClickText.SetActive(false); return;}
@@ -573,7 +575,7 @@ public class TutorialManager : MonoBehaviour
         else if (popUpIndex == 25)
         {
             ExplainText.text = "뒤집힌 카드를 클릭해서 남은 카드들을 모두 맞춰봅시다.";
-            popUps[4].SetActive(false);
+            popUps[5].SetActive(false);
 
             //트리거 전에 간격 주기
             if (popUpInterval >= 0){ ClickText.SetActive(false); return;}
@@ -590,7 +592,7 @@ public class TutorialManager : MonoBehaviour
         else if (popUpIndex == 26)//scene2-2
         {
             ExplainText.text = "모든 칸을 맞추게 되면 완성된 동물이 가진 카드의 수만큼 점수를 획득합니다.";
-            popUps[5].SetActive(true);
+            popUps[6].SetActive(true);
 
             //트리거 전에 간격 주기
             if (popUpInterval >= 0){ ClickText.SetActive(false); return;}
@@ -607,7 +609,7 @@ public class TutorialManager : MonoBehaviour
             ExplainText.text = "이번에는 특수 카드에 대한 설명을 시작하겠습니다.";
             cam.transform.position = speicalPos.transform.position;
 
-            popUps[5].SetActive(false);
+            popUps[6].SetActive(false);
 
             //트리거 전에 간격 주기
             if (popUpInterval >= 0){ ClickText.SetActive(false); return;}
@@ -622,7 +624,7 @@ public class TutorialManager : MonoBehaviour
         else if (popUpIndex == 28)
         {
             ExplainText.text = "Puzzle Memo는 5장의 특수 카드를 보유하고 있습니다.";
-            popUps[6].SetActive(true);
+            popUps[7].SetActive(true);
 
             //트리거 전에 간격 주기
             if (popUpInterval >= 0) { ClickText.SetActive(false); return; }
@@ -651,7 +653,7 @@ public class TutorialManager : MonoBehaviour
         else if (popUpIndex == 30)
         {
             ExplainText.text = "먼저 소개시켜드릴 카드는 원숭이 그림이 그려진 카드입니다.";
-            popUps[6].SetActive(false);
+            popUps[7].SetActive(false);
 
             //트리거 전에 간격 주기
             if (popUpInterval >= 0) { ClickText.SetActive(false); return; }
@@ -666,7 +668,7 @@ public class TutorialManager : MonoBehaviour
         else if (popUpIndex == 31)
         {
             ExplainText.text = "앞으로 튀어 오르는 원숭이가 그려진 카드는 앞사람의 머리 위로 올라타게 합니다";
-            popUps[7].SetActive(true);
+            popUps[8].SetActive(true);
 
             //트리거 전에 간격 주기
             if (popUpInterval >= 0) { ClickText.SetActive(false); return; }
@@ -708,8 +710,8 @@ public class TutorialManager : MonoBehaviour
         else if (popUpIndex == 33)
         {
             ExplainText.text = "뒤로 튕겨나간 원숭이가 그려진 카드는 뒤로 1칸 말을 이동하게 합니다";
-            popUps[7].SetActive(false);
-            popUps[8].SetActive(true);
+            popUps[8].SetActive(false);
+            popUps[9].SetActive(true);
 
             //트리거 전에 간격 주기
             if (popUpInterval >= 0) { ClickText.SetActive(false); return; }
@@ -750,8 +752,8 @@ public class TutorialManager : MonoBehaviour
         else if (popUpIndex == 35)
         {
             ExplainText.text = "다음으로 보실 카드는 거미줄 카드입니다. 거미줄 카드는 자신의 차례를 강제로 한번 쉬게 하는 함정카드입니다.";
-            popUps[8].SetActive(false);
-            popUps[9].SetActive(true);
+            popUps[9].SetActive(false);
+            popUps[10].SetActive(true);
 
             //트리거 전에 간격 주기
             if (popUpInterval >= 0) { ClickText.SetActive(false); return; }
@@ -767,8 +769,8 @@ public class TutorialManager : MonoBehaviour
         else if (popUpIndex == 36)
         {
             ExplainText.text = "마지막 카드는 연꽃이 그려진 카드입니다. 이 카드는 뽑은 것으로 다음 차례로 넘어가는 카드입니다.";
-            popUps[9].SetActive(false);
-            popUps[10].SetActive(true);
+            popUps[10].SetActive(false);
+            popUps[11].SetActive(true);
 
             //트리거 전에 간격 주기
             if (popUpInterval >= 0) { ClickText.SetActive(false); return; }
@@ -785,7 +787,7 @@ public class TutorialManager : MonoBehaviour
         else if (popUpIndex == 37)//설명 종료
         {
             ExplainText.text = "특수 카드이지만 무난하게 차례를 넘긴다는 느낌이 강한 카드입니다.";
-            popUps[10].SetActive(false);
+            popUps[11].SetActive(false);
 
             //트리거 전에 간격 주기
             if (popUpInterval >= 0) { ClickText.SetActive(false); return; }
@@ -817,7 +819,7 @@ public class TutorialManager : MonoBehaviour
         else if (popUpIndex == 39)
         {
             ExplainText.text = "메인 화면의 튜토리얼 버튼을 누른 후 원하시는 목차의 설명을 다시 보실 수 있으며,";
-            popUps[11].SetActive(true);
+            popUps[12].SetActive(true);
 
             //트리거 전에 간격 주기
             if (popUpInterval >= 0) { ClickText.SetActive(false); return; }
@@ -833,8 +835,8 @@ public class TutorialManager : MonoBehaviour
         else if (popUpIndex == 40)
         {
             ExplainText.text = "마찬가지로 메인 화면의 플레이 버튼을 통하여 혼자서도 룰을 연습하실 수 있습니다.";
-            popUps[11].SetActive(false);
-            popUps[12].SetActive(true);
+            popUps[12].SetActive(false);
+            popUps[13].SetActive(true);
 
             //트리거 전에 간격 주기
             if (popUpInterval >= 0) { ClickText.SetActive(false); return; }
@@ -850,7 +852,7 @@ public class TutorialManager : MonoBehaviour
         else if (popUpIndex == 41)
         {
             ExplainText.text = "다음 클릭시 메인화면으로 이동됩니다.";
-            popUps[12].SetActive(false);
+            popUps[13].SetActive(false);
 
             //트리거 전에 간격 주기
             if (popUpInterval >= 0) { ClickText.SetActive(false); return; }
