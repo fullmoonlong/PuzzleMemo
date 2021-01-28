@@ -27,7 +27,7 @@ public class SoloModeCardControl: MonoBehaviour
 
     //변수
     static bool isMyTurn;
-    int cardCnt = 24;
+    static public int cardCnt = 24;
     public float cardInterval = 1.2f;
 
     Animator anim;
