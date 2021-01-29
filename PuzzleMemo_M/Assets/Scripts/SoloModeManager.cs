@@ -16,10 +16,18 @@ public class SoloModeManager : MonoBehaviour
 
     public int turnCount = 0;
 
+    static int animalCnt = 7;
+    public static int[] Animals = new int[animalCnt];
+
     // Use this for initialization
     void Start()
     {
         turnCount = 0;
+
+        for (int i = 0; i < animalCnt; i++)
+        {
+            Animals[i] = 0;
+        }
     }
 
     // Update is called once per frame

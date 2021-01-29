@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 public class SoloModeCardControl: MonoBehaviour
@@ -105,6 +106,7 @@ public class SoloModeCardControl: MonoBehaviour
 
         isOpen = true;
         transform.position = new Vector3(transform.position.x, transform.position.y, -1.1f);
+        MatchInfo();
         anim.Play("SingleAniOpen");
     }
 
@@ -184,5 +186,129 @@ public class SoloModeCardControl: MonoBehaviour
     public bool GetIsMyTurn()
     {
         return isMyTurn;
+    }
+
+    public void MatchInfo()
+    {
+        //제일 밑줄 카드이거나 밑에 칸이 맞춰졌다면
+        if ((imgNum + 6) > cardCnt || GameObject.FindWithTag("card" + (imgNum + 6)).transform.GetComponent<SoloModeCardControl>().ishitted == true)
+        {
+            if (this.tag.Substring(0, 4) == "card")
+            {
+                //동물 정보에 의한 점수 넘겨주기
+                if (imgNum == 1 || imgNum == 2 || imgNum == 3 || imgNum == 7 || imgNum == 8 || imgNum == 13)
+                {
+                    SoloModeManager.Animals[0] += 1;
+
+                    if (SoloModeManager.Animals[0] == 6)
+                    {
+                        if (isMyTurn == true)
+                        {
+                            MalManager.A += 6;
+                        }
+                        else
+                        {
+                            MalManager.B += 6;
+                        }
+                    }
+                }
+                else if (imgNum == 4 || imgNum == 9 || imgNum == 10)
+                {
+                    SoloModeManager.Animals[1] += 1;
+
+                    if (SoloModeManager.Animals[1] == 3)
+                    {
+                        if (isMyTurn == true)
+                        {
+                            MalManager.A += 3;
+                        }
+                        else
+                        {
+                            MalManager.B += 3;
+                        }
+                    }
+                }
+                else if (imgNum == 5 || imgNum == 6 || imgNum == 11 || imgNum == 12)
+                {
+                    SoloModeManager.Animals[2] += 1;
+
+                    if (SoloModeManager.Animals[2] == 4)
+                    {
+                        if (isMyTurn == true)
+                        {
+                            MalManager.A += 4;
+                        }
+                        else
+                        {
+                            MalManager.B += 4;
+                        }
+                    }
+                }
+                else if (imgNum == 14)
+                {
+                    SoloModeManager.Animals[3] += 1;
+
+                    if (SoloModeManager.Animals[3] == 1)
+                    {
+                        if (isMyTurn == true)
+                        {
+                            MalManager.A += 1;
+                        }
+                        else
+                        {
+                            MalManager.B += 1;
+                        }
+                    }
+                }
+                else if (imgNum == 15 || imgNum == 16 || imgNum == 17 || imgNum == 21 || imgNum == 22 || imgNum == 23)
+                {
+                    SoloModeManager.Animals[4] += 1;
+
+                    if (SoloModeManager.Animals[4] == 6)
+                    {
+                        if (isMyTurn == true)
+                        {
+                            MalManager.A += 6;
+                        }
+                        else
+                        {
+                            MalManager.B += 6;
+                        }
+                    }
+                }
+                else if (imgNum == 18 || imgNum == 24)
+                {
+                    SoloModeManager.Animals[5] += 1;
+
+                    if (SoloModeManager.Animals[5] == 2)
+                    {
+                        if (isMyTurn == true)
+                        {
+                            MalManager.A += 2;
+                        }
+                        else
+                        {
+                            MalManager.B += 2;
+                        }
+                    }
+                }
+                else if (imgNum == 19 || imgNum == 20)
+                {
+                    SoloModeManager.Animals[6] += 1;
+
+                    if (SoloModeManager.Animals[6] == 2)
+                    {
+                        if (isMyTurn == true)
+                        {
+                            MalManager.A += 2;
+                        }
+                        else
+                        {
+                            MalManager.B += 2;
+                        }
+                    }
+                }
+            }
+        }
     }
 }

@@ -7,7 +7,7 @@ public class MalManager : MonoBehaviour
     //말
     public GameObject Player_A, Player_B;
     //말 정보
-    public int A, B;
+    public static int A, B;
     
     [Space]
     [Space]
@@ -36,9 +36,6 @@ public class MalManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(A);
-        Debug.Log(B);
-
         MalMovement();
     }
 

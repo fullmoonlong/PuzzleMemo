@@ -14,14 +14,14 @@ public class EnemyAI : MonoBehaviour
         if (SoloModeCardControl.instance.GetIsMyTurn() == false)
         {
             passedTime += Time.deltaTime;
-            aiTurnTimer = Random.Range(4, 7);
+            aiTurnTimer = Random.Range(2, 4);
 
             if (passedTime >= aiTurnTimer)
             {
                 AIClickCheck();
                 passedTime = 0f;
             }
-
+            
             //카드 움직임
             SoloModeCardControl.instance.CardMove();
             SoloModeCardControl.instance.CardBoardMatch();
@@ -70,11 +70,17 @@ public class EnemyAI : MonoBehaviour
             //{
             //    randomCard = Random.Range(1, 24);
             //}
-            while (GameObject.FindWithTag("card" + randomCard).GetComponent<SoloModeCardControl>().ishitted == false)//;
+            while (GameObject.FindWithTag("card" + randomCard).GetComponent<SoloModeCardControl>().ishitted == true)//<- false를 true로 바꿈
             {
                 randomCard = Random.Range(1, 24);
             }
-            Debug.Log("Card " + randomCard);
+
+            //넣어야 위에서 찾은 후에 바로 될꺼 같아서 넣어봄 - 규식
+            if (GameObject.FindWithTag("card" + randomCard).GetComponent<SoloModeCardControl>().ishitted == false)
+            {
+                GameObject.FindWithTag("card" + randomCard).GetComponent<SoloModeCardControl>().OpenCard();
+                SoloModeCardControl.instance.SetIsMyTurn(true);
+            }
         }
         else
         {
