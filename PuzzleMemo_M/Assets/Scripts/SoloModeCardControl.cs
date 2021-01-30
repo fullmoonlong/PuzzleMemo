@@ -93,8 +93,8 @@ public class SoloModeCardControl: MonoBehaviour
                 hit.transform.GetComponent<SoloModeCardControl>().OpenCard();
 
                 //AI의 턴으로 변경
+                SoloModeManager.turnCount++;
                 SetIsMyTurn(false);
-                //SoloModeManager.instance.turnCount++;
             }
         }
     }
@@ -205,10 +205,12 @@ public class SoloModeCardControl: MonoBehaviour
                         if (isMyTurn == true)
                         {
                             MalManager.A += 6;
+                            SoloModeManager.matchOver += 6;
                         }
                         else
                         {
                             MalManager.B += 6;
+                            SoloModeManager.matchOver += 6;
                         }
                     }
                 }
@@ -221,10 +223,12 @@ public class SoloModeCardControl: MonoBehaviour
                         if (isMyTurn == true)
                         {
                             MalManager.A += 3;
+                            SoloModeManager.matchOver += 3;
                         }
                         else
                         {
                             MalManager.B += 3;
+                            SoloModeManager.matchOver += 3;
                         }
                     }
                 }
@@ -237,10 +241,12 @@ public class SoloModeCardControl: MonoBehaviour
                         if (isMyTurn == true)
                         {
                             MalManager.A += 4;
+                            SoloModeManager.matchOver += 4;
                         }
                         else
                         {
                             MalManager.B += 4;
+                            SoloModeManager.matchOver += 4;
                         }
                     }
                 }
@@ -253,10 +259,12 @@ public class SoloModeCardControl: MonoBehaviour
                         if (isMyTurn == true)
                         {
                             MalManager.A += 1;
+                            SoloModeManager.matchOver += 1;
                         }
                         else
                         {
                             MalManager.B += 1;
+                            SoloModeManager.matchOver += 1;
                         }
                     }
                 }
@@ -269,10 +277,12 @@ public class SoloModeCardControl: MonoBehaviour
                         if (isMyTurn == true)
                         {
                             MalManager.A += 6;
+                            SoloModeManager.matchOver += 6;
                         }
                         else
                         {
                             MalManager.B += 6;
+                            SoloModeManager.matchOver += 6;
                         }
                     }
                 }
@@ -285,10 +295,12 @@ public class SoloModeCardControl: MonoBehaviour
                         if (isMyTurn == true)
                         {
                             MalManager.A += 2;
+                            SoloModeManager.matchOver += 2;
                         }
                         else
                         {
                             MalManager.B += 2;
+                            SoloModeManager.matchOver += 2;
                         }
                     }
                 }
@@ -301,10 +313,12 @@ public class SoloModeCardControl: MonoBehaviour
                         if (isMyTurn == true)
                         {
                             MalManager.A += 2;
+                            SoloModeManager.matchOver += 2;
                         }
                         else
                         {
                             MalManager.B += 2;
+                            SoloModeManager.matchOver += 2;
                         }
                     }
                 }
