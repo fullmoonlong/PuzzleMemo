@@ -99,13 +99,13 @@ public class MalManager : MonoBehaviour
     int BindCheck(int Upper, int Downer)
     {
         //덩굴이 5-6, 11-12 사이에 있을 경우
-        if(Downer >= 6 && Upper <= 5)
+        if(Downer >= 8 && Upper <= 7)
         {
-            Upper = 5;
+            Upper = 7;
         }
-        else if (Downer >= 12 && Upper <= 11)
+        else if (Downer >= 15 && Upper <= 14)
         {
-            Upper = 11;
+            Upper = 14;
         }
         else//덩굴 없을때
         {
