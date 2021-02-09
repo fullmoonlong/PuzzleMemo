@@ -33,4 +33,9 @@ public class SceneLoad : MonoBehaviour
     {
         SceneManager.LoadScene("SoloPlayScene");
     }
+
+    public void Collection()
+    {
+        SceneManager.LoadScene("Collection");
+    }
 }

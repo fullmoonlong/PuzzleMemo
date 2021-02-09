@@ -29,7 +29,7 @@ public class OnOff : MonoBehaviour
     //메뉴 온오프
     public void OnClickMenu()
     {
-        SoundScript.Inst.ClickMenu();
+        //SoundScript.Inst.ClickMenu();
         if (MenuSet.activeSelf)
         {
             MenuSet.SetActive(false);
@@ -43,7 +43,7 @@ public class OnOff : MonoBehaviour
     //노래 온오프
     public void OnClickMusic()
     {
-        SoundScript.Inst.ClickMenu();
+        //SoundScript.Inst.ClickMenu();
         if (audioSource.isPlaying)
         {
             audioSource.Pause();
@@ -60,14 +60,14 @@ public class OnOff : MonoBehaviour
     //나가기
     public void OnClickExit()
     {
-        SoundScript.Inst.ClickMenu();
+        //SoundScript.Inst.ClickMenu();
         Application.Quit();
     }
 
     //튜토 온오프
     public void OnClickTuto()
     {
-        SoundScript.Inst.ClickMenu();
+        //SoundScript.Inst.ClickMenu();
         if (MenuTuto.activeSelf)
         {
             MenuTuto.SetActive(false);
@@ -81,7 +81,7 @@ public class OnOff : MonoBehaviour
     //게임 온오프
     public void OnClickGame()
     {
-        SoundScript.Inst.ClickMenu();
+        //SoundScript.Inst.ClickMenu();
         if (MenuGame.activeSelf)
         {
             MenuGame.SetActive(false);
