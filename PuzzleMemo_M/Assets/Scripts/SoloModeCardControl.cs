@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
-
-public class SoloModeCardControl: MonoBehaviour
+using System.IO;
+public class SoloModeCardControl : MonoBehaviour
 {
     #region Singleton
     public static SoloModeCardControl instance;
@@ -33,9 +33,35 @@ public class SoloModeCardControl: MonoBehaviour
 
     Animator anim;
 
+    public List<Animal> AllAnimalList, CurAnimalList;
+
+    string filePath;
+
+    enum AnimalOrder
+    {
+        개구리,
+        아나콘다,
+        아프리카거북,
+        알락꼬리원숭이,
+        재규어,
+        투칸,
+        하마,
+        원숭이,
+        뱀,
+        낙타,
+        여우,
+        펭귄,
+        북극곰
+    }
+
     // Start is called before the first frame update
     void Start()
     {
+        //파일 위치 지정
+        filePath = Application.persistentDataPath + "/AllAnimal.txt";
+        print(filePath);
+        LoadFile();
+
         anim = GetComponent<Animator>();
         SetIsMyTurn(true);
 
@@ -206,6 +232,9 @@ public class SoloModeCardControl: MonoBehaviour
                         {
                             MalManager.A += 6;
                             SoloModeManager.matchOver += 6;
+                            Debug.Log("아나콘다");
+                            AllAnimalList[(int)AnimalOrder.아나콘다].IsHaving = true;
+                            SaveFile();
                         }
                         else
                         {
@@ -224,6 +253,9 @@ public class SoloModeCardControl: MonoBehaviour
                         {
                             MalManager.A += 3;
                             SoloModeManager.matchOver += 3;
+                            Debug.Log("알락꼬리원숭이");
+                            AllAnimalList[(int)AnimalOrder.알락꼬리원숭이].IsHaving = true;
+                            SaveFile();
                         }
                         else
                         {
@@ -242,6 +274,9 @@ public class SoloModeCardControl: MonoBehaviour
                         {
                             MalManager.A += 4;
                             SoloModeManager.matchOver += 4;
+                            Debug.Log("하마");
+                            AllAnimalList[(int)AnimalOrder.하마].IsHaving = true;
+                            SaveFile();
                         }
                         else
                         {
@@ -260,6 +295,9 @@ public class SoloModeCardControl: MonoBehaviour
                         {
                             MalManager.A += 1;
                             SoloModeManager.matchOver += 1;
+                            Debug.Log("개구리");
+                            AllAnimalList[(int)AnimalOrder.개구리].IsHaving = true;
+                            SaveFile();
                         }
                         else
                         {
@@ -278,6 +316,9 @@ public class SoloModeCardControl: MonoBehaviour
                         {
                             MalManager.A += 6;
                             SoloModeManager.matchOver += 6;
+                            Debug.Log("재규어");
+                            AllAnimalList[(int)AnimalOrder.재규어].IsHaving = true;
+                            SaveFile();
                         }
                         else
                         {
@@ -296,6 +337,9 @@ public class SoloModeCardControl: MonoBehaviour
                         {
                             MalManager.A += 2;
                             SoloModeManager.matchOver += 2;
+                            Debug.Log("투칸");
+                            AllAnimalList[(int)AnimalOrder.투칸].IsHaving = true;
+                            SaveFile();
                         }
                         else
                         {
@@ -314,6 +358,9 @@ public class SoloModeCardControl: MonoBehaviour
                         {
                             MalManager.A += 2;
                             SoloModeManager.matchOver += 2;
+                            Debug.Log("아프리카거북");
+                            AllAnimalList[(int)AnimalOrder.아프리카거북].IsHaving = true;
+                            SaveFile();
                         }
                         else
                         {
@@ -325,4 +372,20 @@ public class SoloModeCardControl: MonoBehaviour
             }
         }
     }
+
+    void SaveFile()
+    {
+        //AllAnimalList 직렬화
+        string jdata = JsonUtility.ToJson(new Serialization<Animal>(AllAnimalList));
+        File.WriteAllText(filePath, jdata);
+
+    }
+
+    void LoadFile()
+    {
+        string jdata = File.ReadAllText(filePath);
+
+        AllAnimalList = JsonUtility.FromJson<Serialization<Animal>>(jdata).target;
+    }
+
 }

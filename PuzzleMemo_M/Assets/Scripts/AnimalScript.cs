@@ -37,7 +37,7 @@ public class AnimalScript : MonoBehaviour
     string filePath;
 
     //처음 맵
-    public string curMapType = "정글";
+    public string curMapType = "Jungle";
 
     public GameObject[] AnimalSlot;
     public Image[] AnimalImage, TabImage;
@@ -80,9 +80,11 @@ public class AnimalScript : MonoBehaviour
 
     public void TabMap(string tabName)
     {
+        Debug.Log(tabName);
         curMapType = tabName;
 
         CurAnimalList = AllAnimalList.FindAll(x => x.Map == curMapType);
+        Debug.Log(CurAnimalList.Count);
 
         for (int i = 0; i < AnimalSlot.Length; i++)
         {
@@ -90,10 +92,10 @@ public class AnimalScript : MonoBehaviour
             //현재 아이템 리스트 수 안이면 이름써줌, 아니면 이름안써줌
             AnimalSlot[i].transform.GetChild(1).GetComponent<Text>().text = i < CurAnimalList.Count ? CurAnimalList[i].Name : "";
 
-            if (i < CurAnimalList.Count)
-            {
-                AnimalImage[i].sprite = AnimalSprite[AllAnimalList.FindIndex(x => x.Name == CurAnimalList[i].Name)];
-            }
+            //if (i < CurAnimalList.Count)
+            //{
+            //    AnimalImage[i].sprite = AnimalSprite[AllAnimalList.FindIndex(x => x.Name == CurAnimalList[i].Name)];
+            //}
 
         }
 
@@ -101,15 +103,15 @@ public class AnimalScript : MonoBehaviour
 
         switch (tabName)
         {
-            case "정글":
+            case "Jungle":
                 tabNum = 0;
                 break;
 
-            case "사막":
+            case "Desert":
                 tabNum = 1;
                 break;
 
-            case "남극":
+            case "Antarctica":
                 tabNum = 2;
                 break;
         }
@@ -283,10 +285,6 @@ public class AnimalScript : MonoBehaviour
     //}
 
     //추후에 동물을 얻었을 때
-    public void GetAnimal()
-    {
-        SaveFile();
-    }
 
     void SaveFile()
     {
