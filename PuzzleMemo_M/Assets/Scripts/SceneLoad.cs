@@ -34,6 +34,18 @@ public class SceneLoad : MonoBehaviour
         SceneManager.LoadScene("SoloPlayScene");
     }
 
+    public void SpecialRule_1()
+    {
+        PlayerPrefs.SetInt("SpRuleNum", 1);
+        SceneManager.LoadScene("SpRulePlayScene");
+    }
+
+    public void SpecialRule_2()
+    {
+        PlayerPrefs.SetInt("SpRuleNum", 2);
+        SceneManager.LoadScene("SpRulePlayScene");
+    }
+
     public void Collection()
     {
         SceneManager.LoadScene("Collection");

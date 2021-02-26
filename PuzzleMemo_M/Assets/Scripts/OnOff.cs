@@ -10,6 +10,7 @@ public class OnOff : MonoBehaviour
     public GameObject MenuSet;
     public GameObject MenuTuto;
     public GameObject MenuGame;
+    public GameObject MenuSpGame;
 
     public AudioSource audioSource;
     AudioSource Myaudio;
@@ -77,6 +78,20 @@ public class OnOff : MonoBehaviour
         else
         {
             MenuTuto.SetActive(true);
+        }
+    }
+
+    //응용게임 온오프
+    public void OnClickSpGame()
+    {
+        //SoundScript.Inst.ClickMenu();
+        if (MenuTuto.activeSelf)
+        {
+            MenuSpGame.SetActive(false);
+        }
+        else
+        {
+            MenuSpGame.SetActive(true);
         }
     }
 

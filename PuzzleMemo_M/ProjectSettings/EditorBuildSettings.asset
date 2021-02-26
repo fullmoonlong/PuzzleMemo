@@ -17,4 +17,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Collection.unity
     guid: cc5dac16af94e8541a24f5d6ca9a178d
+  - enabled: 1
+    path: Assets/Scenes/SpRulePlayScene.unity
+    guid: 6fd26b9b7a2cf354580f8985c6459b8c
+  - enabled: 1
+    path: Assets/Scenes/DoubleModeScene.unity
+    guid: f08c4cb79ed172f41845b115124c4d71
   m_configObjects: {}
