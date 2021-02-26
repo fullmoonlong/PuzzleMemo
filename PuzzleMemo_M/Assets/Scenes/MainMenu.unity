@@ -525,6 +525,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Menusound: {fileID: 8300000, guid: c11e1fc67a36db24faa6538e738e49b3, type: 3}
+  AnimalName: {fileID: 0}
+  Dic: {fileID: 0}
+  AnimalSound: []
 --- !u!4 &263484680
 Transform:
   m_ObjectHideFlags: 0
@@ -1260,7 +1263,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: ac4a3d2044b680a4d89cfdeb4514744a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7b6703c47fb23c4469cc5e733e08b239, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
