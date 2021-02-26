@@ -42,7 +42,7 @@ public class AnimalScript : MonoBehaviour
     public GameObject[] AnimalSlot;
     public Image[] AnimalImage, TabImage;
     public Image RealImage;
-    public Sprite[] AnimalSprite, RealSprite;
+    public Sprite[] OnAnimalSprite, OffAnimalSprite, RealSprite;
     public Sprite ClickTab, UnClickTab;
     //텍스트 모음
     public Text NameText;
@@ -56,6 +56,9 @@ public class AnimalScript : MonoBehaviour
 
     //잠겨있는 사전
     public GameObject Lock;
+
+    int CurTypeNum;
+    string[] Type = { "Jungle", "Desert", "Antarctica" };
     void Start()
     {
         //animaldatabase에 있는 텍스트를 allanimal에 대입
@@ -75,10 +78,31 @@ public class AnimalScript : MonoBehaviour
 
     void Update()
     {
-
+      
     }
 
-    public void TabMap(string tabName)
+    public void NextBtn()
+    {
+        CurTypeNum += 1;
+        if (CurTypeNum >= 3)
+        {
+            CurTypeNum = 0;
+        }
+        Debug.Log(Type[CurTypeNum]);
+        TabMap(Type[CurTypeNum]);
+    }
+
+    public void BackBtn()
+    {
+        CurTypeNum -= 1;
+        if (CurTypeNum < 0)
+        {
+            CurTypeNum = 2;
+        }
+        TabMap(Type[CurTypeNum]);
+    }
+
+    void TabMap(string tabName)
     {
         curMapType = tabName;
 
@@ -91,10 +115,13 @@ public class AnimalScript : MonoBehaviour
             //현재 아이템 리스트 수 안이면 이름써줌, 아니면 이름안써줌
             AnimalSlot[i].transform.GetChild(1).GetComponent<Text>().text = i < CurAnimalList.Count ? CurAnimalList[i].Name : "";
 
-            //if (i < CurAnimalList.Count)
-            //{
-            //    AnimalImage[i].sprite = AnimalSprite[AllAnimalList.FindIndex(x => x.Name == CurAnimalList[i].Name)];
-            //}
+             if(i<CurAnimalList.Count)
+            {
+                if (CurAnimalList[i].IsHaving)
+                    AnimalImage[i].sprite = OnAnimalSprite[AllAnimalList.FindIndex(x => x.Name == CurAnimalList[i].Name)];
+                if (!CurAnimalList[i].IsHaving)
+                    AnimalImage[i].sprite = OffAnimalSprite[AllAnimalList.FindIndex(x => x.Name == CurAnimalList[i].Name)];
+            }
 
         }
 
