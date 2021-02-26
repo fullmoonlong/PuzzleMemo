@@ -80,7 +80,6 @@ public class AnimalScript : MonoBehaviour
 
     public void TabMap(string tabName)
     {
-        Debug.Log(tabName);
         curMapType = tabName;
 
         CurAnimalList = AllAnimalList.FindAll(x => x.Map == curMapType);
@@ -88,7 +87,7 @@ public class AnimalScript : MonoBehaviour
 
         for (int i = 0; i < AnimalSlot.Length; i++)
         {
-            AnimalSlot[i].SetActive(i < CurAnimalList.Count);
+             AnimalSlot[i].SetActive(i < CurAnimalList.Count);
             //현재 아이템 리스트 수 안이면 이름써줌, 아니면 이름안써줌
             AnimalSlot[i].transform.GetChild(1).GetComponent<Text>().text = i < CurAnimalList.Count ? CurAnimalList[i].Name : "";
 
@@ -127,6 +126,10 @@ public class AnimalScript : MonoBehaviour
             Dictionary.SetActive(true);
             switch (CurAnimalList[SlotNum].Name.ToString())
             {
+                case "개구리":
+                    RealImage.sprite = RealSprite[0];
+                    break;
+
                 case "원숭이":
                     RealImage.sprite = RealSprite[0];
                     break;

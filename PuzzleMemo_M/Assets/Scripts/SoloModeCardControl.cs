@@ -98,7 +98,6 @@ public class SoloModeCardControl : MonoBehaviour
                 ClickCheck();
             }
         }
-
         //클릭 후 카드 움직임
         CardMove();
         CardBoardMatch();

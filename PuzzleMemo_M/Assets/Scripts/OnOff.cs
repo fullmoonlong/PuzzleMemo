@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -11,6 +12,7 @@ public class OnOff : MonoBehaviour
     public GameObject MenuGame;
 
     public AudioSource audioSource;
+    AudioSource Myaudio;
 
     public Text musictext;
 
@@ -85,6 +87,12 @@ public class OnOff : MonoBehaviour
         if (MenuGame.activeSelf)
         {
             MenuGame.SetActive(false);
+            if(!MenuGame.activeSelf)
+            {
+                //동물울음소리끄기
+                Debug.Log("꺼짐");
+                GameObject.Find("SoundManager").GetComponent<AudioSource>().Stop();
+            }
         }
         else
         {
