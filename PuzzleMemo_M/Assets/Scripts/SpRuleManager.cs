@@ -37,6 +37,8 @@ public class SpRuleManager : MonoBehaviour
         }
 
         SpRuleNum = PlayerPrefs.GetInt("SpRuleNum");
+
+        SpecialRule();
     }
 
     // Update is called once per frame
@@ -76,5 +78,50 @@ public class SpRuleManager : MonoBehaviour
     public void Exit()
     {
         Application.Quit();
+    }
+
+    void SpecialRule()
+    {
+        if (SpRuleManager.SpRuleNum == 1)
+        {
+            SpRuleManager.Animals[0] += 3;
+            SpRuleManager.Animals[1] += 1;
+            SpRuleManager.Animals[2] += 2;
+
+            for (int i = 1; i <= 24; i++)
+            {
+                GameObject.FindWithTag("card" + i).transform.GetComponent<SpRuleCardControl>().ishitted = false;
+                GameObject.FindWithTag("card" + i).transform.GetComponent<SpRuleCardControl>().isOpen = false;
+                GameObject.FindWithTag("card" + i).transform.GetComponent<SpRuleCardControl>().CloseCard();
+            }
+
+            for (int i = 1; i <= 6; i++)
+            {
+                GameObject.FindWithTag("card" + i).transform.GetComponent<SpRuleCardControl>().ishitted = true;
+                GameObject.FindWithTag("card" + i).transform.GetComponent<SpRuleCardControl>().isOpen = true;
+                GameObject.FindWithTag("card" + i).transform.GetComponent<SpRuleCardControl>().ShowImage();
+            }
+        }
+        else if (SpRuleManager.SpRuleNum == 2)
+        {
+            SpRuleManager.Animals[2] += 2;
+            SpRuleManager.Animals[5] = 0; // 완성이므로 제외
+
+            for (int i = 1; i <= 24; i++)
+            {
+                GameObject.FindWithTag("card" + i).transform.GetComponent<SpRuleCardControl>().ishitted = false;
+                GameObject.FindWithTag("card" + i).transform.GetComponent<SpRuleCardControl>().isOpen = false;
+                GameObject.FindWithTag("card" + i).transform.GetComponent<SpRuleCardControl>().CloseCard();
+            }
+
+            for (int i = 6; i <= 24;)
+            {
+                GameObject.FindWithTag("card" + i).transform.GetComponent<SpRuleCardControl>().ishitted = true;
+                GameObject.FindWithTag("card" + i).transform.GetComponent<SpRuleCardControl>().isOpen = true;
+                GameObject.FindWithTag("card" + i).transform.GetComponent<SpRuleCardControl>().ShowImage();
+
+                i += 6;
+            }
+        }
     }
 }
