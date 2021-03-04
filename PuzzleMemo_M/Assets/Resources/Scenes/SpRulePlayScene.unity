@@ -427,7 +427,8 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -2266912520947077146, guid: ffe1e90c23ece1a419678efd03d34fc4, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: ffe1e90c23ece1a419678efd03d34fc4, type: 3}
 --- !u!4 &79786221 stripped
 Transform:
@@ -435,6 +436,31 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 79786220}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &79786222 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2519819370177094018, guid: ffe1e90c23ece1a419678efd03d34fc4,
+    type: 3}
+  m_PrefabInstance: {fileID: 79786220}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &79786223
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 79786222}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4a6f5642c9fc0a4988211dae50b6307, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isOpen: 0
+  ishitted: 0
+  cardPos: {x: 0, y: 0, z: 0}
+  targetPosition: {x: 0, y: 0, z: 0}
+  cardInterval: 1.2
+  AllAnimalList: []
+  CurAnimalList: []
 --- !u!4 &81946227 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 449172999499972381, guid: ffe1e90c23ece1a419678efd03d34fc4,
@@ -891,7 +917,8 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -2266912520947077146, guid: ffe1e90c23ece1a419678efd03d34fc4, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: ffe1e90c23ece1a419678efd03d34fc4, type: 3}
 --- !u!4 &219159586 stripped
 Transform:
@@ -899,6 +926,31 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 219159585}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &219159587 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2519819370177094018, guid: ffe1e90c23ece1a419678efd03d34fc4,
+    type: 3}
+  m_PrefabInstance: {fileID: 219159585}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &219159588
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 219159587}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4a6f5642c9fc0a4988211dae50b6307, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isOpen: 0
+  ishitted: 0
+  cardPos: {x: 0, y: 0, z: 0}
+  targetPosition: {x: 0, y: 0, z: 0}
+  cardInterval: 1.2
+  AllAnimalList: []
+  CurAnimalList: []
 --- !u!1 &261365735
 GameObject:
   m_ObjectHideFlags: 0
@@ -1156,7 +1208,8 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -2266912520947077146, guid: ffe1e90c23ece1a419678efd03d34fc4, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: ffe1e90c23ece1a419678efd03d34fc4, type: 3}
 --- !u!4 &306608130 stripped
 Transform:
@@ -1164,6 +1217,31 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 306608129}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &306608131 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2519819370177094018, guid: ffe1e90c23ece1a419678efd03d34fc4,
+    type: 3}
+  m_PrefabInstance: {fileID: 306608129}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &306608132
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 306608131}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4a6f5642c9fc0a4988211dae50b6307, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isOpen: 0
+  ishitted: 0
+  cardPos: {x: 0, y: 0, z: 0}
+  targetPosition: {x: 0, y: 0, z: 0}
+  cardInterval: 1.2
+  AllAnimalList: []
+  CurAnimalList: []
 --- !u!1001 &336210991
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1241,7 +1319,8 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -2266912520947077146, guid: ffe1e90c23ece1a419678efd03d34fc4, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: ffe1e90c23ece1a419678efd03d34fc4, type: 3}
 --- !u!4 &336210992 stripped
 Transform:
@@ -1249,6 +1328,31 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 336210991}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &336210993 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2519819370177094018, guid: ffe1e90c23ece1a419678efd03d34fc4,
+    type: 3}
+  m_PrefabInstance: {fileID: 336210991}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &336210994
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 336210993}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4a6f5642c9fc0a4988211dae50b6307, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isOpen: 0
+  ishitted: 0
+  cardPos: {x: 0, y: 0, z: 0}
+  targetPosition: {x: 0, y: 0, z: 0}
+  cardInterval: 1.2
+  AllAnimalList: []
+  CurAnimalList: []
 --- !u!1 &341387547
 GameObject:
   m_ObjectHideFlags: 0
@@ -2105,7 +2209,8 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -2266912520947077146, guid: ffe1e90c23ece1a419678efd03d34fc4, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: ffe1e90c23ece1a419678efd03d34fc4, type: 3}
 --- !u!4 &542014463 stripped
 Transform:
@@ -2113,6 +2218,31 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 542014462}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &542014464 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2519819370177094018, guid: ffe1e90c23ece1a419678efd03d34fc4,
+    type: 3}
+  m_PrefabInstance: {fileID: 542014462}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &542014465
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 542014464}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4a6f5642c9fc0a4988211dae50b6307, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isOpen: 0
+  ishitted: 0
+  cardPos: {x: 0, y: 0, z: 0}
+  targetPosition: {x: 0, y: 0, z: 0}
+  cardInterval: 1.2
+  AllAnimalList: []
+  CurAnimalList: []
 --- !u!1001 &554956602
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2190,7 +2320,8 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -2266912520947077146, guid: ffe1e90c23ece1a419678efd03d34fc4, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: ffe1e90c23ece1a419678efd03d34fc4, type: 3}
 --- !u!4 &554956603 stripped
 Transform:
@@ -2198,6 +2329,31 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 554956602}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &554956604 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2519819370177094018, guid: ffe1e90c23ece1a419678efd03d34fc4,
+    type: 3}
+  m_PrefabInstance: {fileID: 554956602}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &554956605
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 554956604}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4a6f5642c9fc0a4988211dae50b6307, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isOpen: 0
+  ishitted: 0
+  cardPos: {x: 0, y: 0, z: 0}
+  targetPosition: {x: 0, y: 0, z: 0}
+  cardInterval: 1.2
+  AllAnimalList: []
+  CurAnimalList: []
 --- !u!1 &558589063
 GameObject:
   m_ObjectHideFlags: 0
@@ -2515,7 +2671,8 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -2266912520947077146, guid: ffe1e90c23ece1a419678efd03d34fc4, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: ffe1e90c23ece1a419678efd03d34fc4, type: 3}
 --- !u!4 &583521701 stripped
 Transform:
@@ -2523,6 +2680,31 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 583521700}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &583521702 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2519819370177094018, guid: ffe1e90c23ece1a419678efd03d34fc4,
+    type: 3}
+  m_PrefabInstance: {fileID: 583521700}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &583521703
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 583521702}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4a6f5642c9fc0a4988211dae50b6307, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isOpen: 0
+  ishitted: 0
+  cardPos: {x: 0, y: 0, z: 0}
+  targetPosition: {x: 0, y: 0, z: 0}
+  cardInterval: 1.2
+  AllAnimalList: []
+  CurAnimalList: []
 --- !u!1 &589511375
 GameObject:
   m_ObjectHideFlags: 0
@@ -2915,7 +3097,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1910679363}
+      - m_Target: {fileID: 0}
         m_MethodName: Retry
         m_Mode: 1
         m_Arguments:
@@ -3431,7 +3613,8 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -2266912520947077146, guid: ffe1e90c23ece1a419678efd03d34fc4, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: ffe1e90c23ece1a419678efd03d34fc4, type: 3}
 --- !u!4 &862390466 stripped
 Transform:
@@ -3439,6 +3622,31 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 862390465}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &862390467 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2519819370177094018, guid: ffe1e90c23ece1a419678efd03d34fc4,
+    type: 3}
+  m_PrefabInstance: {fileID: 862390465}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &862390468
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 862390467}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4a6f5642c9fc0a4988211dae50b6307, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isOpen: 0
+  ishitted: 0
+  cardPos: {x: 0, y: 0, z: 0}
+  targetPosition: {x: 0, y: 0, z: 0}
+  cardInterval: 1.2
+  AllAnimalList: []
+  CurAnimalList: []
 --- !u!1001 &890344515
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3516,7 +3724,8 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -2266912520947077146, guid: ffe1e90c23ece1a419678efd03d34fc4, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: ffe1e90c23ece1a419678efd03d34fc4, type: 3}
 --- !u!4 &890344516 stripped
 Transform:
@@ -3524,6 +3733,31 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 890344515}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &890344517 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2519819370177094018, guid: ffe1e90c23ece1a419678efd03d34fc4,
+    type: 3}
+  m_PrefabInstance: {fileID: 890344515}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &890344518
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 890344517}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4a6f5642c9fc0a4988211dae50b6307, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isOpen: 0
+  ishitted: 0
+  cardPos: {x: 0, y: 0, z: 0}
+  targetPosition: {x: 0, y: 0, z: 0}
+  cardInterval: 1.2
+  AllAnimalList: []
+  CurAnimalList: []
 --- !u!1 &914956071
 GameObject:
   m_ObjectHideFlags: 0
@@ -3923,7 +4157,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1910679363}
+      - m_Target: {fileID: 0}
         m_MethodName: Exit
         m_Mode: 1
         m_Arguments:
@@ -4203,7 +4437,8 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -2266912520947077146, guid: ffe1e90c23ece1a419678efd03d34fc4, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: ffe1e90c23ece1a419678efd03d34fc4, type: 3}
 --- !u!4 &1106074389 stripped
 Transform:
@@ -4211,6 +4446,31 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1106074388}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1106074390 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2519819370177094018, guid: ffe1e90c23ece1a419678efd03d34fc4,
+    type: 3}
+  m_PrefabInstance: {fileID: 1106074388}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1106074391
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1106074390}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4a6f5642c9fc0a4988211dae50b6307, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isOpen: 0
+  ishitted: 0
+  cardPos: {x: 0, y: 0, z: 0}
+  targetPosition: {x: 0, y: 0, z: 0}
+  cardInterval: 1.2
+  AllAnimalList: []
+  CurAnimalList: []
 --- !u!1 &1116889580
 GameObject:
   m_ObjectHideFlags: 0
@@ -4395,7 +4655,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1172427664}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 754404abb9162864bb13dc1752e037ae, type: 3}
+  m_Script: {fileID: 11500000, guid: ff956c27a77ece441830674c939b0bd0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1229250886
@@ -4632,7 +4892,8 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -2266912520947077146, guid: ffe1e90c23ece1a419678efd03d34fc4, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: ffe1e90c23ece1a419678efd03d34fc4, type: 3}
 --- !u!4 &1233622853 stripped
 Transform:
@@ -4640,6 +4901,31 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1233622852}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1233622854 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2519819370177094018, guid: ffe1e90c23ece1a419678efd03d34fc4,
+    type: 3}
+  m_PrefabInstance: {fileID: 1233622852}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1233622855
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1233622854}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4a6f5642c9fc0a4988211dae50b6307, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isOpen: 0
+  ishitted: 0
+  cardPos: {x: 0, y: 0, z: 0}
+  targetPosition: {x: 0, y: 0, z: 0}
+  cardInterval: 1.2
+  AllAnimalList: []
+  CurAnimalList: []
 --- !u!1001 &1278480283
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4717,8 +5003,34 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -2266912520947077146, guid: ffe1e90c23ece1a419678efd03d34fc4, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: ffe1e90c23ece1a419678efd03d34fc4, type: 3}
+--- !u!1 &1278480284 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2519819370177094018, guid: ffe1e90c23ece1a419678efd03d34fc4,
+    type: 3}
+  m_PrefabInstance: {fileID: 1278480283}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1278480285
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1278480284}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4a6f5642c9fc0a4988211dae50b6307, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isOpen: 0
+  ishitted: 0
+  cardPos: {x: 0, y: 0, z: 0}
+  targetPosition: {x: 0, y: 0, z: 0}
+  cardInterval: 1.2
+  AllAnimalList: []
+  CurAnimalList: []
 --- !u!1 &1289178942
 GameObject:
   m_ObjectHideFlags: 0
@@ -4895,7 +5207,8 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -2266912520947077146, guid: ffe1e90c23ece1a419678efd03d34fc4, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: ffe1e90c23ece1a419678efd03d34fc4, type: 3}
 --- !u!4 &1336927763 stripped
 Transform:
@@ -4903,6 +5216,31 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1336927762}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1336927764 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2519819370177094018, guid: ffe1e90c23ece1a419678efd03d34fc4,
+    type: 3}
+  m_PrefabInstance: {fileID: 1336927762}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1336927765
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1336927764}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4a6f5642c9fc0a4988211dae50b6307, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isOpen: 0
+  ishitted: 0
+  cardPos: {x: 0, y: 0, z: 0}
+  targetPosition: {x: 0, y: 0, z: 0}
+  cardInterval: 1.2
+  AllAnimalList: []
+  CurAnimalList: []
 --- !u!1001 &1371611803
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4980,7 +5318,8 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -2266912520947077146, guid: ffe1e90c23ece1a419678efd03d34fc4, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: ffe1e90c23ece1a419678efd03d34fc4, type: 3}
 --- !u!4 &1371611804 stripped
 Transform:
@@ -4988,6 +5327,31 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1371611803}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1371611805 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2519819370177094018, guid: ffe1e90c23ece1a419678efd03d34fc4,
+    type: 3}
+  m_PrefabInstance: {fileID: 1371611803}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1371611806
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1371611805}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4a6f5642c9fc0a4988211dae50b6307, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isOpen: 0
+  ishitted: 0
+  cardPos: {x: 0, y: 0, z: 0}
+  targetPosition: {x: 0, y: 0, z: 0}
+  cardInterval: 1.2
+  AllAnimalList: []
+  CurAnimalList: []
 --- !u!1 &1395147862
 GameObject:
   m_ObjectHideFlags: 0
@@ -5794,7 +6158,8 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -2266912520947077146, guid: ffe1e90c23ece1a419678efd03d34fc4, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: ffe1e90c23ece1a419678efd03d34fc4, type: 3}
 --- !u!4 &1545440261 stripped
 Transform:
@@ -5802,6 +6167,31 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1545440260}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1545440262 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2519819370177094018, guid: ffe1e90c23ece1a419678efd03d34fc4,
+    type: 3}
+  m_PrefabInstance: {fileID: 1545440260}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1545440263
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1545440262}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4a6f5642c9fc0a4988211dae50b6307, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isOpen: 0
+  ishitted: 0
+  cardPos: {x: 0, y: 0, z: 0}
+  targetPosition: {x: 0, y: 0, z: 0}
+  cardInterval: 1.2
+  AllAnimalList: []
+  CurAnimalList: []
 --- !u!1 &1567354609
 GameObject:
   m_ObjectHideFlags: 0
@@ -6260,7 +6650,8 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -2266912520947077146, guid: ffe1e90c23ece1a419678efd03d34fc4, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: ffe1e90c23ece1a419678efd03d34fc4, type: 3}
 --- !u!4 &1654605859 stripped
 Transform:
@@ -6268,6 +6659,31 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1654605858}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1654605860 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2519819370177094018, guid: ffe1e90c23ece1a419678efd03d34fc4,
+    type: 3}
+  m_PrefabInstance: {fileID: 1654605858}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1654605861
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1654605860}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4a6f5642c9fc0a4988211dae50b6307, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isOpen: 0
+  ishitted: 0
+  cardPos: {x: 0, y: 0, z: 0}
+  targetPosition: {x: 0, y: 0, z: 0}
+  cardInterval: 1.2
+  AllAnimalList: []
+  CurAnimalList: []
 --- !u!1 &1664775033
 GameObject:
   m_ObjectHideFlags: 0
@@ -6426,7 +6842,8 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -2266912520947077146, guid: ffe1e90c23ece1a419678efd03d34fc4, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: ffe1e90c23ece1a419678efd03d34fc4, type: 3}
 --- !u!4 &1667476546 stripped
 Transform:
@@ -6434,6 +6851,31 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1667476545}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1667476547 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2519819370177094018, guid: ffe1e90c23ece1a419678efd03d34fc4,
+    type: 3}
+  m_PrefabInstance: {fileID: 1667476545}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1667476548
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1667476547}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4a6f5642c9fc0a4988211dae50b6307, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isOpen: 0
+  ishitted: 0
+  cardPos: {x: 0, y: 0, z: 0}
+  targetPosition: {x: 0, y: 0, z: 0}
+  cardInterval: 1.2
+  AllAnimalList: []
+  CurAnimalList: []
 --- !u!1 &1671021369
 GameObject:
   m_ObjectHideFlags: 0
@@ -6565,7 +7007,8 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -2266912520947077146, guid: ffe1e90c23ece1a419678efd03d34fc4, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: ffe1e90c23ece1a419678efd03d34fc4, type: 3}
 --- !u!4 &1695937067 stripped
 Transform:
@@ -6573,6 +7016,31 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1695937066}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1695937068 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2519819370177094018, guid: ffe1e90c23ece1a419678efd03d34fc4,
+    type: 3}
+  m_PrefabInstance: {fileID: 1695937066}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1695937069
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1695937068}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4a6f5642c9fc0a4988211dae50b6307, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isOpen: 0
+  ishitted: 0
+  cardPos: {x: 0, y: 0, z: 0}
+  targetPosition: {x: 0, y: 0, z: 0}
+  cardInterval: 1.2
+  AllAnimalList: []
+  CurAnimalList: []
 --- !u!1 &1708257114
 GameObject:
   m_ObjectHideFlags: 0
@@ -6612,7 +7080,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -135, y: -192}
+  m_AnchoredPosition: {x: -135, y: -170}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1708257116
@@ -7092,7 +7560,8 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -2266912520947077146, guid: ffe1e90c23ece1a419678efd03d34fc4, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: ffe1e90c23ece1a419678efd03d34fc4, type: 3}
 --- !u!4 &1843886341 stripped
 Transform:
@@ -7100,6 +7569,31 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1843886340}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1843886342 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2519819370177094018, guid: ffe1e90c23ece1a419678efd03d34fc4,
+    type: 3}
+  m_PrefabInstance: {fileID: 1843886340}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1843886343
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1843886342}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4a6f5642c9fc0a4988211dae50b6307, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isOpen: 0
+  ishitted: 0
+  cardPos: {x: 0, y: 0, z: 0}
+  targetPosition: {x: 0, y: 0, z: 0}
+  cardInterval: 1.2
+  AllAnimalList: []
+  CurAnimalList: []
 --- !u!1001 &1868592536
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7177,7 +7671,8 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -2266912520947077146, guid: ffe1e90c23ece1a419678efd03d34fc4, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: ffe1e90c23ece1a419678efd03d34fc4, type: 3}
 --- !u!4 &1868592537 stripped
 Transform:
@@ -7185,6 +7680,31 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1868592536}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1868592538 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2519819370177094018, guid: ffe1e90c23ece1a419678efd03d34fc4,
+    type: 3}
+  m_PrefabInstance: {fileID: 1868592536}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1868592539
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1868592538}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4a6f5642c9fc0a4988211dae50b6307, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isOpen: 0
+  ishitted: 0
+  cardPos: {x: 0, y: 0, z: 0}
+  targetPosition: {x: 0, y: 0, z: 0}
+  cardInterval: 1.2
+  AllAnimalList: []
+  CurAnimalList: []
 --- !u!1 &1877526371
 GameObject:
   m_ObjectHideFlags: 0
@@ -7332,7 +7852,8 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -2266912520947077146, guid: ffe1e90c23ece1a419678efd03d34fc4, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: ffe1e90c23ece1a419678efd03d34fc4, type: 3}
 --- !u!4 &1883575666 stripped
 Transform:
@@ -7340,6 +7861,31 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1883575665}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1883575667 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2519819370177094018, guid: ffe1e90c23ece1a419678efd03d34fc4,
+    type: 3}
+  m_PrefabInstance: {fileID: 1883575665}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1883575668
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1883575667}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4a6f5642c9fc0a4988211dae50b6307, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isOpen: 0
+  ishitted: 0
+  cardPos: {x: 0, y: 0, z: 0}
+  targetPosition: {x: 0, y: 0, z: 0}
+  cardInterval: 1.2
+  AllAnimalList: []
+  CurAnimalList: []
 --- !u!1 &1884005345
 GameObject:
   m_ObjectHideFlags: 0
@@ -7398,7 +7944,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1910679362}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: af6cb2addc64d5446a4f7b0249fb84d3, type: 3}
+  m_Script: {fileID: 11500000, guid: 43af05c8f26c153408f0affd9ed33a7a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   gameOverPanel: {fileID: 1508787328}
@@ -7493,7 +8039,8 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -2266912520947077146, guid: ffe1e90c23ece1a419678efd03d34fc4, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: ffe1e90c23ece1a419678efd03d34fc4, type: 3}
 --- !u!4 &1938119624 stripped
 Transform:
@@ -7501,6 +8048,31 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1938119623}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1938119625 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2519819370177094018, guid: ffe1e90c23ece1a419678efd03d34fc4,
+    type: 3}
+  m_PrefabInstance: {fileID: 1938119623}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1938119626
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1938119625}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4a6f5642c9fc0a4988211dae50b6307, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isOpen: 0
+  ishitted: 0
+  cardPos: {x: 0, y: 0, z: 0}
+  targetPosition: {x: 0, y: 0, z: 0}
+  cardInterval: 1.2
+  AllAnimalList: []
+  CurAnimalList: []
 --- !u!1 &1950899538
 GameObject:
   m_ObjectHideFlags: 0
@@ -8050,7 +8622,8 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -2266912520947077146, guid: ffe1e90c23ece1a419678efd03d34fc4, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: ffe1e90c23ece1a419678efd03d34fc4, type: 3}
 --- !u!4 &2135699869 stripped
 Transform:
@@ -8058,6 +8631,31 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 2135699868}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2135699870 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2519819370177094018, guid: ffe1e90c23ece1a419678efd03d34fc4,
+    type: 3}
+  m_PrefabInstance: {fileID: 2135699868}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2135699871
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2135699870}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4a6f5642c9fc0a4988211dae50b6307, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isOpen: 0
+  ishitted: 0
+  cardPos: {x: 0, y: 0, z: 0}
+  targetPosition: {x: 0, y: 0, z: 0}
+  cardInterval: 1.2
+  AllAnimalList: []
+  CurAnimalList: []
 --- !u!1 &2136187944
 GameObject:
   m_ObjectHideFlags: 0
@@ -8200,5 +8798,31 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -2266912520947077146, guid: ffe1e90c23ece1a419678efd03d34fc4, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: ffe1e90c23ece1a419678efd03d34fc4, type: 3}
+--- !u!1 &3214637494550557094 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2519819370177094018, guid: ffe1e90c23ece1a419678efd03d34fc4,
+    type: 3}
+  m_PrefabInstance: {fileID: 3214637494550557093}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &3214637494550557095
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3214637494550557094}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4a6f5642c9fc0a4988211dae50b6307, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isOpen: 0
+  ishitted: 0
+  cardPos: {x: 0, y: 0, z: 0}
+  targetPosition: {x: 0, y: 0, z: 0}
+  cardInterval: 1.2
+  AllAnimalList: []
+  CurAnimalList: []
