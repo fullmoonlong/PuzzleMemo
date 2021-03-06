@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
+using UnityEngine.UI;
 
 public class DoubleModeCardControl : MonoBehaviour
 {
@@ -32,10 +33,12 @@ public class DoubleModeCardControl : MonoBehaviour
     public float cardInterval = 1.2f;
 
     Animator anim;
+    public static string DoubleMap;
 
     // Start is called before the first frame update
     void Start()
     {
+        DoubleMap = PlayerPrefs.GetString("DoubleMap");
         anim = GetComponent<Animator>();
         SetIsMyTurn(true);
 
@@ -44,14 +47,27 @@ public class DoubleModeCardControl : MonoBehaviour
 
         if (tag.Substring(0, 5) == "board")
         {
-            Color color = transform.GetComponent<Renderer>().material.color;
+            //Color color = transform.GetComponent<Renderer>().material.color;
 
             //transform.GetComponent<MeshRenderer>().material.color = new Color(0.3f, 0.3f, 0.3f, 0f); //흐리게 만들기
 
             //보드 번호 가져오기
             int boardNum = int.Parse(transform.tag.Substring(5));
 
-            transform.GetComponent<Renderer>().material.mainTexture = Resources.Load("single_puzzle2_" + boardNum.ToString()) as Texture2D;
+            if (DoubleMap == "Antarctica")
+            {
+                transform.GetComponent<Image>().sprite = Resources.Load<Sprite>("card_back" + boardNum.ToString());
+                //transform.GetComponent<Image>().sprite = Resources.Load<Sprite>("Puzzle/Basic/single_puzzle2_" + boardNum.ToString());
+            }
+            else if (DoubleMap == "Desert")
+            {
+                transform.GetComponent<Image>().sprite = Resources.Load<Sprite>("medal" + boardNum.ToString());
+                //transform.GetComponent<Image>().sprite = Resources.Load<Sprite>("Puzzle/Basic/single_puzzle2_" + boardNum.ToString());
+            }
+            else
+            {
+                transform.GetComponent<Image>().sprite = Resources.Load<Sprite>("Puzzle/Basic/single_puzzle2_" + boardNum.ToString());
+            }
         }
 
         if (tag.Substring(0, 4) == "card")//특수카드일 경우에, 20위치에 총 카드 갯수
@@ -132,7 +148,21 @@ public class DoubleModeCardControl : MonoBehaviour
 
     public void ShowImage()
     {
-        transform.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("single_puzzle_" + imgNum.ToString());
+        if(DoubleMap == "Antarctica")
+        {
+            transform.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("card_back");
+            //transform.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("single_puzzle_" + imgNum.ToString());
+        }
+        else if (DoubleMap == "Sea")
+        {
+            transform.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("medal");
+            //transform.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("single_puzzle_" + imgNum.ToString());
+        }
+        else
+        {
+
+            transform.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Puzzle/Basic/single_puzzle_" + imgNum.ToString());
+        }
     }
 
     public void HideImage()

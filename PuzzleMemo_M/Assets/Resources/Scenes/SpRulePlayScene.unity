@@ -132,6 +132,7 @@ GameObject:
   - component: {fileID: 3650390}
   - component: {fileID: 3650392}
   - component: {fileID: 3650391}
+  - component: {fileID: 3650393}
   m_Layer: 5
   m_Name: Board14
   m_TagString: board14
@@ -195,6 +196,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3650389}
   m_CullTransparentMesh: 0
+--- !u!114 &3650393
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3650389}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4a6f5642c9fc0a4988211dae50b6307, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isOpen: 0
+  ishitted: 0
+  cardPos: {x: 0, y: 0, z: 0}
+  targetPosition: {x: 0, y: 0, z: 0}
+  cardInterval: 1.2
+  AllAnimalList: []
+  CurAnimalList: []
 --- !u!1 &24106623
 GameObject:
   m_ObjectHideFlags: 0
@@ -206,6 +226,7 @@ GameObject:
   - component: {fileID: 24106624}
   - component: {fileID: 24106626}
   - component: {fileID: 24106625}
+  - component: {fileID: 24106627}
   m_Layer: 5
   m_Name: Board10
   m_TagString: board10
@@ -269,6 +290,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 24106623}
   m_CullTransparentMesh: 0
+--- !u!114 &24106627
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 24106623}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4a6f5642c9fc0a4988211dae50b6307, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isOpen: 0
+  ishitted: 0
+  cardPos: {x: 0, y: 0, z: 0}
+  targetPosition: {x: 0, y: 0, z: 0}
+  cardInterval: 1.2
+  AllAnimalList: []
+  CurAnimalList: []
 --- !u!1 &47176173
 GameObject:
   m_ObjectHideFlags: 0
@@ -294,7 +334,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 47176173}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.51, y: -4.61, z: 0}
+  m_LocalPosition: {x: -0.51, y: -4.41, z: 0}
   m_LocalScale: {x: 0.1, y: 0.1, z: 1}
   m_Children: []
   m_Father: {fileID: 1421225729}
@@ -607,7 +647,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 152812657}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.99, y: -3.45, z: 0}
+  m_LocalPosition: {x: -1.99, y: -3.2499998, z: 0}
   m_LocalScale: {x: 0.1, y: 0.1, z: 1}
   m_Children: []
   m_Father: {fileID: 1421225729}
@@ -703,7 +743,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 194252056}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.06, y: -4.67, z: 0}
+  m_LocalPosition: {x: -1.06, y: -4.47, z: 0}
   m_LocalScale: {x: 0.1, y: 0.1, z: 1}
   m_Children: []
   m_Father: {fileID: 1421225729}
@@ -834,7 +874,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 201623260}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 3.55, z: 0}
+  m_LocalPosition: {x: 0, y: 3.7500002, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -976,7 +1016,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 261365735}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.9, y: -2.96, z: 0}
+  m_LocalPosition: {x: -1.9, y: -2.7599998, z: 0}
   m_LocalScale: {x: 0.4, y: 0.4, z: 1}
   m_Children: []
   m_Father: {fileID: 1884005346}
@@ -1364,6 +1404,7 @@ GameObject:
   - component: {fileID: 341387548}
   - component: {fileID: 341387550}
   - component: {fileID: 341387549}
+  - component: {fileID: 341387551}
   m_Layer: 5
   m_Name: Board17
   m_TagString: board17
@@ -1427,6 +1468,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 341387547}
   m_CullTransparentMesh: 0
+--- !u!114 &341387551
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 341387547}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4a6f5642c9fc0a4988211dae50b6307, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isOpen: 0
+  ishitted: 0
+  cardPos: {x: 0, y: 0, z: 0}
+  targetPosition: {x: 0, y: 0, z: 0}
+  cardInterval: 1.2
+  AllAnimalList: []
+  CurAnimalList: []
 --- !u!1 &387641615
 GameObject:
   m_ObjectHideFlags: 0
@@ -1452,7 +1512,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 387641615}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.05, y: -2.91, z: 0}
+  m_LocalPosition: {x: -1.05, y: -2.7099998, z: 0}
   m_LocalScale: {x: 0.1, y: 0.1, z: 1}
   m_Children: []
   m_Father: {fileID: 1421225729}
@@ -1533,7 +1593,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 393630166}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.05, y: -3.82, z: 0}
+  m_LocalPosition: {x: 2.05, y: -3.6199996, z: 0}
   m_LocalScale: {x: 0.1, y: 0.1, z: 1}
   m_Children: []
   m_Father: {fileID: 1421225729}
@@ -1614,7 +1674,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 396728863}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.51, y: -4.55, z: 0}
+  m_LocalPosition: {x: -1.51, y: -4.35, z: 0}
   m_LocalScale: {x: 0.1, y: 0.1, z: 1}
   m_Children: []
   m_Father: {fileID: 1421225729}
@@ -1681,6 +1741,7 @@ GameObject:
   - component: {fileID: 410618212}
   - component: {fileID: 410618214}
   - component: {fileID: 410618213}
+  - component: {fileID: 410618215}
   m_Layer: 5
   m_Name: Board2
   m_TagString: board2
@@ -1744,6 +1805,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 410618211}
   m_CullTransparentMesh: 0
+--- !u!114 &410618215
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 410618211}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4a6f5642c9fc0a4988211dae50b6307, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isOpen: 0
+  ishitted: 0
+  cardPos: {x: 0, y: 0, z: 0}
+  targetPosition: {x: 0, y: 0, z: 0}
+  cardInterval: 1.2
+  AllAnimalList: []
+  CurAnimalList: []
 --- !u!1 &440436720
 GameObject:
   m_ObjectHideFlags: 0
@@ -1769,7 +1849,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 440436720}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.06, y: -3.48, z: 0}
+  m_LocalPosition: {x: 2.06, y: -3.2799997, z: 0}
   m_LocalScale: {x: 0.1, y: 0.1, z: 1}
   m_Children: []
   m_Father: {fileID: 1421225729}
@@ -1965,7 +2045,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 498162996}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.28, z: 0}
+  m_LocalPosition: {x: 0, y: 0.55, z: 0}
   m_LocalScale: {x: 0.45045, y: 0.474, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1988,6 +2068,7 @@ GameObject:
   - component: {fileID: 530987745}
   - component: {fileID: 530987747}
   - component: {fileID: 530987746}
+  - component: {fileID: 530987748}
   m_Layer: 5
   m_Name: Board21
   m_TagString: board21
@@ -2051,6 +2132,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 530987744}
   m_CullTransparentMesh: 0
+--- !u!114 &530987748
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 530987744}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4a6f5642c9fc0a4988211dae50b6307, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isOpen: 0
+  ishitted: 0
+  cardPos: {x: 0, y: 0, z: 0}
+  targetPosition: {x: 0, y: 0, z: 0}
+  cardInterval: 1.2
+  AllAnimalList: []
+  CurAnimalList: []
 --- !u!1 &539659181
 GameObject:
   m_ObjectHideFlags: 0
@@ -2076,7 +2176,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 539659181}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.08, y: -3.07, z: 0}
+  m_LocalPosition: {x: 2.08, y: -2.8699996, z: 0}
   m_LocalScale: {x: 0.1, y: 0.1, z: 1}
   m_Children: []
   m_Father: {fileID: 1421225729}
@@ -2457,7 +2557,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 565464543}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.01, y: -4.66, z: 0}
+  m_LocalPosition: {x: -0.01, y: -4.4599996, z: 0}
   m_LocalScale: {x: 0.1, y: 0.1, z: 1}
   m_Children: []
   m_Father: {fileID: 1421225729}
@@ -2538,7 +2638,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 577254022}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.99, y: -3.85, z: 0}
+  m_LocalPosition: {x: -1.99, y: -3.6499996, z: 0}
   m_LocalScale: {x: 0.1, y: 0.1, z: 1}
   m_Children: []
   m_Father: {fileID: 1421225729}
@@ -2716,6 +2816,7 @@ GameObject:
   - component: {fileID: 589511376}
   - component: {fileID: 589511378}
   - component: {fileID: 589511377}
+  - component: {fileID: 589511379}
   m_Layer: 5
   m_Name: Board12
   m_TagString: board12
@@ -2779,6 +2880,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 589511375}
   m_CullTransparentMesh: 0
+--- !u!114 &589511379
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 589511375}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4a6f5642c9fc0a4988211dae50b6307, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isOpen: 0
+  ishitted: 0
+  cardPos: {x: 0, y: 0, z: 0}
+  targetPosition: {x: 0, y: 0, z: 0}
+  cardInterval: 1.2
+  AllAnimalList: []
+  CurAnimalList: []
 --- !u!1 &590067234
 GameObject:
   m_ObjectHideFlags: 0
@@ -2790,6 +2910,7 @@ GameObject:
   - component: {fileID: 590067235}
   - component: {fileID: 590067237}
   - component: {fileID: 590067236}
+  - component: {fileID: 590067238}
   m_Layer: 5
   m_Name: Board9
   m_TagString: board9
@@ -2853,6 +2974,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 590067234}
   m_CullTransparentMesh: 0
+--- !u!114 &590067238
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 590067234}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4a6f5642c9fc0a4988211dae50b6307, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isOpen: 0
+  ishitted: 0
+  cardPos: {x: 0, y: 0, z: 0}
+  targetPosition: {x: 0, y: 0, z: 0}
+  cardInterval: 1.2
+  AllAnimalList: []
+  CurAnimalList: []
 --- !u!1 &617025739
 GameObject:
   m_ObjectHideFlags: 0
@@ -2878,7 +3018,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 617025739}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.92, y: -2.96, z: 0}
+  m_LocalPosition: {x: 0.92, y: -2.7599998, z: 0}
   m_LocalScale: {x: 0.1, y: 0.1, z: 1}
   m_Children: []
   m_Father: {fileID: 1421225729}
@@ -2959,7 +3099,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 628318185}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.97, y: -4.62, z: 0}
+  m_LocalPosition: {x: -1.97, y: -4.4199996, z: 0}
   m_LocalScale: {x: 0.1, y: 0.1, z: 1}
   m_Children: []
   m_Father: {fileID: 1421225729}
@@ -3170,7 +3310,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 698017025}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.07, y: -4.57, z: 0}
+  m_LocalPosition: {x: 2.07, y: -4.37, z: 0}
   m_LocalScale: {x: 0.1, y: 0.1, z: 1}
   m_Children: []
   m_Father: {fileID: 1421225729}
@@ -3237,6 +3377,7 @@ GameObject:
   - component: {fileID: 793983817}
   - component: {fileID: 793983819}
   - component: {fileID: 793983818}
+  - component: {fileID: 793983820}
   m_Layer: 5
   m_Name: Board11
   m_TagString: board11
@@ -3300,6 +3441,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 793983816}
   m_CullTransparentMesh: 0
+--- !u!114 &793983820
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 793983816}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4a6f5642c9fc0a4988211dae50b6307, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isOpen: 0
+  ishitted: 0
+  cardPos: {x: 0, y: 0, z: 0}
+  targetPosition: {x: 0, y: 0, z: 0}
+  cardInterval: 1.2
+  AllAnimalList: []
+  CurAnimalList: []
 --- !u!1 &806618578
 GameObject:
   m_ObjectHideFlags: 0
@@ -3375,7 +3535,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 806618578}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -3.78, z: 0}
+  m_LocalPosition: {x: 0, y: -3.5799997, z: 0}
   m_LocalScale: {x: 0.45, y: 0.35, z: 1}
   m_Children: []
   m_Father: {fileID: 1421225729}
@@ -3406,7 +3566,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 830694207}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.48, y: -2.94, z: 0}
+  m_LocalPosition: {x: 0.48, y: -2.7399998, z: 0}
   m_LocalScale: {x: 0.1, y: 0.1, z: 1}
   m_Children: []
   m_Father: {fileID: 1421225729}
@@ -3473,6 +3633,7 @@ GameObject:
   - component: {fileID: 844840439}
   - component: {fileID: 844840441}
   - component: {fileID: 844840440}
+  - component: {fileID: 844840442}
   m_Layer: 5
   m_Name: Board19
   m_TagString: board19
@@ -3536,6 +3697,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 844840438}
   m_CullTransparentMesh: 0
+--- !u!114 &844840442
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 844840438}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4a6f5642c9fc0a4988211dae50b6307, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isOpen: 0
+  ishitted: 0
+  cardPos: {x: 0, y: 0, z: 0}
+  targetPosition: {x: 0, y: 0, z: 0}
+  cardInterval: 1.2
+  AllAnimalList: []
+  CurAnimalList: []
 --- !u!1001 &862390465
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3864,7 +4044,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 922076388}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.05, y: -4.2, z: 0}
+  m_LocalPosition: {x: 2.05, y: -3.9999995, z: 0}
   m_LocalScale: {x: 0.1, y: 0.1, z: 1}
   m_Children: []
   m_Father: {fileID: 1421225729}
@@ -3945,7 +4125,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 937551294}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2, y: -2.96, z: 0}
+  m_LocalPosition: {x: -2, y: -2.7599998, z: 0}
   m_LocalScale: {x: 0.1, y: 0.1, z: 1}
   m_Children: []
   m_Father: {fileID: 1421225729}
@@ -4012,6 +4192,7 @@ GameObject:
   - component: {fileID: 971194260}
   - component: {fileID: 971194262}
   - component: {fileID: 971194261}
+  - component: {fileID: 971194263}
   m_Layer: 5
   m_Name: Board3
   m_TagString: board3
@@ -4075,6 +4256,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 971194259}
   m_CullTransparentMesh: 0
+--- !u!114 &971194263
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 971194259}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4a6f5642c9fc0a4988211dae50b6307, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isOpen: 0
+  ishitted: 0
+  cardPos: {x: 0, y: 0, z: 0}
+  targetPosition: {x: 0, y: 0, z: 0}
+  cardInterval: 1.2
+  AllAnimalList: []
+  CurAnimalList: []
 --- !u!1 &975313584
 GameObject:
   m_ObjectHideFlags: 0
@@ -4230,7 +4430,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1027909363}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.5, y: -2.96, z: 0}
+  m_LocalPosition: {x: -1.5, y: -2.7599998, z: 0}
   m_LocalScale: {x: 0.1, y: 0.1, z: 1}
   m_Children: []
   m_Father: {fileID: 1421225729}
@@ -4297,6 +4497,7 @@ GameObject:
   - component: {fileID: 1033792666}
   - component: {fileID: 1033792668}
   - component: {fileID: 1033792667}
+  - component: {fileID: 1033792669}
   m_Layer: 5
   m_Name: Board22
   m_TagString: board22
@@ -4360,6 +4561,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1033792665}
   m_CullTransparentMesh: 0
+--- !u!114 &1033792669
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1033792665}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4a6f5642c9fc0a4988211dae50b6307, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isOpen: 0
+  ishitted: 0
+  cardPos: {x: 0, y: 0, z: 0}
+  targetPosition: {x: 0, y: 0, z: 0}
+  cardInterval: 1.2
+  AllAnimalList: []
+  CurAnimalList: []
 --- !u!1001 &1106074388
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4752,6 +4972,7 @@ GameObject:
   - component: {fileID: 1231379587}
   - component: {fileID: 1231379589}
   - component: {fileID: 1231379588}
+  - component: {fileID: 1231379590}
   m_Layer: 5
   m_Name: Board5
   m_TagString: board5
@@ -4815,6 +5036,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1231379586}
   m_CullTransparentMesh: 0
+--- !u!114 &1231379590
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1231379586}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4a6f5642c9fc0a4988211dae50b6307, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isOpen: 0
+  ishitted: 0
+  cardPos: {x: 0, y: 0, z: 0}
+  targetPosition: {x: 0, y: 0, z: 0}
+  cardInterval: 1.2
+  AllAnimalList: []
+  CurAnimalList: []
 --- !u!1001 &1233622852
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5363,6 +5603,7 @@ GameObject:
   - component: {fileID: 1395147863}
   - component: {fileID: 1395147865}
   - component: {fileID: 1395147864}
+  - component: {fileID: 1395147866}
   m_Layer: 5
   m_Name: Board23
   m_TagString: board23
@@ -5426,6 +5667,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1395147862}
   m_CullTransparentMesh: 0
+--- !u!114 &1395147866
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1395147862}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4a6f5642c9fc0a4988211dae50b6307, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isOpen: 0
+  ishitted: 0
+  cardPos: {x: 0, y: 0, z: 0}
+  targetPosition: {x: 0, y: 0, z: 0}
+  cardInterval: 1.2
+  AllAnimalList: []
+  CurAnimalList: []
 --- !u!1 &1397150975
 GameObject:
   m_ObjectHideFlags: 0
@@ -5437,6 +5697,7 @@ GameObject:
   - component: {fileID: 1397150976}
   - component: {fileID: 1397150978}
   - component: {fileID: 1397150977}
+  - component: {fileID: 1397150979}
   m_Layer: 5
   m_Name: Board1
   m_TagString: board1
@@ -5500,6 +5761,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1397150975}
   m_CullTransparentMesh: 0
+--- !u!114 &1397150979
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1397150975}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4a6f5642c9fc0a4988211dae50b6307, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isOpen: 0
+  ishitted: 0
+  cardPos: {x: 0, y: 0, z: 0}
+  targetPosition: {x: 0, y: 0, z: 0}
+  cardInterval: 1.2
+  AllAnimalList: []
+  CurAnimalList: []
 --- !u!1 &1421225728
 GameObject:
   m_ObjectHideFlags: 0
@@ -5566,6 +5846,7 @@ GameObject:
   - component: {fileID: 1436376151}
   - component: {fileID: 1436376153}
   - component: {fileID: 1436376152}
+  - component: {fileID: 1436376154}
   m_Layer: 5
   m_Name: Board6
   m_TagString: board6
@@ -5629,6 +5910,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1436376150}
   m_CullTransparentMesh: 0
+--- !u!114 &1436376154
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1436376150}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4a6f5642c9fc0a4988211dae50b6307, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isOpen: 0
+  ishitted: 0
+  cardPos: {x: 0, y: 0, z: 0}
+  targetPosition: {x: 0, y: 0, z: 0}
+  cardInterval: 1.2
+  AllAnimalList: []
+  CurAnimalList: []
 --- !u!1 &1438553843
 GameObject:
   m_ObjectHideFlags: 0
@@ -5705,6 +6005,7 @@ GameObject:
   - component: {fileID: 1468548674}
   - component: {fileID: 1468548676}
   - component: {fileID: 1468548675}
+  - component: {fileID: 1468548677}
   m_Layer: 5
   m_Name: Board7
   m_TagString: board7
@@ -5768,6 +6069,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1468548673}
   m_CullTransparentMesh: 0
+--- !u!114 &1468548677
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1468548673}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4a6f5642c9fc0a4988211dae50b6307, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isOpen: 0
+  ishitted: 0
+  cardPos: {x: 0, y: 0, z: 0}
+  targetPosition: {x: 0, y: 0, z: 0}
+  cardInterval: 1.2
+  AllAnimalList: []
+  CurAnimalList: []
 --- !u!1 &1485066384
 GameObject:
   m_ObjectHideFlags: 0
@@ -5779,6 +6099,7 @@ GameObject:
   - component: {fileID: 1485066385}
   - component: {fileID: 1485066387}
   - component: {fileID: 1485066386}
+  - component: {fileID: 1485066388}
   m_Layer: 5
   m_Name: Board18
   m_TagString: board18
@@ -5842,6 +6163,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1485066384}
   m_CullTransparentMesh: 0
+--- !u!114 &1485066388
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1485066384}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4a6f5642c9fc0a4988211dae50b6307, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isOpen: 0
+  ishitted: 0
+  cardPos: {x: 0, y: 0, z: 0}
+  targetPosition: {x: 0, y: 0, z: 0}
+  cardInterval: 1.2
+  AllAnimalList: []
+  CurAnimalList: []
 --- !u!1 &1494921951
 GameObject:
   m_ObjectHideFlags: 0
@@ -5867,7 +6207,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1494921951}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.01, y: -2.9, z: 0}
+  m_LocalPosition: {x: 0.01, y: -2.6999998, z: 0}
   m_LocalScale: {x: 0.1, y: 0.1, z: 1}
   m_Children: []
   m_Father: {fileID: 1421225729}
@@ -6203,6 +6543,7 @@ GameObject:
   - component: {fileID: 1567354610}
   - component: {fileID: 1567354612}
   - component: {fileID: 1567354611}
+  - component: {fileID: 1567354613}
   m_Layer: 5
   m_Name: Board8
   m_TagString: board8
@@ -6266,6 +6607,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1567354609}
   m_CullTransparentMesh: 0
+--- !u!114 &1567354613
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1567354609}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4a6f5642c9fc0a4988211dae50b6307, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isOpen: 0
+  ishitted: 0
+  cardPos: {x: 0, y: 0, z: 0}
+  targetPosition: {x: 0, y: 0, z: 0}
+  cardInterval: 1.2
+  AllAnimalList: []
+  CurAnimalList: []
 --- !u!1 &1591160722
 GameObject:
   m_ObjectHideFlags: 0
@@ -6277,6 +6637,7 @@ GameObject:
   - component: {fileID: 1591160723}
   - component: {fileID: 1591160725}
   - component: {fileID: 1591160724}
+  - component: {fileID: 1591160726}
   m_Layer: 5
   m_Name: Board13
   m_TagString: board13
@@ -6340,6 +6701,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1591160722}
   m_CullTransparentMesh: 0
+--- !u!114 &1591160726
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1591160722}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4a6f5642c9fc0a4988211dae50b6307, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isOpen: 0
+  ishitted: 0
+  cardPos: {x: 0, y: 0, z: 0}
+  targetPosition: {x: 0, y: 0, z: 0}
+  cardInterval: 1.2
+  AllAnimalList: []
+  CurAnimalList: []
 --- !u!1 &1610349416
 GameObject:
   m_ObjectHideFlags: 0
@@ -6351,6 +6731,7 @@ GameObject:
   - component: {fileID: 1610349417}
   - component: {fileID: 1610349419}
   - component: {fileID: 1610349418}
+  - component: {fileID: 1610349420}
   m_Layer: 5
   m_Name: Board20
   m_TagString: board20
@@ -6414,6 +6795,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1610349416}
   m_CullTransparentMesh: 0
+--- !u!114 &1610349420
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1610349416}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4a6f5642c9fc0a4988211dae50b6307, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isOpen: 0
+  ishitted: 0
+  cardPos: {x: 0, y: 0, z: 0}
+  targetPosition: {x: 0, y: 0, z: 0}
+  cardInterval: 1.2
+  AllAnimalList: []
+  CurAnimalList: []
 --- !u!1 &1636540481
 GameObject:
   m_ObjectHideFlags: 0
@@ -6439,7 +6839,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1636540481}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.64, y: -4.66, z: 0}
+  m_LocalPosition: {x: 1.64, y: -4.4599996, z: 0}
   m_LocalScale: {x: 0.1, y: 0.1, z: 1}
   m_Children: []
   m_Father: {fileID: 1421225729}
@@ -6709,7 +7109,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1664775033}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.51, y: -2.94, z: 0}
+  m_LocalPosition: {x: -0.51, y: -2.7399998, z: 0}
   m_LocalScale: {x: 0.1, y: 0.1, z: 1}
   m_Children: []
   m_Father: {fileID: 1421225729}
@@ -7119,6 +7519,7 @@ GameObject:
   - component: {fileID: 1718455215}
   - component: {fileID: 1718455217}
   - component: {fileID: 1718455216}
+  - component: {fileID: 1718455218}
   m_Layer: 5
   m_Name: Board4
   m_TagString: board4
@@ -7182,6 +7583,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1718455214}
   m_CullTransparentMesh: 0
+--- !u!114 &1718455218
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1718455214}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4a6f5642c9fc0a4988211dae50b6307, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isOpen: 0
+  ishitted: 0
+  cardPos: {x: 0, y: 0, z: 0}
+  targetPosition: {x: 0, y: 0, z: 0}
+  cardInterval: 1.2
+  AllAnimalList: []
+  CurAnimalList: []
 --- !u!1 &1771816888
 GameObject:
   m_ObjectHideFlags: 0
@@ -7207,7 +7627,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1771816888}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.67, y: -2.96, z: 0}
+  m_LocalPosition: {x: 1.67, y: -2.7599998, z: 0}
   m_LocalScale: {x: 0.1, y: 0.1, z: 1}
   m_Children: []
   m_Father: {fileID: 1421225729}
@@ -7288,7 +7708,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1781792533}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.43, y: -4.54, z: 0}
+  m_LocalPosition: {x: 0.43, y: -4.3399997, z: 0}
   m_LocalScale: {x: 0.1, y: 0.1, z: 1}
   m_Children: []
   m_Father: {fileID: 1421225729}
@@ -7355,6 +7775,7 @@ GameObject:
   - component: {fileID: 1823462748}
   - component: {fileID: 1823462750}
   - component: {fileID: 1823462749}
+  - component: {fileID: 1823462751}
   m_Layer: 5
   m_Name: Board24
   m_TagString: board24
@@ -7418,6 +7839,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1823462747}
   m_CullTransparentMesh: 0
+--- !u!114 &1823462751
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1823462747}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4a6f5642c9fc0a4988211dae50b6307, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isOpen: 0
+  ishitted: 0
+  cardPos: {x: 0, y: 0, z: 0}
+  targetPosition: {x: 0, y: 0, z: 0}
+  cardInterval: 1.2
+  AllAnimalList: []
+  CurAnimalList: []
 --- !u!1 &1832635594
 GameObject:
   m_ObjectHideFlags: 0
@@ -8084,6 +8524,7 @@ GameObject:
   - component: {fileID: 1950899539}
   - component: {fileID: 1950899541}
   - component: {fileID: 1950899540}
+  - component: {fileID: 1950899542}
   m_Layer: 5
   m_Name: Board16
   m_TagString: board16
@@ -8147,6 +8588,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1950899538}
   m_CullTransparentMesh: 0
+--- !u!114 &1950899542
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1950899538}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4a6f5642c9fc0a4988211dae50b6307, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isOpen: 0
+  ishitted: 0
+  cardPos: {x: 0, y: 0, z: 0}
+  targetPosition: {x: 0, y: 0, z: 0}
+  cardInterval: 1.2
+  AllAnimalList: []
+  CurAnimalList: []
 --- !u!1 &1974526726
 GameObject:
   m_ObjectHideFlags: 0
@@ -8172,7 +8632,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1974526726}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.1, y: -2.96, z: 0}
+  m_LocalPosition: {x: -2.1, y: -2.7599998, z: 0}
   m_LocalScale: {x: 0.4, y: 0.4, z: 1}
   m_Children: []
   m_Father: {fileID: 1884005346}
@@ -8253,7 +8713,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2020791895}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.9, y: -4.63, z: 0}
+  m_LocalPosition: {x: 0.9, y: -4.43, z: 0}
   m_LocalScale: {x: 0.1, y: 0.1, z: 1}
   m_Children: []
   m_Father: {fileID: 1421225729}
@@ -8415,7 +8875,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2121915338}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.97, y: -4.15, z: 0}
+  m_LocalPosition: {x: -1.97, y: -3.9499998, z: 0}
   m_LocalScale: {x: 0.1, y: 0.1, z: 1}
   m_Children: []
   m_Father: {fileID: 1421225729}
@@ -8482,6 +8942,7 @@ GameObject:
   - component: {fileID: 2130879604}
   - component: {fileID: 2130879606}
   - component: {fileID: 2130879605}
+  - component: {fileID: 2130879607}
   m_Layer: 5
   m_Name: Board15
   m_TagString: board15
@@ -8545,6 +9006,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2130879603}
   m_CullTransparentMesh: 0
+--- !u!114 &2130879607
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2130879603}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4a6f5642c9fc0a4988211dae50b6307, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isOpen: 0
+  ishitted: 0
+  cardPos: {x: 0, y: 0, z: 0}
+  targetPosition: {x: 0, y: 0, z: 0}
+  cardInterval: 1.2
+  AllAnimalList: []
+  CurAnimalList: []
 --- !u!1001 &2135699868
 PrefabInstance:
   m_ObjectHideFlags: 0

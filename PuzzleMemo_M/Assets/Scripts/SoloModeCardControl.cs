@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.UI;
 using System.IO;
+
 public class SoloModeCardControl : MonoBehaviour
 {
     #region Singleton
@@ -77,7 +79,7 @@ public class SoloModeCardControl : MonoBehaviour
             //보드 번호 가져오기
             int boardNum = int.Parse(transform.tag.Substring(5));
 
-            transform.GetComponent<Renderer>().material.mainTexture = Resources.Load("single_puzzle2_" + boardNum.ToString()) as Texture2D;
+            transform.GetComponent<Image>().sprite = Resources.Load<Sprite>("Puzzle/Basic/single_puzzle2_" + boardNum.ToString());
         }
 
         if (tag.Substring(0, 4) == "card")//특수카드일 경우에, 20위치에 총 카드 갯수
@@ -150,7 +152,7 @@ public class SoloModeCardControl : MonoBehaviour
 
     public void ShowImage()
     {
-        transform.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("single_puzzle_" + imgNum.ToString());
+        transform.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Puzzle/Basic/single_puzzle_" + imgNum.ToString());
     }
 
     public void HideImage()

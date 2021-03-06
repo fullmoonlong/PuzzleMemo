@@ -46,6 +46,24 @@ public class SceneLoad : MonoBehaviour
         SceneManager.LoadScene("SpRulePlayScene");
     }
 
+    public void Double_default()
+    {
+        PlayerPrefs.SetString("DoubleMap", "Jungle");
+        SceneManager.LoadScene("DoubleModeScene");
+    }
+
+    public void Double_Antarctica()
+    {
+        PlayerPrefs.SetString("DoubleMap", "Antarctica");
+        SceneManager.LoadScene("DoubleModeScene");
+    }
+
+    public void Double_Desert()
+    {
+        PlayerPrefs.SetString("DoubleMap", "Desert");
+        SceneManager.LoadScene("DoubleModeScene");
+    }
+
     public void Collection()
     {
         SceneManager.LoadScene("Collection");
