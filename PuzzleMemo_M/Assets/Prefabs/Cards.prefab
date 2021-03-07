@@ -73,7 +73,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 71a42ce859276e141b401e1139e1425d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 4e93682acb21b4846804373d93130130, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -100,6 +100,8 @@ MonoBehaviour:
   cardPos: {x: 0, y: 0, z: 0}
   targetPosition: {x: 0, y: 0, z: 0}
   cardInterval: 1.2
+  AllAnimalList: []
+  CurAnimalList: []
 --- !u!65 &5866687518436995095
 BoxCollider:
   m_ObjectHideFlags: 0

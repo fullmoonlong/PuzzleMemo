@@ -66,7 +66,8 @@ public class DoubleModeCardControl : MonoBehaviour
             }
             else
             {
-                transform.GetComponent<Image>().sprite = Resources.Load<Sprite>("Puzzle/Basic/single_puzzle2_" + boardNum.ToString());
+                //transform.GetComponent<Image>().sprite = Resources.Load<Sprite>("Puzzle/Basic/single_puzzle2_" + boardNum.ToString());
+                transform.GetComponent<Image>().sprite = Resources.Load<Sprite>("Puzzle/New/퍼즐_뉴2_" + boardNum.ToString());
             }
         }
 
@@ -160,8 +161,8 @@ public class DoubleModeCardControl : MonoBehaviour
         }
         else
         {
-
-            transform.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Puzzle/Basic/single_puzzle_" + imgNum.ToString());
+            //transform.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Puzzle/Basic/single_puzzle_" + imgNum.ToString());
+            transform.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Puzzle/New/퍼즐_뉴_" + imgNum.ToString());
         }
     }
 
