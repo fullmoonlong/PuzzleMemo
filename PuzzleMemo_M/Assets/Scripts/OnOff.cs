@@ -20,6 +20,7 @@ public class OnOff : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        if(musictext)
         musictext.text = "Music ON";
     }
 
