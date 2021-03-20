@@ -152,12 +152,12 @@ public class SoloModeCardControl : MonoBehaviour
 
     public void ShowImage()
     {
-        transform.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Puzzle/Basic/single_puzzle_" + imgNum.ToString());
+        transform.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Puzzle/New/퍼즐_뉴_" + imgNum.ToString());
     }
 
     public void HideImage()
     {
-        transform.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("single_card_back");
+        transform.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Card_B");
     }
 
     public void CardMove()

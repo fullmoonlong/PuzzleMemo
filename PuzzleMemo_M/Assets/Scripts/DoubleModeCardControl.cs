@@ -109,8 +109,6 @@ public class DoubleModeCardControl : MonoBehaviour
                 //다음사람 턴으로 변경
                 DoubleModeManager.turnCount++;
 
-                Debug.Log(DoubleModeManager.turnCount);
-
                 if ((DoubleModeManager.turnCount / 24) % 2 == 1)
                 {
                     SetIsMyTurn(false);
@@ -168,7 +166,7 @@ public class DoubleModeCardControl : MonoBehaviour
 
     public void HideImage()
     {
-        transform.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("single_card_back");
+        transform.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Card_B");
     }
 
     public void CardMove()

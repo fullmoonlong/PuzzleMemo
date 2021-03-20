@@ -135,7 +135,7 @@ public class SpRuleManager : MonoBehaviour
             {
                 GameObject.FindWithTag("card" + i).transform.GetComponent<SpRuleCardControl>().ishitted = true;
                 GameObject.FindWithTag("card" + i).transform.GetComponent<SpRuleCardControl>().isOpen = true;
-                GameObject.FindWithTag("card" + i).transform.GetComponent<SpRuleCardControl>().ShowImage();
+                GameObject.FindWithTag("card" + i).transform.GetComponent<SpRuleCardControl>().anim.Play("SingleAniOpen");
             }
         }
         else if (SpRuleManager.SpRuleNum == 2)
@@ -154,7 +154,7 @@ public class SpRuleManager : MonoBehaviour
             {
                 GameObject.FindWithTag("card" + i).transform.GetComponent<SpRuleCardControl>().ishitted = true;
                 GameObject.FindWithTag("card" + i).transform.GetComponent<SpRuleCardControl>().isOpen = true;
-                GameObject.FindWithTag("card" + i).transform.GetComponent<SpRuleCardControl>().ShowImage();
+                GameObject.FindWithTag("card" + i).transform.GetComponent<SpRuleCardControl>().anim.Play("SingleAniOpen");
 
                 i += 6;
             }
