@@ -68,4 +68,14 @@ public class SceneLoad : MonoBehaviour
     {
         SceneManager.LoadScene("Collection");
     }
+
+    public void AIPlay()
+    {
+        SceneManager.LoadScene("AIPlay");
+    }
+
+    public void SinglePlay()
+    {
+        SceneManager.LoadScene("SinglePlay");
+    }
 }

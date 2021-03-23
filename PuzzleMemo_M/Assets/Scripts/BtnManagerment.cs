@@ -1,13 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class BtnManagerment : MonoBehaviour
 {
-
     public GameObject[] Btn;
 
     public GameObject Ready;
+
     enum Button
     {
         Tutorial,
@@ -17,17 +18,8 @@ public class BtnManagerment : MonoBehaviour
         GameRule,
         NormalCard,
         SpeicalCard,
-        BasicPlay,
-        SpPlay,
+        AIPlay,
         SinglePlay,
-        BasicPuzzle,
-        BasicJungle,
-        Desert,
-        Antarctica,
-        Easy,
-        Normal,
-        Hard,
-        SpPattern
     }
 
     // Start is called before the first frame update
@@ -60,42 +52,8 @@ public class BtnManagerment : MonoBehaviour
         Btn[(int)Button.Play].SetActive(false);
         Btn[(int)Button.Collection].SetActive(false);
 
-        Btn[(int)Button.BasicPlay].SetActive(true);
-        Btn[(int)Button.SpPlay].SetActive(true);
+        Btn[(int)Button.AIPlay].SetActive(true);
         Btn[(int)Button.SinglePlay].SetActive(true);
-    }
-
-    public void BasicPlay()
-    {
-        Btn[(int)Button.BasicPlay].SetActive(false);
-        Btn[(int)Button.SpPlay].SetActive(false);
-        Btn[(int)Button.SinglePlay].SetActive(false);
-
-        Btn[(int)Button.BasicPuzzle].SetActive(true);
-        Btn[(int)Button.BasicJungle].SetActive(true);
-        Btn[(int)Button.Desert].SetActive(true);
-        Btn[(int)Button.Antarctica].SetActive(true);
-    }
-
-    public void SpPlay()
-    {
-        Btn[(int)Button.BasicPlay].SetActive(false);
-        Btn[(int)Button.SpPlay].SetActive(false);
-        Btn[(int)Button.SinglePlay].SetActive(false);
-
-        Btn[(int)Button.SpPattern].SetActive(true);
-    }
-
-    public void Stage()
-    {
-        Btn[(int)Button.BasicPuzzle].SetActive(false);
-        Btn[(int)Button.BasicJungle].SetActive(false);
-        Btn[(int)Button.Desert].SetActive(false);
-        Btn[(int)Button.Antarctica].SetActive(false);
-
-        Btn[(int)Button.Easy].SetActive(true);
-        Btn[(int)Button.Normal].SetActive(true);
-        Btn[(int)Button.Hard].SetActive(true);
     }
 
     public void ReadyPanel()
