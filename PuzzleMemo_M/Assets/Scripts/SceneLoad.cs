@@ -46,6 +46,18 @@ public class SceneLoad : MonoBehaviour
         SceneManager.LoadScene("SpRulePlayScene");
     }
 
+    public void SpecialRule_3()
+    {
+        PlayerPrefs.SetInt("SpRuleNum", 3);
+        SceneManager.LoadScene("SpRulePlayScene");
+    }
+
+    public void SpecialRule_4()
+    {
+        PlayerPrefs.SetInt("SpRuleNum", 4);
+        SceneManager.LoadScene("SpRulePlayScene");
+    }
+
     public void Double_default()
     {
         PlayerPrefs.SetString("DoubleMap", "Jungle");

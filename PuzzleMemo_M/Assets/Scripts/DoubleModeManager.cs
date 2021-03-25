@@ -22,6 +22,8 @@ public class DoubleModeManager : MonoBehaviour
 
     public GameObject gameOverPanel;
 
+    public static int DoubleModeSpNum;//0이 Default, 1 제일 윗줄, 2 가장 우측
+
     public Text turnText;
 
     // Use this for initialization
@@ -36,6 +38,9 @@ public class DoubleModeManager : MonoBehaviour
             Animals[i] = 0;
         }
 
+        DoubleModeSpNum = PlayerPrefs.GetInt("DoubleModeSpNum");
+
+        DoubleSpRule();
         Shuffle();
     }
 
@@ -108,6 +113,110 @@ public class DoubleModeManager : MonoBehaviour
             //카드위치 정보 넘기기
             card.GetComponent<DoubleModeCardControl>().cardPos = card.transform.position;
             other_card.GetComponent<DoubleModeCardControl>().cardPos = other_card.transform.position;
+        }
+    }
+
+    void DoubleSpRule()
+    {
+        if (DoubleModeManager.DoubleModeSpNum == 1)
+        {
+            DoubleModeManager.Animals[0] += 3;
+            DoubleModeManager.Animals[1] += 1;
+            DoubleModeManager.Animals[2] += 2;
+
+            for (int i = 1; i <= 24; i++)
+            {
+                GameObject.FindWithTag("card" + i).transform.GetComponent<DoubleModeCardControl>().ishitted = false;
+                GameObject.FindWithTag("card" + i).transform.GetComponent<DoubleModeCardControl>().isOpen = false;
+                GameObject.FindWithTag("card" + i).transform.GetComponent<DoubleModeCardControl>().CloseCard();
+            }
+
+            for (int i = 1; i <= 6; i++)
+            {
+                GameObject.FindWithTag("card" + i).transform.GetComponent<DoubleModeCardControl>().ishitted = true;
+                GameObject.FindWithTag("card" + i).transform.GetComponent<DoubleModeCardControl>().isOpen = true;
+                GameObject.FindWithTag("card" + i).transform.GetComponent<DoubleModeCardControl>().anim.Play("SingleAniOpen");
+            }
+        }
+        else if (DoubleModeManager.DoubleModeSpNum == 2)
+        {
+            DoubleModeManager.Animals[2] += 2;
+            DoubleModeManager.Animals[5] = 0; // 투칸 완성이므로 제외
+
+            for (int i = 1; i <= 24; i++)
+            {
+                GameObject.FindWithTag("card" + i).transform.GetComponent<DoubleModeCardControl>().ishitted = false;
+                GameObject.FindWithTag("card" + i).transform.GetComponent<DoubleModeCardControl>().isOpen = false;
+                GameObject.FindWithTag("card" + i).transform.GetComponent<DoubleModeCardControl>().CloseCard();
+            }
+
+            for (int i = 6; i <= 24;)
+            {
+                GameObject.FindWithTag("card" + i).transform.GetComponent<DoubleModeCardControl>().ishitted = true;
+                GameObject.FindWithTag("card" + i).transform.GetComponent<DoubleModeCardControl>().isOpen = true;
+                GameObject.FindWithTag("card" + i).transform.GetComponent<DoubleModeCardControl>().anim.Play("SingleAniOpen");
+
+                i += 6;
+            }
+        }
+        else if (DoubleModeManager.DoubleModeSpNum == 3)
+        {
+            DoubleModeManager.Animals[0] += 3;
+            DoubleModeManager.Animals[1] += 1;
+            DoubleModeManager.Animals[2] += 3;
+            DoubleModeManager.Animals[5] = 0; // 투칸 완성이므로 제외
+
+            for (int i = 1; i <= 24; i++)
+            {
+                GameObject.FindWithTag("card" + i).transform.GetComponent<DoubleModeCardControl>().ishitted = false;
+                GameObject.FindWithTag("card" + i).transform.GetComponent<DoubleModeCardControl>().isOpen = false;
+                GameObject.FindWithTag("card" + i).transform.GetComponent<DoubleModeCardControl>().CloseCard();
+            }
+
+            for (int i = 1; i <= 5; i++)//제일 윗줄 - 6은 제일 우측줄과 겹쳐서 제외함
+            {
+                GameObject.FindWithTag("card" + i).transform.GetComponent<DoubleModeCardControl>().ishitted = true;
+                GameObject.FindWithTag("card" + i).transform.GetComponent<DoubleModeCardControl>().isOpen = true;
+                GameObject.FindWithTag("card" + i).transform.GetComponent<DoubleModeCardControl>().anim.Play("SingleAniOpen");
+            }
+            for (int i = 6; i <= 24;)//제일 우측줄
+            {
+                GameObject.FindWithTag("card" + i).transform.GetComponent<DoubleModeCardControl>().ishitted = true;
+                GameObject.FindWithTag("card" + i).transform.GetComponent<DoubleModeCardControl>().isOpen = true;
+                GameObject.FindWithTag("card" + i).transform.GetComponent<DoubleModeCardControl>().anim.Play("SingleAniOpen");
+
+                i += 6;
+            }
+        }
+        else if (DoubleModeManager.DoubleModeSpNum == 4)
+        {
+            DoubleModeManager.Animals[0] += 3;
+            DoubleModeManager.Animals[2] += 2;
+            DoubleModeManager.Animals[4] += 3;
+            DoubleModeManager.Animals[5] += 1;
+            DoubleModeManager.Animals[6] = 0;//거북이 완성
+
+            for (int i = 1; i <= 24; i++)
+            {
+                GameObject.FindWithTag("card" + i).transform.GetComponent<DoubleModeCardControl>().ishitted = false;
+                GameObject.FindWithTag("card" + i).transform.GetComponent<DoubleModeCardControl>().isOpen = false;
+                GameObject.FindWithTag("card" + i).transform.GetComponent<DoubleModeCardControl>().CloseCard();
+            }
+
+            for (int i = 20; i <= 5; i++)//제일 윗줄 - 19는 제일 좌측줄과 겹쳐서 제외함
+            {
+                GameObject.FindWithTag("card" + i).transform.GetComponent<DoubleModeCardControl>().ishitted = true;
+                GameObject.FindWithTag("card" + i).transform.GetComponent<DoubleModeCardControl>().isOpen = true;
+                GameObject.FindWithTag("card" + i).transform.GetComponent<DoubleModeCardControl>().anim.Play("SingleAniOpen");
+            }
+            for (int i = 1; i <= 24;)
+            {
+                GameObject.FindWithTag("card" + i).transform.GetComponent<DoubleModeCardControl>().ishitted = true;
+                GameObject.FindWithTag("card" + i).transform.GetComponent<DoubleModeCardControl>().isOpen = true;
+                GameObject.FindWithTag("card" + i).transform.GetComponent<DoubleModeCardControl>().anim.Play("SingleAniOpen");
+
+                i += 6;
+            }
         }
     }
 }

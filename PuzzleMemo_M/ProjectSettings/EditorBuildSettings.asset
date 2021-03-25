@@ -26,4 +26,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/AIPlay.unity
     guid: 39fa9ac5b46ec6049a9051418fe1f48e
+  - enabled: 1
+    path: Assets/Scenes/SinglePlay.unity
+    guid: f25a4fbf5d948e3479ec3ac6f0e90271
   m_configObjects: {}

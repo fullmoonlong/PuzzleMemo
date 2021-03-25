@@ -22,7 +22,7 @@ public class SpRuleManager : MonoBehaviour
 
     public GameObject gameOverPanel;
 
-    public static int SpRuleNum;//0이 Default, 1 제일 윗줄, 2 가장 우측
+    public static int SpRuleNum;//0이 Default, 1 제일 윗줄, 2 가장 우측, 3 ㄱ자, 4 ㄴ자
 
     // Use this for initialization
     void Start()
@@ -141,7 +141,7 @@ public class SpRuleManager : MonoBehaviour
         else if (SpRuleManager.SpRuleNum == 2)
         {
             SpRuleManager.Animals[2] += 2;
-            SpRuleManager.Animals[5] = 0; // 완성이므로 제외
+            SpRuleManager.Animals[5] = 0; // 투칸 완성이므로 제외
 
             for (int i = 1; i <= 24; i++)
             {
@@ -151,6 +151,65 @@ public class SpRuleManager : MonoBehaviour
             }
 
             for (int i = 6; i <= 24;)
+            {
+                GameObject.FindWithTag("card" + i).transform.GetComponent<SpRuleCardControl>().ishitted = true;
+                GameObject.FindWithTag("card" + i).transform.GetComponent<SpRuleCardControl>().isOpen = true;
+                GameObject.FindWithTag("card" + i).transform.GetComponent<SpRuleCardControl>().anim.Play("SingleAniOpen");
+
+                i += 6;
+            }
+        }
+        else if (SpRuleManager.SpRuleNum == 3)
+        {
+            SpRuleManager.Animals[0] += 3;
+            SpRuleManager.Animals[1] += 1;
+            SpRuleManager.Animals[2] += 3;
+            SpRuleManager.Animals[5] = 0; // 투칸 완성이므로 제외
+
+            for (int i = 1; i <= 24; i++)
+            {
+                GameObject.FindWithTag("card" + i).transform.GetComponent<SpRuleCardControl>().ishitted = false;
+                GameObject.FindWithTag("card" + i).transform.GetComponent<SpRuleCardControl>().isOpen = false;
+                GameObject.FindWithTag("card" + i).transform.GetComponent<SpRuleCardControl>().CloseCard();
+            }
+
+            for (int i = 1; i <= 5; i++)//제일 윗줄 - 6은 제일 우측줄과 겹쳐서 제외함
+            {
+                GameObject.FindWithTag("card" + i).transform.GetComponent<SpRuleCardControl>().ishitted = true;
+                GameObject.FindWithTag("card" + i).transform.GetComponent<SpRuleCardControl>().isOpen = true;
+                GameObject.FindWithTag("card" + i).transform.GetComponent<SpRuleCardControl>().anim.Play("SingleAniOpen");
+            }
+            for (int i = 6; i <= 24;)//제일 우측줄
+            {
+                GameObject.FindWithTag("card" + i).transform.GetComponent<SpRuleCardControl>().ishitted = true;
+                GameObject.FindWithTag("card" + i).transform.GetComponent<SpRuleCardControl>().isOpen = true;
+                GameObject.FindWithTag("card" + i).transform.GetComponent<SpRuleCardControl>().anim.Play("SingleAniOpen");
+
+                i += 6;
+            }
+        }
+        else if (SpRuleManager.SpRuleNum == 4)
+        {
+            SpRuleManager.Animals[0] += 3;
+            SpRuleManager.Animals[2] += 2;
+            SpRuleManager.Animals[4] += 3;
+            SpRuleManager.Animals[5] += 1;
+            SpRuleManager.Animals[6] = 0;//거북이 완성
+
+            for (int i = 1; i <= 24; i++)
+            {
+                GameObject.FindWithTag("card" + i).transform.GetComponent<SpRuleCardControl>().ishitted = false;
+                GameObject.FindWithTag("card" + i).transform.GetComponent<SpRuleCardControl>().isOpen = false;
+                GameObject.FindWithTag("card" + i).transform.GetComponent<SpRuleCardControl>().CloseCard();
+            }
+
+            for (int i = 20; i <= 5; i++)//제일 윗줄 - 19는 제일 좌측줄과 겹쳐서 제외함
+            {
+                GameObject.FindWithTag("card" + i).transform.GetComponent<SpRuleCardControl>().ishitted = true;
+                GameObject.FindWithTag("card" + i).transform.GetComponent<SpRuleCardControl>().isOpen = true;
+                GameObject.FindWithTag("card" + i).transform.GetComponent<SpRuleCardControl>().anim.Play("SingleAniOpen");
+            }
+            for (int i = 1; i <= 24;)
             {
                 GameObject.FindWithTag("card" + i).transform.GetComponent<SpRuleCardControl>().ishitted = true;
                 GameObject.FindWithTag("card" + i).transform.GetComponent<SpRuleCardControl>().isOpen = true;

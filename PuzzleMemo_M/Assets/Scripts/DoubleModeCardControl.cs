@@ -19,7 +19,7 @@ public class DoubleModeCardControl : MonoBehaviour
     int imgNum = 1;
 
     //오픈된 카드 판별 여부
-    bool isOpen = false;
+    public bool isOpen = false;
     public bool ishitted = false;
 
     //물체 이동을 위해서
@@ -32,7 +32,7 @@ public class DoubleModeCardControl : MonoBehaviour
     static public int cardCnt = 24;
     public float cardInterval = 1.2f;
 
-    Animator anim;
+    public Animator anim;
     public static string DoubleMap;
 
     // Start is called before the first frame update
