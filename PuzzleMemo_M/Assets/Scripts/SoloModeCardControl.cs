@@ -370,6 +370,63 @@ public class SoloModeCardControl : MonoBehaviour
                         }
                     }
                 }
+                // 앞에있는 적에게 올라타기
+                else if (imgNum == 25)
+                {
+                    if (isMyTurn == true)
+                    {
+                        if (MalManager.A < MalManager.B)
+                        {
+                            MalManager.A += (MalManager.B - MalManager.A);
+                        }
+                    }
+                    else
+                    {
+                        if (MalManager.B < MalManager.A)
+                        {
+                            MalManager.B += (MalManager.A - MalManager.B);
+                        }
+                    }
+                }
+                // 턴 강제종료
+                else if (imgNum == 26)
+                {
+                    if (isMyTurn == true)
+                    {
+                        //강제넘기기 알림띄우면서 넘기기
+                        isMyTurn = false;
+                    }
+                    else if (isMyTurn == false)
+                    {
+                        //강제넘기기 알림띄우면서 넘기기
+                        isMyTurn = true;
+                    }
+                }
+                else if (imgNum == 27)
+                {
+                    if (isMyTurn == true)
+                    {
+                        if (MalManager.A == 0)
+                        {
+                            //제자리라 이동안함
+                        }
+                        else
+                        {
+                            MalManager.A -= 1;
+                        }
+                    }
+                    else
+                    {
+                        if (MalManager.B == 0)
+                        {
+                            //제자리라 이동안함
+                        }
+                        else
+                        {
+                            MalManager.B -= 1;
+                        }
+                    }
+                }
             }
         }
     }
