@@ -480,6 +480,7 @@ MonoBehaviour:
   cardPos: {x: 0, y: 0, z: 0}
   targetPosition: {x: 0, y: 0, z: 0}
   cardInterval: 1.2
+  anim: {fileID: 0}
   AllAnimalList: []
   CurAnimalList: []
 --- !u!4 &81946227 stripped
@@ -991,6 +992,7 @@ MonoBehaviour:
   cardPos: {x: 0, y: 0, z: 0}
   targetPosition: {x: 0, y: 0, z: 0}
   cardInterval: 1.2
+  anim: {fileID: 0}
   AllAnimalList: []
   CurAnimalList: []
 --- !u!1 &261365735
@@ -1303,6 +1305,7 @@ MonoBehaviour:
   cardPos: {x: 0, y: 0, z: 0}
   targetPosition: {x: 0, y: 0, z: 0}
   cardInterval: 1.2
+  anim: {fileID: 0}
   AllAnimalList: []
   CurAnimalList: []
 --- !u!1001 &336210991
@@ -1435,6 +1438,7 @@ MonoBehaviour:
   cardPos: {x: 0, y: 0, z: 0}
   targetPosition: {x: 0, y: 0, z: 0}
   cardInterval: 1.2
+  anim: {fileID: 0}
   AllAnimalList: []
   CurAnimalList: []
 --- !u!1 &341387547
@@ -2265,6 +2269,7 @@ MonoBehaviour:
   cardPos: {x: 0, y: 0, z: 0}
   targetPosition: {x: 0, y: 0, z: 0}
   cardInterval: 1.2
+  anim: {fileID: 0}
   AllAnimalList: []
   CurAnimalList: []
 --- !u!1001 &554956602
@@ -2397,6 +2402,7 @@ MonoBehaviour:
   cardPos: {x: 0, y: 0, z: 0}
   targetPosition: {x: 0, y: 0, z: 0}
   cardInterval: 1.2
+  anim: {fileID: 0}
   AllAnimalList: []
   CurAnimalList: []
 --- !u!1 &558589063
@@ -2769,6 +2775,7 @@ MonoBehaviour:
   cardPos: {x: 0, y: 0, z: 0}
   targetPosition: {x: 0, y: 0, z: 0}
   cardInterval: 1.2
+  anim: {fileID: 0}
   AllAnimalList: []
   CurAnimalList: []
 --- !u!1 &589511375
@@ -3732,6 +3739,7 @@ MonoBehaviour:
   cardPos: {x: 0, y: 0, z: 0}
   targetPosition: {x: 0, y: 0, z: 0}
   cardInterval: 1.2
+  anim: {fileID: 0}
   AllAnimalList: []
   CurAnimalList: []
 --- !u!1001 &890344515
@@ -3864,6 +3872,7 @@ MonoBehaviour:
   cardPos: {x: 0, y: 0, z: 0}
   targetPosition: {x: 0, y: 0, z: 0}
   cardInterval: 1.2
+  anim: {fileID: 0}
   AllAnimalList: []
   CurAnimalList: []
 --- !u!1 &914956071
@@ -4598,6 +4607,7 @@ MonoBehaviour:
   cardPos: {x: 0, y: 0, z: 0}
   targetPosition: {x: 0, y: 0, z: 0}
   cardInterval: 1.2
+  anim: {fileID: 0}
   AllAnimalList: []
   CurAnimalList: []
 --- !u!1 &1116889580
@@ -5074,6 +5084,7 @@ MonoBehaviour:
   cardPos: {x: 0, y: 0, z: 0}
   targetPosition: {x: 0, y: 0, z: 0}
   cardInterval: 1.2
+  anim: {fileID: 0}
   AllAnimalList: []
   CurAnimalList: []
 --- !u!1001 &1278480283
@@ -5200,6 +5211,7 @@ MonoBehaviour:
   cardPos: {x: 0, y: 0, z: 0}
   targetPosition: {x: 0, y: 0, z: 0}
   cardInterval: 1.2
+  anim: {fileID: 0}
   AllAnimalList: []
   CurAnimalList: []
 --- !u!1 &1289178942
@@ -5431,6 +5443,7 @@ MonoBehaviour:
   cardPos: {x: 0, y: 0, z: 0}
   targetPosition: {x: 0, y: 0, z: 0}
   cardInterval: 1.2
+  anim: {fileID: 0}
   AllAnimalList: []
   CurAnimalList: []
 --- !u!1001 &1371611803
@@ -5563,6 +5576,7 @@ MonoBehaviour:
   cardPos: {x: 0, y: 0, z: 0}
   targetPosition: {x: 0, y: 0, z: 0}
   cardInterval: 1.2
+  anim: {fileID: 0}
   AllAnimalList: []
   CurAnimalList: []
 --- !u!1 &1395147862
@@ -6424,6 +6438,7 @@ MonoBehaviour:
   cardPos: {x: 0, y: 0, z: 0}
   targetPosition: {x: 0, y: 0, z: 0}
   cardInterval: 1.2
+  anim: {fileID: 0}
   AllAnimalList: []
   CurAnimalList: []
 --- !u!1 &1567354609
@@ -6937,6 +6952,7 @@ MonoBehaviour:
   cardPos: {x: 0, y: 0, z: 0}
   targetPosition: {x: 0, y: 0, z: 0}
   cardInterval: 1.2
+  anim: {fileID: 0}
   AllAnimalList: []
   CurAnimalList: []
 --- !u!1 &1664775033
@@ -7150,6 +7166,7 @@ MonoBehaviour:
   cardPos: {x: 0, y: 0, z: 0}
   targetPosition: {x: 0, y: 0, z: 0}
   cardInterval: 1.2
+  anim: {fileID: 0}
   AllAnimalList: []
   CurAnimalList: []
 --- !u!1 &1671021369
@@ -7336,6 +7353,7 @@ MonoBehaviour:
   cardPos: {x: 0, y: 0, z: 0}
   targetPosition: {x: 0, y: 0, z: 0}
   cardInterval: 1.2
+  anim: {fileID: 0}
   AllAnimalList: []
   CurAnimalList: []
 --- !u!1 &1708257114
@@ -7910,6 +7928,7 @@ MonoBehaviour:
   cardPos: {x: 0, y: 0, z: 0}
   targetPosition: {x: 0, y: 0, z: 0}
   cardInterval: 1.2
+  anim: {fileID: 0}
   AllAnimalList: []
   CurAnimalList: []
 --- !u!1001 &1868592536
@@ -8042,6 +8061,7 @@ MonoBehaviour:
   cardPos: {x: 0, y: 0, z: 0}
   targetPosition: {x: 0, y: 0, z: 0}
   cardInterval: 1.2
+  anim: {fileID: 0}
   AllAnimalList: []
   CurAnimalList: []
 --- !u!1 &1877526371
@@ -8244,6 +8264,7 @@ MonoBehaviour:
   cardPos: {x: 0, y: 0, z: 0}
   targetPosition: {x: 0, y: 0, z: 0}
   cardInterval: 1.2
+  anim: {fileID: 0}
   AllAnimalList: []
   CurAnimalList: []
 --- !u!1 &1884005345
@@ -8452,6 +8473,7 @@ MonoBehaviour:
   cardPos: {x: 0, y: 0, z: 0}
   targetPosition: {x: 0, y: 0, z: 0}
   cardInterval: 1.2
+  anim: {fileID: 0}
   AllAnimalList: []
   CurAnimalList: []
 --- !u!1 &1950899538
@@ -9056,6 +9078,7 @@ MonoBehaviour:
   cardPos: {x: 0, y: 0, z: 0}
   targetPosition: {x: 0, y: 0, z: 0}
   cardInterval: 1.2
+  anim: {fileID: 0}
   AllAnimalList: []
   CurAnimalList: []
 --- !u!1 &2136187944
@@ -9247,5 +9270,6 @@ MonoBehaviour:
   cardPos: {x: 0, y: 0, z: 0}
   targetPosition: {x: 0, y: 0, z: 0}
   cardInterval: 1.2
+  anim: {fileID: 0}
   AllAnimalList: []
   CurAnimalList: []

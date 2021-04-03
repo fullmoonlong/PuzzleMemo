@@ -22,7 +22,7 @@ public class SpRuleManager : MonoBehaviour
 
     public GameObject gameOverPanel;
 
-    public static int SpRuleNum;//0이 Default, 1 제일 윗줄, 2 가장 우측, 3 ㄱ자, 4 ㄴ자
+    public static int SpRuleNum;//0이 Default, 4 제일 윗줄, 3 가장 우측, 1 ㄱ자, 2 ㄴ자
 
     // Use this for initialization
     void Start()
@@ -38,8 +38,9 @@ public class SpRuleManager : MonoBehaviour
 
         SpRuleNum = PlayerPrefs.GetInt("SpRuleNum");
 
-        SpecialRule();
         Shuffle();
+        SpecialRule();
+        
     }
 
     // Update is called once per frame
@@ -118,7 +119,8 @@ public class SpRuleManager : MonoBehaviour
 
     void SpecialRule()
     {
-        if (SpRuleManager.SpRuleNum == 1)
+        //ㅡ, ㅣ, ㄱ, ㄴ
+        if (SpRuleManager.SpRuleNum == 4)
         {
             SpRuleManager.Animals[0] += 3;
             SpRuleManager.Animals[1] += 1;
@@ -131,14 +133,14 @@ public class SpRuleManager : MonoBehaviour
                 GameObject.FindWithTag("card" + i).transform.GetComponent<SpRuleCardControl>().CloseCard();
             }
 
-            for (int i = 1; i <= 6; i++)
+            for (int i = 6; i >= 1; i--)
             {
                 GameObject.FindWithTag("card" + i).transform.GetComponent<SpRuleCardControl>().ishitted = true;
                 GameObject.FindWithTag("card" + i).transform.GetComponent<SpRuleCardControl>().isOpen = true;
                 GameObject.FindWithTag("card" + i).transform.GetComponent<SpRuleCardControl>().anim.Play("SingleAniOpen");
             }
         }
-        else if (SpRuleManager.SpRuleNum == 2)
+        else if (SpRuleManager.SpRuleNum == 3)
         {
             SpRuleManager.Animals[2] += 2;
             SpRuleManager.Animals[5] = 0; // 투칸 완성이므로 제외
@@ -159,7 +161,7 @@ public class SpRuleManager : MonoBehaviour
                 i += 6;
             }
         }
-        else if (SpRuleManager.SpRuleNum == 3)
+        else if (SpRuleManager.SpRuleNum == 1)
         {
             SpRuleManager.Animals[0] += 3;
             SpRuleManager.Animals[1] += 1;
@@ -188,7 +190,7 @@ public class SpRuleManager : MonoBehaviour
                 i += 6;
             }
         }
-        else if (SpRuleManager.SpRuleNum == 4)
+        else if (SpRuleManager.SpRuleNum == 2)
         {
             SpRuleManager.Animals[0] += 3;
             SpRuleManager.Animals[2] += 2;
@@ -203,7 +205,7 @@ public class SpRuleManager : MonoBehaviour
                 GameObject.FindWithTag("card" + i).transform.GetComponent<SpRuleCardControl>().CloseCard();
             }
 
-            for (int i = 20; i <= 5; i++)//제일 윗줄 - 19는 제일 좌측줄과 겹쳐서 제외함
+            for (int i = 20; i <= 5; i++)//제일 아랫줄 - 19는 제일 좌측줄과 겹쳐서 제외함
             {
                 GameObject.FindWithTag("card" + i).transform.GetComponent<SpRuleCardControl>().ishitted = true;
                 GameObject.FindWithTag("card" + i).transform.GetComponent<SpRuleCardControl>().isOpen = true;

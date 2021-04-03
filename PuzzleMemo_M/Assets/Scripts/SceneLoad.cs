@@ -5,6 +5,32 @@ using UnityEngine.SceneManagement;
 
 public class SceneLoad : MonoBehaviour
 {
+    public void TestInToSpGame()
+    {
+        int Map = GetComponent<AIPlay>().CurMap;
+        int Type = GetComponent<AIPlay>().CurType;
+
+        //맵
+        if (Map == 0)
+        {
+            PlayerPrefs.SetString("DoubleMap", "Jungle");
+        }
+        else if (Map == 1)
+        {
+            PlayerPrefs.SetString("DoubleMap", "Antarctica");
+        }
+        else if (Map == 2)
+        {
+            PlayerPrefs.SetString("DoubleMap", "Desert");
+        }
+
+        //타입
+        PlayerPrefs.SetInt("SpRuleNum", Type + 1);
+
+        //씬 이동
+        SceneManager.LoadScene("SpRulePlayScene");
+    }
+
     public void MainMenu()
     {
         SceneManager.LoadScene("MainMenu");
@@ -28,7 +54,6 @@ public class SceneLoad : MonoBehaviour
         PlayerPrefs.SetInt("PopIndex", 16);
     }
 
-    //주경이가 정한 씬네임 따라적기
     public void Solo()
     {
         SceneManager.LoadScene("SoloPlayScene");

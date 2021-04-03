@@ -1103,6 +1103,7 @@ GameObject:
   - component: {fileID: 1036855732}
   - component: {fileID: 1036855731}
   - component: {fileID: 1036855733}
+  - component: {fileID: 1036855734}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -1167,6 +1168,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 61b99e94aa6320f47b89b789c6150fa4, type: 3}
   - {fileID: 21300000, guid: 88dc8ab86bbc20a40b83c55a57ed260a, type: 3}
   - {fileID: 21300000, guid: 97c8359cac7cbd944a518b60a5a5380d, type: 3}
+  CurType: 0
+  CurMap: 0
   CurImage: {fileID: 1566342800}
   MapImage: {fileID: 543665645}
 --- !u!4 &1036855732
@@ -1201,6 +1204,18 @@ MonoBehaviour:
   MenuSpGame: {fileID: 0}
   audioSource: {fileID: 0}
   musictext: {fileID: 0}
+--- !u!114 &1036855734
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1036855730}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 344f890f157c6aa40bd0a25e36ac7701, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1397510996
 GameObject:
   m_ObjectHideFlags: 0
@@ -1470,6 +1485,7 @@ GameObject:
   - component: {fileID: 1566342799}
   - component: {fileID: 1566342801}
   - component: {fileID: 1566342800}
+  - component: {fileID: 1566342802}
   m_Layer: 5
   m_Name: TypeImage
   m_TagString: Untagged
@@ -1533,6 +1549,60 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1566342798}
   m_CullTransparentMesh: 0
+--- !u!114 &1566342802
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1566342798}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 1566342800}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1036855734}
+        m_MethodName: TestInToSpGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1601801431
 GameObject:
   m_ObjectHideFlags: 0

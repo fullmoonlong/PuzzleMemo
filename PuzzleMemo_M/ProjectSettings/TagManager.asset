@@ -52,6 +52,9 @@ TagManager:
   - board22
   - board23
   - board24
+  - card25
+  - card26
+  - card27
   layers:
   - Default
   - TransparentFX

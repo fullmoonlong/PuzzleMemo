@@ -21,8 +21,8 @@ public class AIPlay : MonoBehaviour
     //첫번째배열에는 타입, 두번째 배열은 맵종류 이차원 배열이 안되서 일차원 배열로 변경
     public Sprite[] TypeMapImage; 
 
-    int CurType;
-    int CurMap;
+    public int CurType;
+    public int CurMap;
 
     int TypeLength;
     int MapLength;
