@@ -42,6 +42,12 @@ public class SceneLoad : MonoBehaviour
         SceneManager.LoadScene("Tutorial");
     }
 
+    public void NormalCard()
+    {
+        SceneManager.LoadScene("Tutorial");
+        PlayerPrefs.SetInt("PopIndex", 18);
+    }
+
     public void SpeicalCard()
     {
         SceneManager.LoadScene("Tutorial");
@@ -57,30 +63,6 @@ public class SceneLoad : MonoBehaviour
     public void Solo()
     {
         SceneManager.LoadScene("SoloPlayScene");
-    }
-
-    public void SpecialRule_1()
-    {
-        PlayerPrefs.SetInt("SpRuleNum", 1);
-        SceneManager.LoadScene("SpRulePlayScene");
-    }
-
-    public void SpecialRule_2()
-    {
-        PlayerPrefs.SetInt("SpRuleNum", 2);
-        SceneManager.LoadScene("SpRulePlayScene");
-    }
-
-    public void SpecialRule_3()
-    {
-        PlayerPrefs.SetInt("SpRuleNum", 3);
-        SceneManager.LoadScene("SpRulePlayScene");
-    }
-
-    public void SpecialRule_4()
-    {
-        PlayerPrefs.SetInt("SpRuleNum", 4);
-        SceneManager.LoadScene("SpRulePlayScene");
     }
 
     public void Double_default()

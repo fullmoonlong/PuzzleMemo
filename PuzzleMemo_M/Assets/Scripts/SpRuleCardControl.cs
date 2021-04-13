@@ -39,6 +39,8 @@ public class SpRuleCardControl : MonoBehaviour
 
     string filePath;
 
+    public static int SpRuleNum;//0이 Default, 4 제일 윗줄, 3 가장 우측, 1 ㄱ자, 2 ㄴ자
+
     enum AnimalOrder
     {
         개구리,
@@ -87,6 +89,12 @@ public class SpRuleCardControl : MonoBehaviour
             //카드 번호 가져오기
             imgNum = int.Parse(transform.tag.Substring(4));
         }
+
+        //ㄱ, ㄴ, ㅡ, ㅣ 정보 받기
+        SpRuleNum = PlayerPrefs.GetInt("SpRuleNum");
+
+        //카드 변환
+        SpecialRule();
     }
 
     // Update is called once per frame
@@ -103,6 +111,125 @@ public class SpRuleCardControl : MonoBehaviour
         //클릭 후 카드 움직임
         CardMove();
         CardBoardMatch();
+
+        if (Input.GetKeyDown(KeyCode.O))
+        {
+            SpRuleNum = 1;
+            Debug.Log(SpRuleNum);
+        }
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            SpRuleNum = 2;
+            Debug.Log(SpRuleNum);
+        }
+    }
+
+    public void SpecialRule()
+    {
+        //ㅡ, ㅣ, ㄱ, ㄴ
+        if (tag == "card1")//1번만 일어나게
+        {
+            if (SpRuleNum == 4)
+            {
+                SpRuleManager.Animals[0] += 3;
+                SpRuleManager.Animals[1] += 1;
+                SpRuleManager.Animals[2] += 2;
+
+                for (int i = 1; i <= 24; i++)
+                {
+                    GameObject.FindWithTag("card" + i).transform.GetComponent<SpRuleCardControl>().ishitted = false;
+                    GameObject.FindWithTag("card" + i).transform.GetComponent<SpRuleCardControl>().isOpen = false;
+                    GameObject.FindWithTag("card" + i).transform.GetComponent<SpRuleCardControl>().CloseCard();
+                }
+
+                for (int i = 6; i >= 1; i--)
+                {
+                    GameObject.FindWithTag("card" + i).transform.GetComponent<SpRuleCardControl>().ishitted = true;
+                    GameObject.FindWithTag("card" + i).transform.GetComponent<SpRuleCardControl>().isOpen = true;
+                    GameObject.FindWithTag("card" + i).transform.GetComponent<SpRuleCardControl>().anim.Play("SingleAniOpen");
+                }
+            }
+            else if (SpRuleNum == 3)
+            {
+                SpRuleManager.Animals[2] += 2;
+                SpRuleManager.Animals[5] = 0; // 투칸 완성이므로 제외
+
+                for (int i = 1; i <= 24; i++)
+                {
+                    GameObject.FindWithTag("card" + i).transform.GetComponent<SpRuleCardControl>().ishitted = false;
+                    GameObject.FindWithTag("card" + i).transform.GetComponent<SpRuleCardControl>().isOpen = false;
+                    GameObject.FindWithTag("card" + i).transform.GetComponent<SpRuleCardControl>().CloseCard();
+                }
+
+                for (int i = 6; i <= 24;)
+                {
+                    GameObject.FindWithTag("card" + i).transform.GetComponent<SpRuleCardControl>().ishitted = true;
+                    GameObject.FindWithTag("card" + i).transform.GetComponent<SpRuleCardControl>().isOpen = true;
+                    GameObject.FindWithTag("card" + i).transform.GetComponent<SpRuleCardControl>().anim.Play("SingleAniOpen");
+
+                    i += 6;
+                }
+            }
+            else if (SpRuleNum == 1)
+            {
+                SpRuleManager.Animals[0] += 3;
+                SpRuleManager.Animals[1] += 1;
+                SpRuleManager.Animals[2] += 3;
+                SpRuleManager.Animals[5] = 0; // 투칸 완성이므로 제외
+
+                for (int i = 1; i <= 24; i++)
+                {
+                    GameObject.FindWithTag("card" + i).transform.GetComponent<SpRuleCardControl>().ishitted = false;
+                    GameObject.FindWithTag("card" + i).transform.GetComponent<SpRuleCardControl>().isOpen = false;
+                    GameObject.FindWithTag("card" + i).transform.GetComponent<SpRuleCardControl>().CloseCard();
+                }
+
+                for (int i = 1; i <= 5; i++)//제일 윗줄 - 6은 제일 우측줄과 겹쳐서 제외함
+                {
+                    GameObject.FindWithTag("card" + i).transform.GetComponent<SpRuleCardControl>().ishitted = true;
+                    GameObject.FindWithTag("card" + i).transform.GetComponent<SpRuleCardControl>().isOpen = true;
+                    GameObject.FindWithTag("card" + i).transform.GetComponent<SpRuleCardControl>().anim.Play("SingleAniOpen");
+                }
+                for (int i = 6; i <= 24;)//제일 우측줄
+                {
+                    GameObject.FindWithTag("card" + i).transform.GetComponent<SpRuleCardControl>().ishitted = true;
+                    GameObject.FindWithTag("card" + i).transform.GetComponent<SpRuleCardControl>().isOpen = true;
+                    GameObject.FindWithTag("card" + i).transform.GetComponent<SpRuleCardControl>().anim.Play("SingleAniOpen");
+
+                    i += 6;
+                }
+            }
+            else if (SpRuleNum == 2)
+            {
+                SpRuleManager.Animals[0] += 3;
+                SpRuleManager.Animals[2] += 2;
+                SpRuleManager.Animals[4] += 3;
+                SpRuleManager.Animals[5] += 1;
+                SpRuleManager.Animals[6] = 0;//거북이 완성
+
+                for (int i = 1; i <= 24; i++)
+                {
+                    GameObject.FindWithTag("card" + i).transform.GetComponent<SpRuleCardControl>().ishitted = false;
+                    GameObject.FindWithTag("card" + i).transform.GetComponent<SpRuleCardControl>().isOpen = false;
+                    GameObject.FindWithTag("card" + i).transform.GetComponent<SpRuleCardControl>().CloseCard();
+                }
+
+                for (int i = 20; i <= 5; i++)//제일 아랫줄 - 19는 제일 좌측줄과 겹쳐서 제외함
+                {
+                    GameObject.FindWithTag("card" + i).transform.GetComponent<SpRuleCardControl>().ishitted = true;
+                    GameObject.FindWithTag("card" + i).transform.GetComponent<SpRuleCardControl>().isOpen = true;
+                    GameObject.FindWithTag("card" + i).transform.GetComponent<SpRuleCardControl>().anim.Play("SingleAniOpen");
+                }
+                for (int i = 1; i <= 24;)
+                {
+                    GameObject.FindWithTag("card" + i).transform.GetComponent<SpRuleCardControl>().ishitted = true;
+                    GameObject.FindWithTag("card" + i).transform.GetComponent<SpRuleCardControl>().isOpen = true;
+                    GameObject.FindWithTag("card" + i).transform.GetComponent<SpRuleCardControl>().anim.Play("SingleAniOpen");
+
+                    i += 6;
+                }
+            }
+        }
     }
 
     void ClickCheck()
