@@ -410,7 +410,7 @@ public class TutorialManager : MonoBehaviour
 
         else if (popUpIndex == 14)//scene1-2.8 (내리는 모션 )
         {
-            ExplainText.text = "또한, 업혀있는 사람은 덩굴이 내려운 장소에서 무조건 내리게 됩니다.";
+            ExplainText.text = "또한, 업혀있는 사람은 덩굴이 내려온 장소에서 무조건 내리게 됩니다.";
             Player1.transform.position = Vector3.Lerp(Player1.transform.position, OutPos.transform.position, cameraSpeed * Time.deltaTime);
 
             //트리거 전에 간격 주기
