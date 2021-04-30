@@ -37,7 +37,7 @@ public class AnimalScript : MonoBehaviour
     string filePath;
 
     //처음 맵
-    public string curMapType = "Jungle";
+    public string curMapType = "Basic";
 
     public GameObject[] AnimalSlot;
     public Image[] AnimalImage, TabImage;
@@ -58,7 +58,7 @@ public class AnimalScript : MonoBehaviour
     public GameObject Lock;
 
     int CurTypeNum;
-    string[] Type = { "Jungle", "Desert", "Antarctica" };
+    string[] Type = { "Basic", "Jungle", "Desert", "Antarctica" };
     void Start()
     {
         //animaldatabase에 있는 텍스트를 allanimal에 대입
@@ -84,7 +84,7 @@ public class AnimalScript : MonoBehaviour
     public void NextBtn()
     {
         CurTypeNum += 1;
-        if (CurTypeNum >= 3)
+        if (CurTypeNum >= 4)
         {
             CurTypeNum = 0;
         }
@@ -97,7 +97,7 @@ public class AnimalScript : MonoBehaviour
         CurTypeNum -= 1;
         if (CurTypeNum < 0)
         {
-            CurTypeNum = 2;
+            CurTypeNum = 3;
         }
         TabMap(Type[CurTypeNum]);
     }
@@ -129,16 +129,20 @@ public class AnimalScript : MonoBehaviour
 
         switch (tabName)
         {
-            case "Jungle":
+            case "Basic":
                 tabNum = 0;
                 break;
 
-            case "Desert":
+            case "Jungle":
                 tabNum = 1;
                 break;
 
-            case "Antarctica":
+            case "Desert":
                 tabNum = 2;
+                break;
+
+            case "Antarctica":
+                tabNum = 3;
                 break;
         }
 
