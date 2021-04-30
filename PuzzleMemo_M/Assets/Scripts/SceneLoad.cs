@@ -5,6 +5,15 @@ using UnityEngine.SceneManagement;
 
 public class SceneLoad : MonoBehaviour
 {
+    private void Update()
+    {
+        if (SceneManager.GetActiveScene().name == "MainMenu" && Input.GetKey(KeyCode.Escape))
+        {
+            Application.Quit();
+        }
+    }
+
+
     public void TestInToSpGame()
     {
         int Map = GetComponent<AIPlay>().CurMap;
