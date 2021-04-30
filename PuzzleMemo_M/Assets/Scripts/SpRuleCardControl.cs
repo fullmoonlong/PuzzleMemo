@@ -153,7 +153,6 @@ public class SpRuleCardControl : MonoBehaviour
             {
                 SpRuleManager.Animals[2] += 2;
                 SpRuleManager.Animals[5] = 0; // 투칸 완성이므로 제외
-                SpRuleManager.matchOver += 2;
 
                 for (int i = 1; i <= 24; i++)
                 {
@@ -177,7 +176,6 @@ public class SpRuleCardControl : MonoBehaviour
                 SpRuleManager.Animals[1] += 1;
                 SpRuleManager.Animals[2] += 3;
                 SpRuleManager.Animals[5] = 0; // 투칸 완성이므로 제외
-                SpRuleManager.matchOver += 2;
 
                 for (int i = 1; i <= 24; i++)
                 {
@@ -208,7 +206,6 @@ public class SpRuleCardControl : MonoBehaviour
                 SpRuleManager.Animals[4] += 3;
                 SpRuleManager.Animals[5] += 1;
                 SpRuleManager.Animals[6] = 0;//거북이 완성
-                SpRuleManager.matchOver += 2;
 
                 for (int i = 1; i <= 24; i++)
                 {
@@ -248,6 +245,10 @@ public class SpRuleCardControl : MonoBehaviour
             {
                 //카드에 있는 OpenCard()함수 실행하기
                 hit.transform.GetComponent<SpRuleCardControl>().OpenCard();
+
+                //AI의 턴으로 변경
+                SpRuleManager.turnCount++;
+                SetIsMyTurn(false);
             }
         }
     }
@@ -261,10 +262,6 @@ public class SpRuleCardControl : MonoBehaviour
         transform.position = new Vector3(transform.position.x, transform.position.y, -1.1f);
         MatchInfo();
         anim.Play("SingleAniOpen");
-
-        //AI의 턴으로 변경
-        SpRuleManager.turnCount++;
-        SetIsMyTurn(false);
     }
 
     public void CloseCard()
