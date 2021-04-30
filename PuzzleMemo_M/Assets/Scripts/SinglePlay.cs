@@ -5,8 +5,10 @@ using UnityEngine.UI;
 
 public class SinglePlay : MonoBehaviour
 {
+    public Text TitleText;
     public Text ExplainText;
 
+    public string[] title;
     public string[] explain;
 
     int CurMap;
@@ -24,6 +26,7 @@ public class SinglePlay : MonoBehaviour
         MapLength = 4;
         CurMapImage.sprite = MapImage[CurMap];
         ExplainText.text = explain[CurMap];
+        TitleText.text = title[CurMap];
     }
 
     // Update is called once per frame
@@ -31,6 +34,25 @@ public class SinglePlay : MonoBehaviour
     {
         CurMapImage.sprite = MapImage[CurMap];
         ExplainText.text = explain[CurMap];
+        TitleText.text = title[CurMap];
+    }
+
+    public void MapNextBtn()
+    {
+        CurMap += 1;
+        if (CurMap >= MapLength)
+        {
+            CurMap = 0;
+        }
+    }
+
+    public void MapBackBtn()
+    {
+        CurMap -= 1;
+        if (CurMap < 0)
+        {
+            CurMap = MapLength - 1;
+        }
     }
 
     public void MapBasic()
