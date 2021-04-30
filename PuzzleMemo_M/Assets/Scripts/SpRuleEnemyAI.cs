@@ -18,8 +18,15 @@ public class SpRuleEnemyAI : MonoBehaviour
 
             if (passedTime >= aiTurnTimer)
             {
-                AIClickCheck();
-                passedTime = 0f;
+                if (SpRuleManager.matchOver < 24)
+                {
+                    AIClickCheck();
+                    passedTime = 0f;
+                }
+                else
+                {
+                    Debug.Log("SpruLEFINISH");
+                }
             }
 
             //카드 움직임
@@ -30,12 +37,8 @@ public class SpRuleEnemyAI : MonoBehaviour
 
     void AIClickCheck()
     {
-        if(SpRuleManager.matchOver >= 24)
-        {
-            return;
-        }
         //AI단계별 구현
-        int randomCard = Random.Range(1, 24);
+        int randomCard = Random.Range(1, 25);
 
         if (GameObject.FindWithTag("card" + randomCard).GetComponent<SpRuleCardControl>().ishitted == true)
         {
@@ -44,32 +47,32 @@ public class SpRuleEnemyAI : MonoBehaviour
                 if (SpRuleManager.turnCount <= 5)
                 {
                     Debug.Log("Phase1");
-                    randomCard = Random.Range(1, 24);
+                    randomCard = Random.Range(1, 25);
                 }
                 else if (SpRuleManager.turnCount <= 10 && SpRuleManager.turnCount > 5)
                 {
                     Debug.Log("Phase2");
-                    randomCard = Random.Range(7, 24);
+                    randomCard = Random.Range(7, 25);
                     if (GameObject.FindWithTag("card" + randomCard).GetComponent<SpRuleCardControl>().ishitted == true)
                     {
                         while (GameObject.FindWithTag("card" + randomCard).GetComponent<SpRuleCardControl>().ishitted == true)
                         {
-                            randomCard = Random.Range(1, 24);
+                            randomCard = Random.Range(1, 25);
                         }
                     }
                 }
                 else if (SpRuleManager.turnCount <= 20 && SpRuleManager.turnCount > 10)
                 {
                     Debug.Log("Phase3");
-                    randomCard = Random.Range(13, 24);
+                    randomCard = Random.Range(13, 25);
                     if (GameObject.FindWithTag("card" + randomCard).GetComponent<SpRuleCardControl>().ishitted == true)
                     {
                         while (GameObject.FindWithTag("card" + randomCard).GetComponent<SpRuleCardControl>().ishitted == true)
                         {
-                            randomCard = Random.Range(7, 24);
+                            randomCard = Random.Range(7, 25);
                             if (GameObject.FindWithTag("card" + randomCard).GetComponent<SpRuleCardControl>().ishitted == true)
                             {
-                                randomCard = Random.Range(1, 24);
+                                randomCard = Random.Range(1, 25);
                             }
                         }
                     }
@@ -77,15 +80,15 @@ public class SpRuleEnemyAI : MonoBehaviour
                 else
                 {
                     Debug.Log("Phase4");
-                    randomCard = Random.Range(19, 24);
+                    randomCard = Random.Range(19, 25);
                     if (GameObject.FindWithTag("card" + randomCard).GetComponent<SpRuleCardControl>().ishitted == true)
                     {
                         while (GameObject.FindWithTag("card" + randomCard).GetComponent<SpRuleCardControl>().ishitted == true)
                         {
-                            randomCard = Random.Range(13, 24);
+                            randomCard = Random.Range(13, 25);
                             if (GameObject.FindWithTag("card" + randomCard).GetComponent<SpRuleCardControl>().ishitted == true)
                             {
-                                randomCard = Random.Range(1, 24);
+                                randomCard = Random.Range(1, 25);
                             }
                         }
                     }
@@ -106,32 +109,32 @@ public class SpRuleEnemyAI : MonoBehaviour
             if (SpRuleManager.turnCount <= 5)
             {
                 Debug.Log("Phase1");
-                randomCard = Random.Range(1, 24);
+                randomCard = Random.Range(1, 25);
             }
             else if (SpRuleManager.turnCount <= 10 && SpRuleManager.turnCount > 5)
             {
                 Debug.Log("Phase2");
-                randomCard = Random.Range(7, 24);
+                randomCard = Random.Range(7, 25);
                 if (GameObject.FindWithTag("card" + randomCard).GetComponent<SpRuleCardControl>().ishitted == true)
                 {
                     while (GameObject.FindWithTag("card" + randomCard).GetComponent<SpRuleCardControl>().ishitted == true)
                     {
-                        randomCard = Random.Range(1, 24);
+                        randomCard = Random.Range(1, 25);
                     }
                 }
             }
             else if (SpRuleManager.turnCount <= 20 && SpRuleManager.turnCount > 10)
             {
                 Debug.Log("Phase3");
-                randomCard = Random.Range(13, 24);
+                randomCard = Random.Range(13, 25);
                 if (GameObject.FindWithTag("card" + randomCard).GetComponent<SpRuleCardControl>().ishitted == true)
                 {
                     while (GameObject.FindWithTag("card" + randomCard).GetComponent<SpRuleCardControl>().ishitted == true)
                     {
-                        randomCard = Random.Range(7, 24);
+                        randomCard = Random.Range(7, 25);
                         if (GameObject.FindWithTag("card" + randomCard).GetComponent<SpRuleCardControl>().ishitted == true)
                         {
-                            randomCard = Random.Range(1, 24);
+                            randomCard = Random.Range(1, 25);
                         }
                     }
                 }
@@ -139,15 +142,15 @@ public class SpRuleEnemyAI : MonoBehaviour
             else
             {
                 Debug.Log("Phase4");
-                randomCard = Random.Range(19, 24);
+                randomCard = Random.Range(19, 25);
                 if (GameObject.FindWithTag("card" + randomCard).GetComponent<SpRuleCardControl>().ishitted == true)
                 {
                     while (GameObject.FindWithTag("card" + randomCard).GetComponent<SpRuleCardControl>().ishitted == true)
                     {
-                        randomCard = Random.Range(13, 24);
+                        randomCard = Random.Range(13, 25);
                         if (GameObject.FindWithTag("card" + randomCard).GetComponent<SpRuleCardControl>().ishitted == true)
                         {
-                            randomCard = Random.Range(1, 24);
+                            randomCard = Random.Range(1, 25);
                         }
                     }
                 }

@@ -1823,19 +1823,31 @@ MonoBehaviour:
   OnAnimalSprite:
   - {fileID: 21300000, guid: e2634415a0a3cfe49ba678544f3c1df1, type: 3}
   - {fileID: 21300000, guid: 88eb0da0cff2aff468b365d69d21e4ce, type: 3}
-  - {fileID: 21300000, guid: ab0c52f5c3a601a438869db54132d8ca, type: 3}
+  - {fileID: 21300000, guid: 4e3e8e7ea1920534daeec963065f5125, type: 3}
   - {fileID: 21300000, guid: 9587084d04c0a5d40aabf3b557da2f28, type: 3}
-  - {fileID: 21300000, guid: c1f45ebc53564054abda317b9d9e2219, type: 3}
+  - {fileID: 21300000, guid: 01a3f35dd16c39c4dac7e666d9334b37, type: 3}
   - {fileID: 21300000, guid: 53cdb4dacee1721439bb866e3804dbf9, type: 3}
-  - {fileID: 21300000, guid: 326da1abe7ee33b4c8e8978422578b0b, type: 3}
+  - {fileID: 21300000, guid: cd54ced1ef062174fbddfc6986d91a4c, type: 3}
+  - {fileID: 21300000, guid: 5751f12911a870d459859b52a2c60e0d, type: 3}
+  - {fileID: 21300000, guid: f1f458a8e5f456c4eac248ec91dcd1e3, type: 3}
+  - {fileID: 21300000, guid: 682619e21fb5ffc49a6d43a830c7cf86, type: 3}
+  - {fileID: 21300000, guid: cd54ced1ef062174fbddfc6986d91a4c, type: 3}
+  - {fileID: 21300000, guid: 5751f12911a870d459859b52a2c60e0d, type: 3}
+  - {fileID: 21300000, guid: 01a3f35dd16c39c4dac7e666d9334b37, type: 3}
   OffAnimalSprite:
   - {fileID: 21300000, guid: 475bde17602a8a849a30f47d80ea8bc2, type: 3}
   - {fileID: 21300000, guid: d722c7e3626ee5b4a9e5a2ce2ffb8251, type: 3}
-  - {fileID: 21300000, guid: 721563172116d75429882c63d6e4d4e9, type: 3}
+  - {fileID: 21300000, guid: a6ef16592f77b7245ad5e57d435ce11f, type: 3}
   - {fileID: 21300000, guid: 72f80c1d47af98a4bac2d53bf956d380, type: 3}
-  - {fileID: 21300000, guid: bae89c52f57ee694190c653f8e786623, type: 3}
+  - {fileID: 21300000, guid: 48f8aad9a75e2034ba12f95be8e54ea2, type: 3}
   - {fileID: 21300000, guid: 24926b016a3f14944838aa838527e3d1, type: 3}
-  - {fileID: 21300000, guid: 6595f28fdfdc79848947891ae01d95c4, type: 3}
+  - {fileID: 21300000, guid: 7a301ccf9264e6d49a035e85b194e5a2, type: 3}
+  - {fileID: 21300000, guid: 6f41c4685cb74f847970a0d886d6993f, type: 3}
+  - {fileID: 21300000, guid: 2e47337bb59f0ae47a316d3edd358b2c, type: 3}
+  - {fileID: 21300000, guid: e5f960902271f414095df564fffdf792, type: 3}
+  - {fileID: 21300000, guid: 7a301ccf9264e6d49a035e85b194e5a2, type: 3}
+  - {fileID: 21300000, guid: 6f41c4685cb74f847970a0d886d6993f, type: 3}
+  - {fileID: 21300000, guid: 48f8aad9a75e2034ba12f95be8e54ea2, type: 3}
   RealSprite:
   - {fileID: 21300000, guid: b119e5028f1ce1d4883ebd0b5bb2ecf2, type: 3}
   - {fileID: 21300000, guid: c4134af4dd192af449bd36410bc84542, type: 3}
