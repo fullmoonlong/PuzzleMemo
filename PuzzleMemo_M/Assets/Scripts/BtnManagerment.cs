@@ -20,6 +20,7 @@ public class BtnManagerment : MonoBehaviour
         SpeicalCard,
         AIPlay,
         SinglePlay,
+        BackBtn
     }
 
     // Start is called before the first frame update
@@ -33,6 +34,15 @@ public class BtnManagerment : MonoBehaviour
     {
         
     }
+    public void MainScreen()
+    {
+        for(int i = 0; i < 10; i++)
+            Btn[i].SetActive(false);
+        
+        Btn[(int)Button.Tutorial].SetActive(true);
+        Btn[(int)Button.Play].SetActive(true);
+        Btn[(int)Button.Collection].SetActive(true);
+    }
 
     public void Tutorial()
     {
@@ -44,6 +54,8 @@ public class BtnManagerment : MonoBehaviour
         Btn[(int)Button.GameRule].SetActive(true);
         Btn[(int)Button.NormalCard].SetActive(true);
         Btn[(int)Button.SpeicalCard].SetActive(true);
+        Btn[(int)Button.BackBtn].SetActive(true);
+        
     }
 
     public void Play()
@@ -54,6 +66,7 @@ public class BtnManagerment : MonoBehaviour
 
         Btn[(int)Button.AIPlay].SetActive(true);
         Btn[(int)Button.SinglePlay].SetActive(true);
+        Btn[(int)Button.BackBtn].SetActive(true);
     }
 
     public void ReadyPanel()
