@@ -6,7 +6,7 @@ public class AIPlay : MonoBehaviour
 {
     //종류별로 ㄱ,ㄴ,ㅣ,ㅡ자
     public Text TypeTitleText;
-    public Text TypeExplainText;
+    //public Text TypeExplainText;
 
     public string[] typetitle;
     public string[] typeexplain;
@@ -45,7 +45,7 @@ public class AIPlay : MonoBehaviour
 
         //처음 타입의 타이틀과 설명 시작
         TypeTitleText.text = typetitle[CurType];
-        TypeExplainText.text = typeexplain[CurType];
+        //TypeExplainText.text = typeexplain[CurType];
     }
 
     // Update is called once per frame
@@ -55,7 +55,7 @@ public class AIPlay : MonoBehaviour
         CurImage.sprite = TypeMapImage[CurType + CurMap * TypeLength];
 
         TypeTitleText.text = typetitle[CurType];
-        TypeExplainText.text = typeexplain[CurType];
+        //TypeExplainText.text = typeexplain[CurType];
 
         //맵 보여주는 이미지
         MapImage.sprite = TypeMapImage[TypeLength * CurType + CurMap];

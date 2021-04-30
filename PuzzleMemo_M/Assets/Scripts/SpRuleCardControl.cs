@@ -214,7 +214,7 @@ public class SpRuleCardControl : MonoBehaviour
                     GameObject.FindWithTag("card" + i).transform.GetComponent<SpRuleCardControl>().CloseCard();
                 }
 
-                for (int i = 20; i <= 5; i++)//제일 아랫줄 - 19는 제일 좌측줄과 겹쳐서 제외함
+                for (int i = 20; i <= 24; i++)//제일 아랫줄 - 19는 제일 좌측줄과 겹쳐서 제외함
                 {
                     GameObject.FindWithTag("card" + i).transform.GetComponent<SpRuleCardControl>().ishitted = true;
                     GameObject.FindWithTag("card" + i).transform.GetComponent<SpRuleCardControl>().isOpen = true;
