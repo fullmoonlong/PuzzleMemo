@@ -18,15 +18,8 @@ public class EnemyAI : MonoBehaviour
 
             if (passedTime >= aiTurnTimer)
             {
-                if (SoloModeManager.matchOver < 24)
-                {
-                    AIClickCheck();
-                    passedTime = 0f;
-                }
-                else
-                {
-                    Debug.Log("FINISHED");
-                }
+                AIClickCheck();
+                passedTime = 0f;
             }
 
             //카드 움직임
@@ -37,8 +30,12 @@ public class EnemyAI : MonoBehaviour
 
     void AIClickCheck()
     {
+        if(SoloModeManager.matchOver >= 24)
+        {
+            return;
+        }
         //AI단계별 구현
-        int randomCard = Random.Range(1, 28);
+        int randomCard = Random.Range(1, 24);
 
         if (GameObject.FindWithTag("card" + randomCard).GetComponent<SoloModeCardControl>().ishitted == true)
         {
@@ -47,32 +44,32 @@ public class EnemyAI : MonoBehaviour
                 if (SoloModeManager.turnCount <= 5)
                 {
                     Debug.Log("Phase1");
-                    randomCard = Random.Range(1, 28);
+                    randomCard = Random.Range(1, 24);
                 }
                 else if (SoloModeManager.turnCount <= 10 && SoloModeManager.turnCount > 5)
                 {
                     Debug.Log("Phase2");
-                    randomCard = Random.Range(7, 28);
+                    randomCard = Random.Range(7, 24);
                     if (GameObject.FindWithTag("card" + randomCard).GetComponent<SoloModeCardControl>().ishitted == true)
                     {
                         while (GameObject.FindWithTag("card" + randomCard).GetComponent<SoloModeCardControl>().ishitted == true)
                         {
-                            randomCard = Random.Range(1, 28);
+                            randomCard = Random.Range(1, 24);
                         }
                     }
                 }
                 else if (SoloModeManager.turnCount <= 20 && SoloModeManager.turnCount > 10)
                 {
                     Debug.Log("Phase3");
-                    randomCard = Random.Range(13, 28);
+                    randomCard = Random.Range(13, 24);
                     if (GameObject.FindWithTag("card" + randomCard).GetComponent<SoloModeCardControl>().ishitted == true)
                     {
                         while (GameObject.FindWithTag("card" + randomCard).GetComponent<SoloModeCardControl>().ishitted == true)
                         {
-                            randomCard = Random.Range(7, 28);
+                            randomCard = Random.Range(7, 24);
                             if (GameObject.FindWithTag("card" + randomCard).GetComponent<SoloModeCardControl>().ishitted == true)
                             {
-                                randomCard = Random.Range(1, 28);
+                                randomCard = Random.Range(1, 24);
                             }
                         }
                     }
@@ -80,15 +77,15 @@ public class EnemyAI : MonoBehaviour
                 else
                 {
                     Debug.Log("Phase4");
-                    randomCard = Random.Range(19, 28);
+                    randomCard = Random.Range(19, 24);
                     if (GameObject.FindWithTag("card" + randomCard).GetComponent<SoloModeCardControl>().ishitted == true)
                     {
                         while (GameObject.FindWithTag("card" + randomCard).GetComponent<SoloModeCardControl>().ishitted == true)
                         {
-                            randomCard = Random.Range(13, 28);
+                            randomCard = Random.Range(13, 24);
                             if (GameObject.FindWithTag("card" + randomCard).GetComponent<SoloModeCardControl>().ishitted == true)
                             {
-                                randomCard = Random.Range(1, 28);
+                                randomCard = Random.Range(1, 24);
                             }
                         }
                     }
@@ -108,32 +105,32 @@ public class EnemyAI : MonoBehaviour
             if (SoloModeManager.turnCount <= 5)
             {
                 Debug.Log("Phase1");
-                randomCard = Random.Range(1, 28);
+                randomCard = Random.Range(1, 24);
             }
             else if (SoloModeManager.turnCount <= 10 && SoloModeManager.turnCount > 5)
             {
                 Debug.Log("Phase2");
-                randomCard = Random.Range(7, 28);
+                randomCard = Random.Range(7, 24);
                 if (GameObject.FindWithTag("card" + randomCard).GetComponent<SoloModeCardControl>().ishitted == true)
                 {
                     while (GameObject.FindWithTag("card" + randomCard).GetComponent<SoloModeCardControl>().ishitted == true)
                     {
-                        randomCard = Random.Range(1, 28);
+                        randomCard = Random.Range(1, 24);
                     }
                 }
             }
             else if (SoloModeManager.turnCount <= 20 && SoloModeManager.turnCount > 10)
             {
                 Debug.Log("Phase3");
-                randomCard = Random.Range(13, 28);
+                randomCard = Random.Range(13, 24);
                 if (GameObject.FindWithTag("card" + randomCard).GetComponent<SoloModeCardControl>().ishitted == true)
                 {
                     while (GameObject.FindWithTag("card" + randomCard).GetComponent<SoloModeCardControl>().ishitted == true)
                     {
-                        randomCard = Random.Range(7, 28);
+                        randomCard = Random.Range(7, 24);
                         if (GameObject.FindWithTag("card" + randomCard).GetComponent<SoloModeCardControl>().ishitted == true)
                         {
-                            randomCard = Random.Range(1, 28);
+                            randomCard = Random.Range(1, 24);
                         }
                     }
                 }
@@ -141,15 +138,15 @@ public class EnemyAI : MonoBehaviour
             else
             {
                 Debug.Log("Phase4");
-                randomCard = Random.Range(19, 28);
+                randomCard = Random.Range(19, 24);
                 if (GameObject.FindWithTag("card" + randomCard).GetComponent<SoloModeCardControl>().ishitted == true)
                 {
                     while (GameObject.FindWithTag("card" + randomCard).GetComponent<SoloModeCardControl>().ishitted == true)
                     {
-                        randomCard = Random.Range(13, 28);
+                        randomCard = Random.Range(13, 24);
                         if (GameObject.FindWithTag("card" + randomCard).GetComponent<SoloModeCardControl>().ishitted == true)
                         {
-                            randomCard = Random.Range(1, 28);
+                            randomCard = Random.Range(1, 24);
                         }
                     }
                 }

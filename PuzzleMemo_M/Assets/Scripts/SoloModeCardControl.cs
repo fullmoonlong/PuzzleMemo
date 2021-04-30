@@ -118,6 +118,10 @@ public class SoloModeCardControl : MonoBehaviour
             {
                 //카드에 있는 OpenCard()함수 실행하기
                 hit.transform.GetComponent<SoloModeCardControl>().OpenCard();
+
+                //AI의 턴으로 변경
+                SoloModeManager.turnCount++;
+                SetIsMyTurn(false);
             }
         }
     }
@@ -131,10 +135,6 @@ public class SoloModeCardControl : MonoBehaviour
         transform.position = new Vector3(transform.position.x, transform.position.y, -1.1f);
         MatchInfo();
         anim.Play("SingleAniOpen");
-
-        //AI의 턴으로 변경
-        SoloModeManager.turnCount++;
-        SetIsMyTurn(false);
     }
 
     public void CloseCard()
@@ -377,7 +377,6 @@ public class SoloModeCardControl : MonoBehaviour
                     {
                         if (MalManager.A < MalManager.B)
                         {
-                            Debug.Log("앞에 올라타기");
                             MalManager.A += (MalManager.B - MalManager.A);
                         }
                     }
@@ -385,7 +384,6 @@ public class SoloModeCardControl : MonoBehaviour
                     {
                         if (MalManager.B < MalManager.A)
                         {
-                            Debug.Log("앞에 올라타기");
                             MalManager.B += (MalManager.A - MalManager.B);
                         }
                     }
@@ -396,29 +394,24 @@ public class SoloModeCardControl : MonoBehaviour
                     if (isMyTurn == true)
                     {
                         //강제넘기기 알림띄우면서 넘기기
-                        Debug.Log("턴넘기기(나)");
                         isMyTurn = false;
                     }
                     else if (isMyTurn == false)
                     {
                         //강제넘기기 알림띄우면서 넘기기
-                        Debug.Log("턴넘기기(컴퓨터)");
                         isMyTurn = true;
                     }
                 }
-                //뒤로한칸
                 else if (imgNum == 27)
                 {
                     if (isMyTurn == true)
                     {
                         if (MalManager.A == 0)
                         {
-                            Debug.Log("첫칸이라뒤로안감");
                             //제자리라 이동안함
                         }
                         else
                         {
-                            Debug.Log("뒤로가기");
                             MalManager.A -= 1;
                         }
                     }
@@ -426,12 +419,10 @@ public class SoloModeCardControl : MonoBehaviour
                     {
                         if (MalManager.B == 0)
                         {
-                            Debug.Log("첫칸이라뒤로안감");
                             //제자리라 이동안함
                         }
                         else
                         {
-                            Debug.Log("뒤로가기");
                             MalManager.B -= 1;
                         }
                     }

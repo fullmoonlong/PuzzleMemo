@@ -48,7 +48,7 @@ public class SoloModeManager : MonoBehaviour
         {
             Debug.Log(matchOver);
         }
-        if(matchOver >= 24)
+        if(matchOver == 24)
         {
             gameOverPanel.SetActive(true);
         }
@@ -61,13 +61,13 @@ public class SoloModeManager : MonoBehaviour
 
     public void Exit()
     {
-        SceneManager.LoadScene("MainMenu");
+        Application.Quit();
     }
 
     void Shuffle()
     {
         int cardCnt = SoloModeCardControl.cardCnt;//일반 카드 수
-        int S_cardCnt = 3; // 특수 카드 수
+        int S_cardCnt = 0; // 특수 카드 수
 
         //카드 위치 정하기
         /*for (int i = 1; i <= cardCnt + S_cardCnt; i++)
