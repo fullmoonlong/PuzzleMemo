@@ -851,8 +851,25 @@ public class TutorialManager : MonoBehaviour
 
         else if (popUpIndex == 41)
         {
-            ExplainText.text = "다음 클릭시 메인화면으로 이동됩니다.";
+            ExplainText.text = "마지막으로 백과사전 버튼을 통하여 동물들의 정보와 울음소리를 들을 수 있습니다.";
             popUps[13].SetActive(false);
+            popUps[14].SetActive(true);
+
+            //트리거 전에 간격 주기
+            if (popUpInterval >= 0) { ClickText.SetActive(false); return; }
+            if (popUpInterval < 0) { ClickText.SetActive(true); }
+            if (Input.GetButtonDown("Fire1"))
+            {
+
+                popUpInterval = IntervalTime;
+                popUpIndex++;
+            }
+        }
+
+        else if (popUpIndex == 42)
+        {
+            ExplainText.text = "다음 클릭시 메인화면으로 이동됩니다.";
+            popUps[14].SetActive(false);
 
             //트리거 전에 간격 주기
             if (popUpInterval >= 0) { ClickText.SetActive(false); return; }

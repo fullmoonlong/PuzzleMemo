@@ -52,7 +52,7 @@ public class AIPlay : MonoBehaviour
     void Update()
     {
         //타입보여주는 이미지
-        CurImage.sprite = TypeMapImage[TypeLength * CurType + CurMap];
+        CurImage.sprite = TypeMapImage[CurType + CurMap * TypeLength];
 
         TypeTitleText.text = typetitle[CurType];
         TypeExplainText.text = typeexplain[CurType];
