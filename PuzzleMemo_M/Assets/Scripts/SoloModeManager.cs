@@ -61,7 +61,7 @@ public class SoloModeManager : MonoBehaviour
 
     public void Exit()
     {
-        Application.Quit();
+        SceneManager.LoadScene("MainMenu");
     }
 
     void Shuffle()

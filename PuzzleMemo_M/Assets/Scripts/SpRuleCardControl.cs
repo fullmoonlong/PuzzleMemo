@@ -134,6 +134,7 @@ public class SpRuleCardControl : MonoBehaviour
                 SpRuleManager.Animals[0] += 3;
                 SpRuleManager.Animals[1] += 1;
                 SpRuleManager.Animals[2] += 2;
+                //SpRuleManager.matchOver = 6;
 
                 for (int i = 1; i <= 24; i++)
                 {
@@ -153,6 +154,7 @@ public class SpRuleCardControl : MonoBehaviour
             {
                 SpRuleManager.Animals[2] += 2;
                 SpRuleManager.Animals[5] = 0; // 투칸 완성이므로 제외
+                SpRuleManager.matchOver = 2;
 
                 for (int i = 1; i <= 24; i++)
                 {
@@ -176,6 +178,7 @@ public class SpRuleCardControl : MonoBehaviour
                 SpRuleManager.Animals[1] += 1;
                 SpRuleManager.Animals[2] += 3;
                 SpRuleManager.Animals[5] = 0; // 투칸 완성이므로 제외
+                SpRuleManager.matchOver = 2;
 
                 for (int i = 1; i <= 24; i++)
                 {
@@ -202,10 +205,10 @@ public class SpRuleCardControl : MonoBehaviour
             else if (SpRuleNum == 2)
             {
                 SpRuleManager.Animals[0] += 3;
-                SpRuleManager.Animals[2] += 2;
                 SpRuleManager.Animals[4] += 3;
                 SpRuleManager.Animals[5] += 1;
                 SpRuleManager.Animals[6] = 0;//거북이 완성
+                SpRuleManager.matchOver = 2;
 
                 for (int i = 1; i <= 24; i++)
                 {
@@ -352,6 +355,7 @@ public class SpRuleCardControl : MonoBehaviour
                 //동물 정보에 의한 점수 넘겨주기
                 if (imgNum == 1 || imgNum == 2 || imgNum == 3 || imgNum == 7 || imgNum == 8 || imgNum == 13)
                 {
+                    //뱀
                     SpRuleManager.Animals[0] += 1;
 
                     if (SpRuleManager.Animals[0] == 6)
@@ -373,6 +377,7 @@ public class SpRuleCardControl : MonoBehaviour
                 }
                 else if (imgNum == 4 || imgNum == 9 || imgNum == 10)
                 {
+                    //알락 원숭이
                     SpRuleManager.Animals[1] += 1;
 
                     if (SpRuleManager.Animals[1] == 3)
@@ -394,6 +399,7 @@ public class SpRuleCardControl : MonoBehaviour
                 }
                 else if (imgNum == 5 || imgNum == 6 || imgNum == 11 || imgNum == 12)
                 {
+                    //하마
                     SpRuleManager.Animals[2] += 1;
 
                     if (SpRuleManager.Animals[2] == 4)
@@ -415,6 +421,7 @@ public class SpRuleCardControl : MonoBehaviour
                 }
                 else if (imgNum == 14)
                 {
+                    //개구리
                     SpRuleManager.Animals[3] += 1;
 
                     if (SpRuleManager.Animals[3] == 1)
@@ -436,6 +443,7 @@ public class SpRuleCardControl : MonoBehaviour
                 }
                 else if (imgNum == 15 || imgNum == 16 || imgNum == 17 || imgNum == 21 || imgNum == 22 || imgNum == 23)
                 {
+                    //재규어
                     SpRuleManager.Animals[4] += 1;
 
                     if (SpRuleManager.Animals[4] == 6)
@@ -457,6 +465,7 @@ public class SpRuleCardControl : MonoBehaviour
                 }
                 else if (imgNum == 18 || imgNum == 24)
                 {
+                    //투칸
                     SpRuleManager.Animals[5] += 1;
 
                     if (SpRuleManager.Animals[5] == 2)
@@ -478,6 +487,7 @@ public class SpRuleCardControl : MonoBehaviour
                 }
                 else if (imgNum == 19 || imgNum == 20)
                 {
+                    //거북이
                     SpRuleManager.Animals[6] += 1;
 
                     if (SpRuleManager.Animals[6] == 2)

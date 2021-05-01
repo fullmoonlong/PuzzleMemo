@@ -79,7 +79,7 @@ public class SpRuleManager : MonoBehaviour
 
     public void Exit()
     {
-        Application.Quit();
+        SceneManager.LoadScene("MainMenu");
     }
 
     void Shuffle()
