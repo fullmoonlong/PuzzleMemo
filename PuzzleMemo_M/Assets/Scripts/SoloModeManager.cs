@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class SoloModeManager : MonoBehaviour
@@ -21,6 +22,17 @@ public class SoloModeManager : MonoBehaviour
     public static int[] Animals = new int[animalCnt];
 
     public GameObject gameOverPanel;
+    public Text gameOverText;
+
+    /// <summary>
+    /// 특수카드 알림 작업중 WIP
+    /// </summary>
+    //public GameObject spCardButton25;
+    //public GameObject spCardButton26;
+    //public GameObject spCardButton27;
+    public Text spCard25Text;
+    public Text spCard26Text;
+    public Text spCard27Text;
 
     // Use this for initialization
     void Start()
@@ -28,6 +40,10 @@ public class SoloModeManager : MonoBehaviour
         turnCount = 0;
         matchOver = 0;
         gameOverPanel.SetActive(false);
+        ///특수카드 작업중
+        //spCardButton25.SetActive(false);
+        //spCardButton26.SetActive(false);
+        //spCardButton27.SetActive(false);
 
         for (int i = 0; i < animalCnt; i++)
         {
@@ -51,6 +67,19 @@ public class SoloModeManager : MonoBehaviour
         if (matchOver >= 24)
         {
             gameOverPanel.SetActive(true);
+
+            if (MalManager.A > MalManager.B)
+            {
+                gameOverText.text = "Win!";
+            }
+            else if (MalManager.B > MalManager.A)
+            {
+                gameOverText.text = "Lose!";
+            }
+            else
+            {
+                gameOverText.text = "Draw!";
+            }
         }
     }
 

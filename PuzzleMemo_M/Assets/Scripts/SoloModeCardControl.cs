@@ -32,8 +32,10 @@ public class SoloModeCardControl : MonoBehaviour
     static bool isMyTurn;
     static public int cardCnt = 24;
     public float cardInterval = 1.2f;
+    private float alarm = 0f;
 
     Animator anim;
+    SoloModeManager soloModeManager;
 
     public List<Animal> AllAnimalList, CurAnimalList;
 
@@ -65,6 +67,7 @@ public class SoloModeCardControl : MonoBehaviour
         LoadFile();
 
         anim = GetComponent<Animator>();
+        soloModeManager = SoloModeManager.instance;
         SetIsMyTurn(true);
 
         //이미지 위치용 정보
@@ -379,6 +382,8 @@ public class SoloModeCardControl : MonoBehaviour
                         {
                             Debug.Log("앞에 올라타기");
                             MalManager.A += (MalManager.B - MalManager.A);
+                            //soloModeManager.spCard25Text.text = "상대 말에 올라탔습니다!";
+                            //soloModeManager.spCardButton25.SetActive(true);
                         }
                     }
                     else
@@ -395,7 +400,22 @@ public class SoloModeCardControl : MonoBehaviour
                 {
                     if (isMyTurn == true)
                     {
+                        /// 특수카드 알려주는 알림 WIP(작업중)
+                        /*
+                        soloModeManager.spCard26Text.text = "한 턴을 넘깁니다!";
+                        soloModeManager.spCardButton26.SetActive(true);
+                        float alarmDuration = 3f;
+                        alarm += Time.deltaTime;
                         //강제넘기기 알림띄우면서 넘기기
+                        if (alarm >= alarmDuration)
+                        {
+                            soloModeManager.spCardButton26.SetActive(false);
+                            Debug.Log("턴넘기기(나)");
+                            isMyTurn = false;
+                            alarm = 0f;
+                        }
+                        */
+
                         Debug.Log("턴넘기기(나)");
                         isMyTurn = false;
                     }
@@ -420,6 +440,8 @@ public class SoloModeCardControl : MonoBehaviour
                         {
                             Debug.Log("뒤로가기");
                             MalManager.A -= 1;
+                            //soloModeManager.spCard27Text.text = "한 칸 뒤로 갑니다!";
+                            //soloModeManager.spCardButton27.SetActive(true);
                         }
                     }
                     else

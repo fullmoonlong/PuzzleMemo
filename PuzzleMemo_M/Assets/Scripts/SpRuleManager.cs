@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class SpRuleManager : MonoBehaviour
@@ -21,6 +22,7 @@ public class SpRuleManager : MonoBehaviour
     public static int[] Animals = new int[animalCnt];
 
     public GameObject gameOverPanel;
+    public Text gameOverText;
 
     //public static int SpRuleNum;//0이 Default, 4 제일 윗줄, 3 가장 우측, 1 ㄱ자, 2 ㄴ자
 
@@ -66,9 +68,22 @@ public class SpRuleManager : MonoBehaviour
         {
             Debug.Log(matchOver);
         }
-        if(matchOver >= 24)
+        if (matchOver >= 24)
         {
             gameOverPanel.SetActive(true);
+
+            if (MalManager.A > MalManager.B)
+            {
+                gameOverText.text = "Win!";
+            }
+            else if (MalManager.B > MalManager.A)
+            {
+                gameOverText.text = "Lose!";
+            }
+            else
+            {
+                gameOverText.text = "Draw!";
+            }
         }
     }
 

@@ -493,8 +493,8 @@ GameObject:
   - component: {fileID: 45696501}
   - component: {fileID: 45696500}
   m_Layer: 5
-  m_Name: Board27
-  m_TagString: board27
+  m_Name: Board25
+  m_TagString: board25
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -511,7 +511,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1511200707}
-  m_RootOrder: 2
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -4516,8 +4516,8 @@ GameObject:
   - component: {fileID: 887048643}
   - component: {fileID: 887048642}
   m_Layer: 5
-  m_Name: Board25
-  m_TagString: board25
+  m_Name: Board26
+  m_TagString: board26
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4534,7 +4534,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1511200707}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -4696,8 +4696,8 @@ GameObject:
   - component: {fileID: 899524521}
   - component: {fileID: 899524520}
   m_Layer: 5
-  m_Name: Board26
-  m_TagString: board26
+  m_Name: Board27
+  m_TagString: board27
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4714,7 +4714,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1511200707}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -5084,7 +5084,7 @@ GameObject:
   - component: {fileID: 985580900}
   - component: {fileID: 985580899}
   m_Layer: 5
-  m_Name: got
+  m_Name: GameOverText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6870,9 +6870,9 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 45696499}
   - {fileID: 887048641}
   - {fileID: 899524519}
-  - {fileID: 45696499}
   m_Father: {fileID: 1289178946}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -8850,6 +8850,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameOverPanel: {fileID: 353738577}
+  gameOverText: {fileID: 985580899}
+  spCard25Text: {fileID: 0}
+  spCard26Text: {fileID: 0}
+  spCard27Text: {fileID: 0}
 --- !u!4 &1910679364
 Transform:
   m_ObjectHideFlags: 0
