@@ -211,6 +211,7 @@ GameObject:
   - component: {fileID: 78072598}
   - component: {fileID: 78072600}
   - component: {fileID: 78072601}
+  - component: {fileID: 78072602}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -286,6 +287,39 @@ MonoBehaviour:
   - {fileID: 1913225164}
   - {fileID: 552412807}
   Ready: {fileID: 1716633587}
+--- !u!114 &78072602
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 78072597}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b2649fa547464342a2df2db6ae90ffd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AnimalDatabase: {fileID: 4900000, guid: ec1bbdbc1a1c4c743ad91f9567f257c3, type: 3}
+  AllAnimalList: []
+  CurAnimalList: []
+  MyAnimalList: []
+  curMapType: Basic
+  AnimalSlot: []
+  AnimalImage: []
+  TabImage: []
+  RealImage: {fileID: 0}
+  OnAnimalSprite: []
+  OffAnimalSprite: []
+  RealSprite: []
+  ClickTab: {fileID: 0}
+  UnClickTab: {fileID: 0}
+  NameText: {fileID: 0}
+  IntroText: {fileID: 0}
+  SpeciesText: {fileID: 0}
+  SizeText: {fileID: 0}
+  HabitatText: {fileID: 0}
+  Dictionary: {fileID: 0}
+  Lock: {fileID: 0}
 --- !u!1 &103151058
 GameObject:
   m_ObjectHideFlags: 0
