@@ -48,6 +48,8 @@ public class SpRuleManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Debug.Log(Animals[0] + " / " + Animals[1] + " / " + Animals[2] + " / " + Animals[3] + " / " + Animals[4] + " / " +
+             Animals[5] + " / " + Animals[6]);
         /*if (Input.GetKeyDown(KeyCode.O))
         {
             SpRuleNum = 1;

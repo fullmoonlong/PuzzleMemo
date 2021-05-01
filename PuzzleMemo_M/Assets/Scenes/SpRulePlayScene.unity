@@ -8902,6 +8902,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameOverPanel: {fileID: 1508787328}
+  gameOverText: {fileID: 1640785257}
 --- !u!4 &1910679364
 Transform:
   m_ObjectHideFlags: 0

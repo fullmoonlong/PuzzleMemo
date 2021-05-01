@@ -95,7 +95,6 @@ public class SpRuleEnemyAI : MonoBehaviour
                 }
             }
 
-            //넣어야 위에서 찾은 후에 바로 될꺼 같아서 넣어봄 - 규식
             if (GameObject.FindWithTag("card" + randomCard).GetComponent<SpRuleCardControl>().ishitted == false)
             {
                 Debug.Log(randomCard);
@@ -155,11 +154,15 @@ public class SpRuleEnemyAI : MonoBehaviour
                     }
                 }
             }
-            GameObject.FindWithTag("card" + randomCard).GetComponent<SpRuleCardControl>().OpenCard();
-            Debug.Log(randomCard);
-            //플레이어의 턴으로 변경
-            SpRuleManager.turnCount++;
-            SpRuleCardControl.instance.SetIsMyTurn(true);
+
+            if (GameObject.FindWithTag("card" + randomCard).GetComponent<SpRuleCardControl>().ishitted == false)
+            {
+                GameObject.FindWithTag("card" + randomCard).GetComponent<SpRuleCardControl>().OpenCard();
+                Debug.Log(randomCard);
+                //플레이어의 턴으로 변경
+                SpRuleManager.turnCount++;
+                SpRuleCardControl.instance.SetIsMyTurn(true);
+            }
         }
     }
 }

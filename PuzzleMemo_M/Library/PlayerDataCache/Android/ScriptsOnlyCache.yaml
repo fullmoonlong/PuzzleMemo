@@ -1300,7 +1300,7 @@ ScriptsOnlyBuild:
     className: ColorLookup
   - hash:
       serializedVersion: 2
-      Hash: 57a47b4b746d41a60a9e7a22c9c74d2b
+      Hash: e5f60703e5269644634e1b8aff650643
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: SpRuleManager
@@ -1534,7 +1534,7 @@ ScriptsOnlyBuild:
     className: DebugUIHandlerUIntField
   - hash:
       serializedVersion: 2
-      Hash: 57a47b4b746d41a60a9e7a22c9c74d2b
+      Hash: 4f6abd528fe505a5bc7a4dd123c49092
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: SoloModeManager
@@ -1776,4 +1776,4 @@ ScriptsOnlyBuild:
   - Assets/Scenes/DoubleModeScene.unity
   - Assets/Scenes/AIPlay.unity
   - Assets/Scenes/SinglePlay.unity
-  playerPath: C:/Users/HOME/Desktop/PMM_apk/Test_0501.apk
+  playerPath: C:/Users/HOME/Desktop/PMM_apk/PuzzleMemo_Mobile.ver0501.apk
