@@ -66,7 +66,7 @@ public class SpRuleManager : MonoBehaviour
         {
             Debug.Log(matchOver);
         }
-        if(matchOver == 24)
+        if(matchOver >= 24)
         {
             gameOverPanel.SetActive(true);
         }

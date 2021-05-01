@@ -502,6 +502,8 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 12494}
     - Class: 114
+      Script: {instanceID: 12726}
+    - Class: 114
       Script: {instanceID: 13088}
     - Class: 114
       Script: {instanceID: 14206}
@@ -511,6 +513,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 15140}
     - Class: 114
       Script: {instanceID: 15804}
+    - Class: 114
+      Script: {instanceID: 16302}
     - Class: 114
       Script: {instanceID: 16388}
     - Class: 115
@@ -1772,4 +1776,4 @@ ScriptsOnlyBuild:
   - Assets/Scenes/DoubleModeScene.unity
   - Assets/Scenes/AIPlay.unity
   - Assets/Scenes/SinglePlay.unity
-  playerPath: C:/Users/HOME/Desktop/PMM_apk/Test_0430.apk
+  playerPath: C:/Users/HOME/Desktop/PMM_apk/Test_0501.apk

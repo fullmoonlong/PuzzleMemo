@@ -250,8 +250,8 @@ public class SpRuleCardControl : MonoBehaviour
                 hit.transform.GetComponent<SpRuleCardControl>().OpenCard();
 
                 //AI의 턴으로 변경
-                SpRuleManager.turnCount++;
-                SetIsMyTurn(false);
+                /*SpRuleManager.turnCount++;
+                SetIsMyTurn(false);*/
             }
         }
     }
@@ -265,6 +265,10 @@ public class SpRuleCardControl : MonoBehaviour
         transform.position = new Vector3(transform.position.x, transform.position.y, -1.1f);
         MatchInfo();
         anim.Play("SingleAniOpen");
+
+        //AI의 턴으로 변경
+        SpRuleManager.turnCount++;
+        SetIsMyTurn(false);
     }
 
     public void CloseCard()
